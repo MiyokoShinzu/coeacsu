@@ -50,7 +50,7 @@
 
                         <div class="col-lg-10  mx-auto p-3 ">
                             <form id="uploadForm">
-                                <div class="row border p-3 shadow">
+                                <div class="row">
                                     <div class="col-lg-12 w-100 mx-auto">
                                         <strong class="mb-2 h4">File Uploader</strong>
                                     </div>
