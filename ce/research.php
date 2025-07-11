@@ -13,6 +13,7 @@
 
 </head>
 <?php include '../src/connection.php'; ?>
+
 <body class="position-relative" style="overflow-x: hidden; font-family: 'Poppins', sans-serif;">
 
     <div class="main min-vh-100 ">
@@ -27,13 +28,10 @@
                 <p class="text-white">Narrative Report</p>
             </div>
             <div class="col-lg-6 mx-auto mt-3">
-                <video controls>
-                    <source media="(min-width: 650px)" srcset="../assets/videos/research-video-large.mp4" type="video/mp4">
-                    <source media="(min-width: 450px)" srcset="../assets/videos/research-video-medium.mp4" type="video/mp4">
-                    <source media="(min-width: 0px)" srcset="../assets/videos/research-video-small.mp4" type="video/mp4">
+                <video width="640" height="360" controls muted autoplay loop>
+                    <source src="../uploads/test.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                
 
             </div>
             <div class=" col-lg-12 col-md-12 col-sm-12 mt-3 mb-3 d-flex align-items-center justify-start flex-column mx-auto" style="background:rgb(174,14,14)">
@@ -59,7 +57,7 @@
             <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
                     <img src="../assets/pdf.svg" style="height: 30px; width: 30px; margin-right: 10px;" alt="Drive Icon">
-                    <span class="file-name">' .''. htmlspecialchars($fileName) . '</span>
+                    <span class="file-name">' . '' . htmlspecialchars($fileName) . '</span>
                 </div>
             </a>
         </div>';
@@ -79,7 +77,7 @@
                 <h5 class="ms-5 text-dark mb-3">Campus and College RDE Agenda</h5>
 
                 <?php
-              
+
                 $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Campus and College RDE Agenda' and department= 'ce' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
 
@@ -94,7 +92,7 @@
                 <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
                     <img src="../assets/pdf.svg" style="height: 30px; width: 30px; margin-right: 10px;" alt="Drive Icon">
-                    <span class="file-name">' .''. htmlspecialchars($fileName) . '</span>
+                    <span class="file-name">' . '' . htmlspecialchars($fileName) . '</span>
                 </div>
                     </a>
                     </div>';
@@ -105,16 +103,16 @@
                 ?>
 
             </div>
-            
+
             <div class="col-lg-11 mx-auto">
                 <h5 class="ms-5 text-dark mb-3">Copyrights AVP</h5>
-        
+
                 <?php
                 // adjust path as needed
-        
+
                 $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Copyrights AVP' and department= 'ce' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
-        
+
                 if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
@@ -126,7 +124,7 @@
                 <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
                     <img src="../assets/pdf.svg" style="height: 30px; width: 30px; margin-right: 10px;" alt="Drive Icon">
-                    <span class="file-name">' .''. htmlspecialchars($fileName) . '</span>
+                    <span class="file-name">' . '' . htmlspecialchars($fileName) . '</span>
                 </div>
                     </a>
                     </div>';
@@ -135,17 +133,17 @@
                     echo '<p class="text-center text-muted">No files found under Copyrights AVP.</p>';
                 }
                 ?>
-        
+
             </div>
             <div class="col-lg-11 mx-auto">
                 <h5 class="ms-5 text-dark mb-3">Faculty Research Awards</h5>
-        
+
                 <?php
                 // adjust path as needed
-        
+
                 $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Faculty Research Awards' and department= 'ce' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
-        
+
                 if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
@@ -157,7 +155,7 @@
                 <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
                     <img src="../assets/pdf.svg" style="height: 30px; width: 30px; margin-right: 10px;" alt="Drive Icon">
-                    <span class="file-name">' .''. htmlspecialchars($fileName) . '</span>
+                    <span class="file-name">' . '' . htmlspecialchars($fileName) . '</span>
                 </div>
                     </a>
                     </div>';
@@ -166,17 +164,17 @@
                     echo '<p class="text-center text-muted">No files found under Faculty Research Awards.</p>';
                 }
                 ?>
-        
+
             </div>
             <div class="col-lg-11 mx-auto">
                 <h5 class="ms-5 text-dark mb-3">Student Research Awards</h5>
-        
+
                 <?php
                 // adjust path as needed
-        
+
                 $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Student Research Awards' and department= 'ce' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
-        
+
                 if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
@@ -188,7 +186,7 @@
                 <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
                     <img src="../assets/pdf.svg" style="height: 30px; width: 30px; margin-right: 10px;" alt="Drive Icon">
-                    <span class="file-name">' .''. htmlspecialchars($fileName) . '</span>
+                    <span class="file-name">' . '' . htmlspecialchars($fileName) . '</span>
                 </div>
                     </a>
                     </div>';
@@ -197,17 +195,17 @@
                     echo '<p class="text-center text-muted">No files found under Student Research Awards.</p>';
                 }
                 ?>
-        
+
             </div>
             <div class="col-lg-11 mx-auto">
                 <h5 class="ms-5 text-dark mb-3">Special Order On Institutionally Funded Research</h5>
-        
+
                 <?php
                 // adjust path as needed
-        
+
                 $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Special Order On Institutionally Funded Research' and department= 'ce' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
-        
+
                 if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
@@ -219,7 +217,7 @@
                 <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
                     <img src="../assets/pdf.svg" style="height: 30px; width: 30px; margin-right: 10px;" alt="Drive Icon">
-                    <span class="file-name">' .''. htmlspecialchars($fileName) . '</span>
+                    <span class="file-name">' . '' . htmlspecialchars($fileName) . '</span>
                 </div>
                     </a>
                     </div>';
@@ -228,17 +226,17 @@
                     echo '<p class="text-center text-muted">No files found under Special Order On Institutionally Funded Research.</p>';
                 }
                 ?>
-        
+
             </div>
             <div class="col-lg-11 mx-auto">
                 <h5 class="ms-5 text-dark mb-3">Others</h5>
-        
+
                 <?php
                 // adjust path as needed
-        
+
                 $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Others' and department= 'ce' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
-        
+
                 if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
@@ -250,7 +248,7 @@
                 <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
                     <img src="../assets/pdf.svg" style="height: 30px; width: 30px; margin-right: 10px;" alt="Drive Icon">
-                    <span class="file-name">' .''. htmlspecialchars($fileName) . '</span>
+                    <span class="file-name">' . '' . htmlspecialchars($fileName) . '</span>
                 </div>
                     </a>
                     </div>';
@@ -260,11 +258,11 @@
                 }
                 $mysqli->close();
                 ?>
-        
+
             </div>
 
 
-            
+
 
         </div>
     </div>
