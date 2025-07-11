@@ -29,18 +29,13 @@
             </div>
 
             <div class="col-lg-6 mx-auto mt-3 p-0 m-0 border border-1">
-
-                <div class="col-lg-6 mx-auto mt-3 p-0 m-0">
-
-
-
+                <div class="col-lg-6 mx-auto my-3 p-0 m-0">
                     <div class="ratio ratio-16x9 p-0 m-0">
                         <video class="w-100 h-100" style="object-fit: cover;" controls loop>
                             <source src="../uploads/test.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
-
                 </div>
             </div>
             <div class="mt-3 col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto" style="background:rgb(174,14,14)">
