@@ -2,8 +2,6 @@
 
 <body>
 
-
-
     <?php include "./globals/navbar.php"; ?>
     <!-- Main content -->
 
@@ -141,6 +139,121 @@
 
     <!-- Bootstrap JS -->
     <?php include "./globals/scripts.php"; ?>
+    <link href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" rel="stylesheet">
+    <style>
+        #research_table {
+            font-family: 'Open Sans', 'Poppins', sans-serif;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(174, 14, 14, 0.10);
+            overflow: hidden;
+        }
+
+        #research_table thead th {
+            background: linear-gradient(90deg, #f7f7fa 80%, #ffe3e3 100%);
+            color: #ae0e0e;
+            font-family: 'Open Sans', 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.12em;
+            padding: 16px 12px;
+            border: none;
+            letter-spacing: 0.5px;
+        }
+
+        #research_table tbody td {
+            font-family: 'Open Sans', 'Poppins', sans-serif;
+            font-size: 1em;
+            color: #222;
+            background: #fff;
+            border: none;
+            padding: 14px 12px;
+        }
+
+        #research_table tbody tr:nth-child(odd) td {
+            background: #f9eaea;
+        }
+
+        #research_table tbody tr:hover td {
+            background: #ffe3e3;
+            transition: background 0.2s;
+        }
+
+        .dataTables_filter label {
+            font-family: 'Open Sans', 'Poppins', sans-serif;
+            font-size: 1em;
+            color: #ae0e0e;
+            margin-bottom: 0.5em;
+        }
+
+        .dataTables_filter input[type="search"] {
+            border-radius: 24px;
+            border: 1.5px solid #ae0e0e;
+            padding: 10px 40px 10px 36px;
+            font-size: 1em;
+            font-family: 'Open Sans', 'Poppins', sans-serif;
+            outline: none;
+            background: #fff8f6;
+            box-shadow: 0 2px 8px rgba(174, 14, 14, 0.08);
+            transition: border 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .dataTables_filter input[type="search"]:focus {
+            border: 2px solid #ff904c;
+            box-shadow: 0 4px 16px rgba(255, 144, 76, 0.12);
+        }
+
+        .dataTables_filter .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+            color: #ae0e0e;
+            pointer-events: none;
+        }
+
+        .dataTables_paginate .paginate_button {
+            border-radius: 16px !important;
+            background: #fff8f6 !important;
+            color: #ae0e0e !important;
+            border: 1px solid #ae0e0e !important;
+            margin: 0 2px;
+            padding: 6px 14px !important;
+            font-family: 'Open Sans', 'Poppins', sans-serif;
+            font-size: 1em;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .dataTables_paginate .paginate_button.current {
+            background: #ae0e0e !important;
+            color: #fff !important;
+            border: 1px solid #ae0e0e !important;
+        }
+
+        .dataTables_info {
+            font-family: 'Open Sans', 'Poppins', sans-serif;
+            color: #ae0e0e;
+            margin-top: 1em;
+        }
+    </style>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <script>
+        // Add search icon to DataTables search input
+        $(document).ready(function() {
+            setTimeout(function() {
+                var filter = document.querySelector('.dataTables_filter');
+                if (filter && !filter.querySelector('.search-icon')) {
+                    var icon = document.createElement('span');
+                    icon.className = 'search-icon bi bi-search';
+                    filter.appendChild(icon);
+                    var input = filter.querySelector('input[type="search"]');
+                    if (input) {
+                        input.style.paddingLeft = '36px';
+                    }
+                }
+            }, 500);
+        });
+    </script>
     <script>
         fetch(`../api/select_files.php`)
             .then(res => res.json())
@@ -158,7 +271,7 @@
    target="_blank" 
    data-bs-toggle="tooltip" 
    title="View File"></a>
-
+<button type="button" class="btn btn-sm btn-primary me-2 info-btn" data-bs-toggle="modal" data-bs-target="#helloModal"><i class="bi bi-info-circle"></i></button>
 <a href="#" 
    class="bi bi-trash text-danger fs-5" 
    id="delete_file_btn" 
@@ -172,6 +285,7 @@
                 });
                 $('#research_table').DataTable({
                     dom: 'rftip',
+                    responsive: true,
                     "order": [
                         [0, "desc"]
                     ],
@@ -289,7 +403,20 @@
         });
     </script>
 
-
+    <!-- Hello World Modal -->
+    <div class="modal fade" id="helloModal" tabindex="-1" aria-labelledby="helloModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="helloModalLabel">Info</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Hello World
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 

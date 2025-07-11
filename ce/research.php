@@ -16,7 +16,7 @@
 
 <body class="position-relative" style="overflow-x: hidden; font-family: 'Poppins', sans-serif;">
 
-    <div class="main min-vh-100 ">
+    <div class="main min-vh-100 w-100">
         <?php include "./globals/header.php" ?>
         <?php include "./globals/banner.php" ?>
 
@@ -30,17 +30,15 @@
 
             <div class="col-lg-6 mx-auto mt-3 p-0 m-0 border border-1">
 
-            <div class="col-lg-6 mx-auto mt-3 p-0 m-0">
+                <div class="col-lg-6 mx-auto mt-3 p-0 m-0">
+                    <div class="ratio ratio-16x9 p-0 m-0">
+                        <video class="w-100 h-100" style="object-fit: cover;" controls muted autoplay loop>
+                            <source src="../uploads/test.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
 
-
-
-                <div class="ratio ratio-16x9 p-0 m-0">
-                    <video class="w-100 h-100" style="object-fit: cover;" controls muted autoplay loop>
-                        <source src="../uploads/test.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
                 </div>
-
             </div>
             <div class=" col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto" style="background:rgb(174,14,14)">
                 <h3 class="text-white p-3">Narrative Report</h3>
@@ -93,10 +91,6 @@
                 ?>
 
             </div>
-
-
-
-
 
             <div class="col-lg-11 mx-auto">
                 <h5 class="ms-5 text-dark mb-3">Campus and College RDE Agenda</h5>
