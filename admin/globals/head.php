@@ -38,14 +38,16 @@
             z-index: 1040;
             transition: transform 0.3s ease;
         }
-
+        .pagination, .dt-info{
+            margin-top: 10px;;
+        }
         .sidebar .nav-link {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.8);
         }
 
         .sidebar .nav-link:hover,
         .sidebar .nav-link.active {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.4);
             color: #fff;
         }
 
@@ -126,6 +128,18 @@
                 margin-left: 0;
                 width: 100%;
             }
+        }
+    </style>
+    <style>
+        :root {
+            --primary: rgb(174, 14, 14);
+            --primary-light: rgb(220, 60, 60);
+            --accent: #ff904c;
+            --background: #fff7f7;
+            --text: #222;
+            --border-radius: 12px;
+            --box-shadow: 0 2px 12px rgba(174, 14, 14, 0.08);
+            --transition: 0.3s cubic-bezier(.25, .8, .25, 1);
         }
     </style>
     <style>
