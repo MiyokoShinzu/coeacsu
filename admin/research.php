@@ -9,13 +9,10 @@
 
     <div id="main">
         <nav class="breadcrumb mt-5">
-            <a class="breadcrumb-item" href="#">Admin</a>
-            <a class="breadcrumb-item" href="#">Home </a>
             <span class="breadcrumb-item active" aria-current="page">Research</span>
-
         </nav>
-        <div class="row w-100">
-            <div class="col-lg-11 p-2 mx-auto shadow border">
+        <div class="row w-90 mx-auto">
+            <div class="col-lg-12 p-2 mx-auto shadow border">
                 <div class="table-responsive">
                     <div class="wrapper w-100 text-end">
                         <button class="btn btn-sm btn-success mb-2 mt-2" data-bs-toggle="modal" data-bs-target="#files_modal"><i class="bi bi-upload"></i> Upload New File</button>

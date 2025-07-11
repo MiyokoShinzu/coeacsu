@@ -52,11 +52,76 @@ $mysqli->close();
 
     <link href="https://demo.adminkit.io/css/light.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/style/root.css">
+    <style>
+        :root {
+            --primary: rgb(174, 14, 14);
+            --primary-light: rgb(220, 60, 60);
+            --accent: #ff904c;
+            --background: #fff7f7;
+            --text: #222;
+            --border-radius: 12px;
+            --box-shadow: 0 2px 12px rgba(174, 14, 14, 0.08);
+            --transition: 0.3s cubic-bezier(.25, .8, .25, 1);
+        }
+
+        body {
+            background: #fff;
+            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /*
+        .btn-primary,
+        .btn-main {
+            background: var(--primary);
+            color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover,
+        .btn-main:hover {
+            background: var(--primary-light);
+            color: #fff;
+        }
+        */
+
+        .card,
+        .container,
+        .navbar,
+        .modal-content {
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--primary);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        a {
+            color: var(--accent);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
-    <main class="d-flex w-100">
+    <main class="d-flex w-100 mt-3">
 
         <div class="container d-flex flex-column">
 

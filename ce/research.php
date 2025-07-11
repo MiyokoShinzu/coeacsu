@@ -27,21 +27,18 @@
                 <h3 class=" text-start text-white mt-2" style="font-weight: bolder; ">Research</h3>
                 <p class="text-white">Narrative Presentation</p>
             </div>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             <div class="col-lg-6 mx-auto mt-3 p-0 m-0 border border-1">
+=======
+            <div class="col-lg-6 mx-auto mt-3 p-0 m-0">
+>>>>>>> c48b9dd5a24a076cc5f4e66b2eb25c3ce328d794
                 <div class="ratio ratio-16x9 p-0 m-0">
                     <video class="w-100 h-100" style="object-fit: cover;" controls muted autoplay loop>
                         <source src="../uploads/test.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
-=======
-            <div class="col-lg-6 mx-auto mt-3 d-flex align-items-center justify-content-center image-container">
-                <video width="640" height="360" controls muted autoplay loop>
-                    <source src="../uploads/test.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
->>>>>>> Stashed changes
 
             </div>
             <div class=" col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto" style="background:rgb(174,14,14)">
