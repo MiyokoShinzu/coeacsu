@@ -15,9 +15,9 @@
             <div class="col-lg-12 p-2 mx-auto shadow border">
                 <div class="table-responsive">
                     <div class="wrapper w-100 text-end">
-                        <button class="btn btn-sm btn-success mb-2 mt-2" data-bs-toggle="modal" data-bs-target="#files_modal"><i class="bi bi-upload"></i> Upload New File</button>
+                        <button class="btn btn-sm  btn-secondary mb-2 mt-2"  data-bs-toggle="modal" data-bs-target="#files_modal"><i class="bi bi-upload"></i> Upload New File</button>
                     </div>
-                    <table id="research_table" class="table p-2 table-striped table-bordered">
+                    <table id="research_table" class="table p-2 table-hover table-bordered m-3">
                         <thead>
                             <tr>
                                 <th>Path</th>
