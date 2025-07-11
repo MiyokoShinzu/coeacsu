@@ -30,13 +30,16 @@
 
             <div class="col-lg-6 mx-auto mt-3 p-0 m-0 border border-1">
 
-                <div class="col-lg-6 mx-auto mt-3 p-0 m-0">
-                    <div class="ratio ratio-16x9 p-0 m-0">
-                        <video class="w-100 h-100" style="object-fit: cover;" controls muted autoplay loop>
-                            <source src="../uploads/test.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
+            <div class="col-lg-6 mx-auto mt-3 p-0 m-0">
+
+
+
+                <div class="ratio ratio-16x9 p-0 m-0">
+                    <video class="w-100 h-100" style="object-fit: cover;" controls  loop>
+                        <source src="../uploads/test.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
 
                 </div>
             </div>
@@ -154,7 +157,7 @@
                 ?>
 
             </div>
-            <div class="col-lg-11 mx-auto">
+            <div class="col-lg-2 mx-auto">
                 <h5 class="ms-5 text-dark mb-3">Faculty Research Awards</h5>
 
                 <?php
