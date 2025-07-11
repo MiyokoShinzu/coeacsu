@@ -16,7 +16,7 @@
 
 <body class="position-relative" style="overflow-x: hidden; font-family: 'Poppins', sans-serif;">
 
-    <div class="main min-vh-100 ">
+    <div class="main min-vh-100 w-100">
         <?php include "./globals/header.php" ?>
         <?php include "./globals/banner.php" ?>
 
@@ -41,6 +41,7 @@
                     </video>
                 </div>
 
+                </div>
             </div>
             <div class=" col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto" style="background:rgb(174,14,14)">
                 <h3 class="text-white p-3">Narrative Report</h3>
@@ -93,10 +94,6 @@
                 ?>
 
             </div>
-
-
-
-
 
             <div class="col-lg-11 mx-auto">
                 <h5 class="ms-5 text-dark mb-3">Campus and College RDE Agenda</h5>
