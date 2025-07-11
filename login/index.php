@@ -52,6 +52,7 @@ $mysqli->close();
 
     <link href="https://demo.adminkit.io/css/light.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style/root.css">
 </head>
 
 <body>
@@ -62,7 +63,7 @@ $mysqli->close();
             <div class="row mt-2">
                 <div class="col-11 col-lg-10 text-center mx-auto mt-1">
                     <!-- <img src="https://1000logos.net/wp-content/uploads/2019/03/PNP-Logo.png" alt="" class="mt-3" style="height: 100px; width: 200px;"> -->
-                    
+
                     <h1 class="mt-2 " style=" font-size: 3em; ">College of Engineering and Architecture</h1>
                     <img src="../assets/coea_logo.png" class="mt-3" alt="" style="height: 120px; width: 120px; margin: auto; display: block;" class="mb-3">
 

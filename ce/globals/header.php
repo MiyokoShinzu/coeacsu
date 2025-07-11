@@ -1,5 +1,5 @@
 <!-- Full-width, fixed top navbar -->
-<div class="position-fixed top-0 start-0 end-0 bg-transparent z-3" style="width: 100vw; margin: 0; padding: 0;">
+<div class="position-fixed top-0 start-0 end-0 bg-transparent z-3" style="width: 100%; margin: 0; padding: 0;">
     <nav class="navbar navbar-expand-lg shadow-sm w-100">
 
         <!-- Logo and Title -->
