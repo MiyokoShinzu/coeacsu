@@ -9,19 +9,19 @@
         <nav class="breadcrumb mt-5">
             <span class="breadcrumb-item active" aria-current="page">Research</span>
         </nav>
-        <div class="row w-90 mx-auto">
-            <div class="col-lg-12 p-2 mx-auto shadow border">
+        <div class="row w-90 mx-auto mt-2">
+            <div class="col-lg-11 p-5 mx-auto shadow border">
                 <div class="table-responsive">
                     <div class="wrapper w-100 text-end">
-                        <button class="btn btn-sm  btn-secondary mb-2 mt-2" data-bs-toggle="modal" data-bs-target="#files_modal"><i class="bi bi-upload"></i> Upload New File</button>
+                        <button class="btn btn-sm mb-2 mt-2" style="background: rgba(82, 81, 81, 1); color: #fff;" data-bs-toggle="modal" data-bs-target="#files_modal"><i class="bi bi-upload"></i> Upload New File</button>
                     </div>
-                    <table id="research_table" class="table p-2 table-hover table-bordered">
+                    <table id="research_table" class="table p-2 table-hover border table-bordered shadow">
                         <thead>
-                            <tr>
-                                <th>Path</th>
-                                <th>Section</th>
-                                <th>Area</th>
-                                <th>Actions</th>
+                            <tr class="border">
+                                <th class="text-secondary">Path</th>
+                                <th class="text-secondary">Section</th>
+                                <th class="text-secondary">Area</th>
+                                <th class="text-secondary">Actions</th>
 
                             </tr>
                         </thead>
@@ -48,7 +48,7 @@
                             <div class="row" id="files_row"></div>
                         </div>
 
-                        <div class="col-lg-10  mx-auto p-3 ">
+                        <div class="col-lg-11  mx-auto p-1 ">
                             <form id="uploadForm">
                                 <div class="row">
                                     <div class="col-lg-12 w-100 mx-auto">
@@ -61,6 +61,17 @@
                                             <input type="file" name="file" id="file" class="form-control" required>
                                         </div>
                                     </div>
+                                    <div class="col-lg-12 mx-auto mb-3">
+                                        <div class="form-group">
+                                            <label class="mb-2" for="">File Type</label>
+                                            <select name="file_type" id="file_type" class="form-select" required>
+                                                <option value="">-- Select File Type --</option>
+                                                <option value="pdf">PDF</option>
+                                                <option value="video">Video</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
                                     <div class="col-lg-12 mx-auto mb-3">
                                         <div class="form-group">
                                             <label class="mb-2" for="">Section</label>
@@ -175,9 +186,7 @@
    target="_blank" 
    data-bs-toggle="tooltip" 
    title="View File"></a>
-<a href="#" 
-    class="btn btn-sm btn-primary me-2 info-btn" 
-    data-bs-toggle="modal" data-bs-target="#helloModal"><i class="bi bi-info-circle"></i></button>
+
 <a href="#" 
    class="bi bi-trash text-danger fs-5" 
    id="delete_file_btn" 
@@ -191,8 +200,6 @@
                 });
                 $('#research_table').DataTable({
                     dom: 'rftip',
-                    responsive: true,
-                    scrollX: true,
                     "order": [
                         [0, "desc"]
                     ],
@@ -228,15 +235,24 @@
                 data: formData,
                 contentType: false,
                 processData: false,
+
                 success: function(data) {
                     try {
                         var response = JSON.parse(data);
 
                         if (response.success) {
-                            $('#upload').html('Upload');
-                            console.log('File uploaded successfully:', response.success);
-                            alert('File successfully uploaded');
-                            window.location.reload();
+                            $('#upload').addClass('bg-success')
+
+                            $('#upload').html(`<i class='bi bi-check text-white' style="font-size: 1em;">File successfully uploaded</i>`)
+
+                            setTimeout(() => {
+                                console.log('File uploaded successfully:', response.success);
+
+                                window.location.reload();
+                            }, 800);
+
+
+
                         } else {
                             $('#upload').html('Upload');
                             console.error('File upload failed:', response.error);
@@ -259,36 +275,89 @@
                 }
             });
         }
+        // $(document).on('click', '#upload', function(e) {
+        //     e.preventDefault();
+        //     var section = $('#section').val();
+        //     console.log(section);
+
+        //     $('#upload').html(`<div class="spinner-border text-white" role="status"></div>`);
+
+        //     const file = $('#file')[0].files[0];
+        //     // assumes a hidden input or source with id="case_id"
+
+        //     if (file) {
+        //         const fileSizeLimit = 20 * 1024 * 1024;
+
+        //         if (file.type !== 'application/pdf') {
+        //             $('#upload').html('Upload');
+        //             alert('Please select a PDF file.');
+        //             return;
+        //         }
+
+        //         if (file.size > fileSizeLimit) {
+        //             $('#upload').html('Upload');
+        //             alert('File size exceeds 20MB limit.');
+        //             return;
+        //         }
+
+        //         uploadFile(file, section);
+        //     } else {
+        //         $('#upload').html('Upload');
+        //         alert('Please select a file.');
+        //     }
+        // });
         $(document).on('click', '#upload', function(e) {
             e.preventDefault();
             var section = $('#section').val();
-            console.log(section);
+            var fileType = $('#file_type').val();
+            const file = $('#file')[0].files[0];
 
             $('#upload').html(`<div class="spinner-border text-white" role="status"></div>`);
 
-            const file = $('#file')[0].files[0];
-            // assumes a hidden input or source with id="case_id"
+            if (!fileType) {
+                $('#upload').html('Upload');
+                alert('Please select a file type.');
+                return;
+            }
 
-            if (file) {
-                const fileSizeLimit = 20 * 1024 * 1024;
+            if (!file) {
+                $('#upload').html('Upload');
+                alert('Please select a file.');
+                return;
+            }
 
+            const fileSizeLimit = 100 * 1024 * 1024; // 100MB for video
+
+            if (fileType === 'pdf') {
                 if (file.type !== 'application/pdf') {
                     $('#upload').html('Upload');
-                    alert('Please select a PDF file.');
+                    alert('Please select a valid PDF file.');
+                    return;
+                }
+
+                if (file.size > 20 * 1024 * 1024) {
+                    $('#upload').html('Upload');
+                    alert('PDF file size exceeds 20MB limit.');
+                    return;
+                }
+
+            } else if (fileType === 'video') {
+                const allowedVideoTypes = ['video/mp4', 'video/webm', 'video/ogg'];
+                if (!allowedVideoTypes.includes(file.type)) {
+                    $('#upload').html('Upload');
+                    alert('Please select a valid video file (MP4, WebM, Ogg).');
                     return;
                 }
 
                 if (file.size > fileSizeLimit) {
                     $('#upload').html('Upload');
-                    alert('File size exceeds 20MB limit.');
+                    alert('Video file size exceeds 100MB limit.');
                     return;
                 }
-
-                uploadFile(file, section);
-            } else {
-                $('#upload').html('Upload');
-                alert('Please select a file.');
             }
+
+            // Proceed with upload
+            uploadFile(file, section);
         });
     </script>
     <script>
@@ -310,20 +379,6 @@
         });
     </script>
 
-    <!-- Hello World Modal -->
-    <div class="modal fade" id="helloModal" tabindex="-1" aria-labelledby="helloModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="helloModalLabel">Info</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Hello World
-                </div>
-            </div>
-        </div>
-    </div>
 
 </body>
 
