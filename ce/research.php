@@ -24,7 +24,7 @@
         <!-- background: #ff4C01; #FE904D-->
          <?php  $bg = "#f17e0bff"; ?>
         <div class="row d-flex gs-1 justify-content-center align-items-center">
-            <div class=" col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:<?php echo $bg; ?>">
+            <div class=" col-lg-11 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:<?php echo $bg; ?>">
                 <h4 class=" text-start text-white mt-2" style="font-weight: bolder; ">Research</h4>
                 <p class="text-white">Narrative Presentation</p>
             </div>
