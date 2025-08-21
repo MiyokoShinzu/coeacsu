@@ -51,7 +51,7 @@
             }
             ?>
 
-            <div class="mt-3 col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:<?php echo $bg; ?>">
+            <div class="mt-3 col-lg-11 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:<?php echo $bg; ?>">
                 <h3 class="text-white p-3">Narrative Report</h3>
             </div>
             <?php
@@ -72,7 +72,7 @@
             }
             ?>
 
-            <div class=" col-lg-12 col-md-12 col-sm-12 mt-3 mb-5 d-flex align-items-center justify-start flex-column mx-auto" style="background:<?php echo $bg; ?>">
+            <div class=" col-lg-11 col-md-12 col-sm-12 mt-3 mb-5 d-flex align-items-center justify-start flex-column mx-auto" style="background:<?php echo $bg; ?>">
                 <h3 class=" text-start text-white mt-2" style="font-weight: bolder; ">Attachments</h3>
             </div>
             <div class="col-lg-5 mx-auto">
