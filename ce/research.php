@@ -61,7 +61,7 @@
                 while ($row = $result->fetch_assoc()) {
                     $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                     $fileName = basename($filePath);
-                    echo '<div class="col-lg-7 mx-auto mt-3 p-0 ">
+                    echo '<div class="col-lg-5 mx-auto mt-3 p-0 ">
                             <div class="col-lg-12 mx-auto my-3 p-0 m-0 text-center">
                                 <iframe src="' . htmlspecialchars($filePath) . '#toolbar=0&navpanes=0&scrollbar=0" id="n_report" frameborder="0" style="min-height: 500px; min-width: 50%;"></iframe>
                             </div>
