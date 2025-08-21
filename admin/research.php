@@ -13,7 +13,7 @@
             <div class="col-lg-11 p-5 mx-auto shadow border">
                 <div class="table-responsive">
                     <div class="wrapper w-100 text-end">
-                        <button class="btn btn-sm mb-2 mt-2" style="background: rgba(82, 81, 81, 1); color: #fff;" data-bs-toggle="modal" data-bs-target="#files_modal"><i class="bi bi-upload"></i> Upload New File</button>
+                        <button class="btn btn-sm mb-2 mt-2" style="background: rgba(174, 4, 4, 1); color: #fff;" data-bs-toggle="modal" data-bs-target="#files_modal"><i class="bi bi-upload"></i> Upload New File</button>
                     </div>
                     <table id="research_table" class="table p-2 table-hover border table-bordered shadow">
                         <thead>
