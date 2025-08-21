@@ -52,7 +52,7 @@
             ?>
 
             <div class="mt-3 col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:<?php echo $bg; ?>">
-                <h3 class="text-white p-3">Narrative Report</h3>
+                <h5 class="text-white p-3">Narrative Report</h5>
             </div>
             <?php
             $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Narrative Report' and department='ce' ORDER BY id DESC";
@@ -73,7 +73,7 @@
             ?>
 
             <div class=" col-lg-12 col-md-12 col-sm-12 mt-3 mb-5 d-flex align-items-center justify-start flex-column mx-auto" style="background:<?php echo $bg; ?>">
-                <h3 class=" text-start text-white mt-2" style="font-weight: bolder; ">Attachments</h3>
+                <h5 class=" text-start text-white mt-2" style="font-weight: bolder; ">Attachments</h5>
             </div>
             <div class="col-lg-5 mx-auto">
                 <h5 class=" text-dark mb-3">Administration Support for Research</h5>
