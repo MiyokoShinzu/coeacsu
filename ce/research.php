@@ -132,7 +132,7 @@
                     </div>';
                     }
                 } else {
-                    echo '<p class="text-center text-muted">No files found under Campus and College RDE Agenda.</p>';
+                    echo '<p class="text-center text-muted fs-5">No files found under Campus and College RDE Agenda.</p>';
                 }
                 ?>
 
