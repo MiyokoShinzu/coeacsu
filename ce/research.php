@@ -272,7 +272,7 @@
                 $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Others' and department= 'ce' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
 
-                print_r($result);
+                
 
                 if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
