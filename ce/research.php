@@ -23,7 +23,7 @@
 
         <!-- background: #ff4C01; #FE904D-->
         <div class="row d-flex gs-1 justify-content-center align-items-center">
-            <div class=" col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:rgb(174,14,14)">
+            <div class=" col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:rgba(174, 14, 14, 0.72)">
                 <h3 class=" text-start text-white mt-2" style="font-weight: bolder; ">Research</h3>
                 <p class="text-white">Narrative Presentation</p>
             </div>
