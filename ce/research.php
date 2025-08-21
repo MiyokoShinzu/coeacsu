@@ -23,7 +23,7 @@
 
         <!-- background: #ff4C01; #FE904D-->
          <?php  $bg = "linear-gradient(to right, #ff4C01, #FE904D)"; ?>
-        <div class="row d-flex gs-1 mt-1 justify-content-center align-items-center w-75">
+        <div class="row d-flex gs-1 mt-1 justify-content-center align-items-center " style="width: 95%; margin: 0 auto;">
             <div class=" col-lg-12  col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:<?php echo $bg; ?>">
                 <h4 class=" text-start text-white mt-2" style="font-weight: bolder; ">Research</h4>
                 <p class="text-white">Narrative Presentation</p>
