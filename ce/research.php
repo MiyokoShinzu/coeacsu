@@ -23,43 +23,61 @@
 
         <!-- background: #ff4C01; #FE904D-->
         <div class="row d-flex gs-1 justify-content-center align-items-center">
-            <div class=" col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto" style="background:rgb(174,14,14)">
+            <div class=" col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:rgb(174,14,14)">
                 <h3 class=" text-start text-white mt-2" style="font-weight: bolder; ">Research</h3>
                 <p class="text-white">Narrative Presentation</p>
             </div>
-
-            <div class="col-lg-6 mx-auto mt-3 p-0 m-0 border border-1">
-                <div class="col-lg-6 mx-auto my-3 p-0 m-0">
-                    <div class="ratio ratio-16x9 p-0 m-0">
-                        <video class="w-100 h-100" style="object-fit: cover;" controls loop>
-                            <source src="../uploads/test.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-3 col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto" style="background:rgb(174,14,14)">
+            <?php
+                $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Narrative Presentation' and department='ce' ORDER BY id DESC";
+                $result = $mysqli->query($sql);
+                if ($result && $result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
+                        $fileName = basename($filePath);
+                        echo '<div class="col-lg-7 mx-auto mt-3 p-0 ">
+                            <div class="col-lg-12 mx-auto my-3 p-0 m-0">
+                                <div class="ratio ratio-16x9 p-0 m-0 w-100 h-100">
+                                    <video class="w-100 h-100" style="object-fit: cover;" controls loop>
+                                        <source src="../uploads/test.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>';
+                    }
+                }
+                else {
+                    echo '<p class="text-center text-muted">No video found under Narrative Presentation.</p>';
+                }
+            ?>
+           
+            <div class="mt-3 col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:rgb(174,14,14)">
                 <h3 class="text-white p-3">Narrative Report</h3>
             </div>
-            <div class="col-lg-12 mt-3 mb-3">
-
-                <div class="row w-100 ">
-                    <div class="col-lg-10 mx-auto d-flex align-items-center justify-content-center">
-                        <iframe
-                            src="../uploads/NarrativeReport.pdf#toolbar=0&navpanes=0&scrollbar=0"
-                            id="n_report"
-                            frameborder="0"
-                            class="min-vh-100"
-                            style="width: 733px;">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-            <div class=" col-lg-12 col-md-12 col-sm-12 mt-3 mb-3 d-flex align-items-center justify-start flex-column mx-auto" style="background:rgb(174,14,14)">
+            <?php
+                $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Narrative Report' and department='ce' ORDER BY id DESC";
+                $result = $mysqli->query($sql);
+                if ($result && $result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
+                        $fileName = basename($filePath);
+                        echo '<div class="col-lg-7 mx-auto mt-3 p-0 ">
+                            <div class="col-lg-12 mx-auto my-3 p-0 m-0 text-center">
+                                <iframe src="../uploads/NarrativeReport.pdf#toolbar=0&navpanes=0&scrollbar=0" id="n_report" frameborder="0" style="min-height: 500px; min-width: 50%;"></iframe>
+                            </div>
+                        </div>';
+                    }
+                }
+                else {
+                    echo '<p class="text-center text-muted">No report found under Narrative Report.</p>';
+                }
+            ?>
+          
+            <div class=" col-lg-12 col-md-12 col-sm-12 mt-3 mb-5 d-flex align-items-center justify-start flex-column mx-auto" style="background:rgb(174,14,14)">
                 <h3 class=" text-start text-white mt-2" style="font-weight: bolder; ">Attachments</h3>
             </div>
-            <div class="col-lg-11 mx-auto">
-                <h5 class="ms-5 text-dark mb-3">Administration Support for Research</h5>
+            <div class="col-lg-5 mx-auto">
+                <h5 class=" text-dark mb-3">Administration Support for Research</h5>
 
                 <?php
                 // adjust path as needed
@@ -77,8 +95,8 @@
 
             <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
-                    <img src="../assets/pdf.svg" style="height: 30px; width: 30px; margin-right: 10px;" alt="Drive Icon">
-                    <span class="file-name">' . '' . htmlspecialchars($fileName) . '</span>
+                    <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
+                    <span class="file-name" style="font-size: 0.7em;">' . '' . htmlspecialchars($fileName) . '</span>
                 </div>
             </a>
         </div>';
@@ -90,8 +108,8 @@
 
             </div>
 
-            <div class="col-lg-11 mx-auto">
-                <h5 class="ms-5 text-dark mb-3">Campus and College RDE Agenda</h5>
+            <div class="col-lg-5 mx-auto">
+                <h5 class=" text-dark mb-3">Campus and College RDE Agenda</h5>
 
                 <?php
 
@@ -108,8 +126,8 @@
 
                 <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
-                    <img src="../assets/pdf.svg" style="height: 30px; width: 30px; margin-right: 10px;" alt="Drive Icon">
-                    <span class="file-name">' . '' . htmlspecialchars($fileName) . '</span>
+                    <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
+                    <span class="file-name" style="font-size: 0.7em">' . '' . htmlspecialchars($fileName) . '</span>
                 </div>
                     </a>
                     </div>';
@@ -121,8 +139,8 @@
 
             </div>
 
-            <div class="col-lg-11 mx-auto">
-                <h5 class="ms-5 text-dark mb-3">Copyrights AVP</h5>
+            <div class="col-lg-5 mx-auto">
+                <h5 class=" text-dark mb-3">Copyrights AVP</h5>
 
                 <?php
                 // adjust path as needed
@@ -140,8 +158,8 @@
         
                 <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
-                    <img src="../assets/pdf.svg" style="height: 30px; width: 30px; margin-right: 10px;" alt="Drive Icon">
-                    <span class="file-name">' . '' . htmlspecialchars($fileName) . '</span>
+                    <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
+                    <span class="file-name" style="font-size: 0.7em">' . '' . htmlspecialchars($fileName) . '</span>
                 </div>
                     </a>
                     </div>';
@@ -152,8 +170,8 @@
                 ?>
 
             </div>
-            <div class="col-lg-11 mx-auto">
-                <h5 class="ms-5 text-dark mb-3">Faculty Research Awards</h5>
+            <div class="col-lg-5 mx-auto">
+                <h5 class=" text-dark mb-3">Faculty Research Awards</h5>
 
                 <?php
                 // adjust path as needed
@@ -171,8 +189,8 @@
         
                 <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
-                    <img src="../assets/pdf.svg" style="height: 30px; width: 30px; margin-right: 10px;" alt="Drive Icon">
-                    <span class="file-name">' . '' . htmlspecialchars($fileName) . '</span>
+                    <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
+                    <span class="file-name" style="font-size: 0.7em">' . '' . htmlspecialchars($fileName) . '</span>
                 </div>
                     </a>
                     </div>';
@@ -183,8 +201,8 @@
                 ?>
 
             </div>
-            <div class="col-lg-11 mx-auto">
-                <h5 class="ms-5 text-dark mb-3">Student Research Awards</h5>
+            <div class="col-lg-5 mx-auto">
+                <h5 class=" text-dark mb-3">Student Research Awards</h5>
 
                 <?php
                 // adjust path as needed
@@ -202,8 +220,8 @@
         
                 <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
-                    <img src="../assets/pdf.svg" style="height: 30px; width: 30px; margin-right: 10px;" alt="Drive Icon">
-                    <span class="file-name">' . '' . htmlspecialchars($fileName) . '</span>
+                    <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
+                    <span class="file-name" style="font-size: 0.7em">' . '' . htmlspecialchars($fileName) . '</span>
                 </div>
                     </a>
                     </div>';
@@ -214,8 +232,8 @@
                 ?>
 
             </div>
-            <div class="col-lg-11 mx-auto">
-                <h5 class="ms-5 text-dark mb-3">Special Order On Institutionally Funded Research</h5>
+            <div class="col-lg-5 mx-auto">
+                <h5 class=" text-dark mb-3">Special Order On Institutionally Funded Research</h5>
 
                 <?php
                 // adjust path as needed
@@ -233,8 +251,8 @@
         
                 <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
-                    <img src="../assets/pdf.svg" style="height: 30px; width: 30px; margin-right: 10px;" alt="Drive Icon">
-                    <span class="file-name">' . '' . htmlspecialchars($fileName) . '</span>
+                    <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
+                    <span class="file-name" style="font-size: 0.7em">' . '' . htmlspecialchars($fileName) . '</span>
                 </div>
                     </a>
                     </div>';
@@ -245,8 +263,8 @@
                 ?>
 
             </div>
-            <div class="col-lg-11 mx-auto">
-                <h5 class="ms-5 text-dark mb-3">Others</h5>
+            <div class="col-lg-5 mx-auto">
+                <h5 class=" text-dark mb-3">Others</h5>
 
                 <?php
                 // adjust path as needed
@@ -264,8 +282,8 @@
         
                 <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
-                    <img src="../assets/pdf.svg" style="height: 30px; width: 30px; margin-right: 10px;" alt="Drive Icon">
-                    <span class="file-name">' . '' . htmlspecialchars($fileName) . '</span>
+                    <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
+                    <span class="file-name" style="font-size: 0.7em">' . '' . htmlspecialchars($fileName) . '</span>
                 </div>
                     </a>
                     </div>';
