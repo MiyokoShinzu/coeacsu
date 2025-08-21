@@ -47,7 +47,7 @@
                         </div>';
                 }
             } else {
-                echo '<p class="alert alert-danger fs-5 text-center text-muted">No video found under Narrative Presentation.</p>';
+                echo '<p class="alert alert-warning fs-5 text-center text-muted">No video found under Narrative Presentation.</p>';
             }
             ?>
 
@@ -68,7 +68,7 @@
                         </div>';
                 }
             } else {
-                echo '<p class="alert alert-danger fs-5 text-center text-muted">No report found under Narrative Report.</p>';
+                echo '<p class="alert alert-warning fs-5 text-center text-muted">No report found under Narrative Report.</p>';
             }
             ?>
 
@@ -101,7 +101,7 @@
         </div>';
                     }
                 } else {
-                    echo '<p class="alert alert-danger fs-5 text-center text-muted">No files found under Research & Administration Support.</p>';
+                    echo '<p class="alert alert-warning fs-5 text-center text-muted">No files found under Research & Administration Support.</p>';
                 }
                 ?>
 
@@ -164,7 +164,7 @@
                     </div>';
                     }
                 } else {
-                    echo '<p class="alert alert-danger fs-5 text-center text-muted">No files found under Copyrights AVP.</p>';
+                    echo '<p class="alert alert-warning fs-5 text-center text-muted">No files found under Copyrights AVP.</p>';
                 }
                 ?>
 
@@ -195,7 +195,7 @@
                     </div>';
                     }
                 } else {
-                    echo '<p class="alert alert-danger fs-5 text-center text-muted">No files found under Faculty Research Awards.</p>';
+                    echo '<p class="alert alert-warning fs-5 text-center text-muted">No files found under Faculty Research Awards.</p>';
                 }
                 ?>
 
@@ -226,7 +226,7 @@
                     </div>';
                     }
                 } else {
-                    echo '<p class="alert alert-danger fs-5 text-center text-muted">No files found under Student Research Awards.</p>';
+                    echo '<p class="alert alert-warning fs-5 text-center text-muted">No files found under Student Research Awards.</p>';
                 }
                 ?>
 
@@ -257,7 +257,7 @@
                     </div>';
                     }
                 } else {
-                    echo '<p class="alert alert-danger fs-5 text-center text-muted">No files found under Special Order On Institutionally Funded Research.</p>';
+                    echo '<p class="alert alert-warning fs-5 text-center text-muted">No files found under Special Order On Institutionally Funded Research.</p>';
                 }
                 ?>
 
@@ -290,7 +290,7 @@
                     </div>';
                     }
                 } else {
-                    echo '<p class="alert alert-danger fs-5 text-center text-muted">No files found under Others.</p>';
+                    echo '<p class="alert alert-warning fs-5 text-center text-muted">No files found under Others.</p>';
                 }
                 $mysqli->close();
                 ?>
