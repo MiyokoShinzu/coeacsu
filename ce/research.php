@@ -10,7 +10,7 @@
     <link rel="stylesheet" href=".././globals/global.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
 </head>
 <?php include '../src/connection.php'; ?>
 
@@ -22,8 +22,8 @@
 
 
         <!-- background: #ff4C01; #FE904D-->
-         <?php  $bg = "linear-gradient(to right, #ff4C01, #FE904D)"; ?>
-        <div class="row d-flex gs-1 mt-1 justify-content-center align-items-center " style="width: 95%; margin: 0 auto;">
+        <?php $bg = "linear-gradient(to right, #ff4C01, #FE904D)"; ?>
+        <div class="row d-flex gs-1 mt-1 justify-content-center align-items-center " style="width: 100%; margin: 0 auto;">
             <div class=" col-lg-12  col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:<?php echo $bg; ?>">
                 <h4 class=" text-start text-white mt-2" style="font-weight: bolder; ">Research</h4>
                 <p class="text-white">Narrative Presentation</p>
@@ -39,7 +39,7 @@
                             <div class="col-lg-12 mx-auto my-3 p-0 m-0">
                                 <div class="ratio ratio-16x9 p-0 m-0 w-100 h-100">
                                     <video class="w-100 h-100" style="object-fit: cover;" controls loop>
-                                        <source src="../uploads/test.mp4" type="video/mp4">
+                                        <source src="'.$filePath.'" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
                                 </div>
@@ -61,7 +61,7 @@
                 while ($row = $result->fetch_assoc()) {
                     $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                     $fileName = basename($filePath);
-                    echo '<div class="col-lg-5 mx-auto mt-3 p-0 ">
+                    echo '<div class="col-lg-5 mx-auto mt-3 p-0 row">
                             <div class="col-lg-12 mx-auto my-3 p-0 m-0 text-center">
                                 <iframe src="' . htmlspecialchars($filePath) . '#toolbar=0&navpanes=0&scrollbar=0" id="n_report" frameborder="0" style="min-height: 500px; min-width: 50%;"></iframe>
                             </div>
