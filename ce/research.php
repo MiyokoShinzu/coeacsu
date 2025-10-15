@@ -25,7 +25,7 @@
         <?php $bg = "linear-gradient(to right, #ff4C01, #FE904D)"; ?>
         <div class="row d-flex gs-1 mt-1 justify-content-center align-items-center " style="width: 100%; margin: 0 auto;">
             <div class=" col-lg-12  col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:<?php echo $bg; ?>">
-                <h4 class=" text-start text-white mt-2" style="font-weight: bolder; ">Research</h4>
+                <h1 class=" text-start text-white mt-2 p-2" style="font-weight: bolder; font-size: 4em">RESEARCH</h1>
                 <p class="text-white">Narrative Presentation</p>
             </div>
             <?php
@@ -35,11 +35,15 @@
                 while ($row = $result->fetch_assoc()) {
                     $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                     $fileName = basename($filePath);
-                    echo '<div class="col-lg-7 mx-auto mt-3 p-0 ">
+                    $cleanPath = preg_replace('/^\.\.\//', '', $filePath);
+
+
+                    echo '<div class="col-lg-7 mx-auto mt-3 p-0 border shadow">
                             <div class="col-lg-12 mx-auto my-3 p-0 m-0">
                                 <div class="ratio ratio-16x9 p-0 m-0 w-100 h-100">
                                     <video class="w-100 h-100" style="object-fit: cover;" controls loop>
-                                        <source src="'.$filePath.'" type="video/mp4">
+                                        <source src="' . $cleanPath . '" type="video/mp4">
+                                       
                                         Your browser does not support the video tag.
                                     </video>
                                 </div>
@@ -47,7 +51,7 @@
                         </div>';
                 }
             } else {
-                echo '<p class="alert p-0 alert-warning fs-5 text-center text-muted">No video found under Narrative Presentation.</p>';
+                echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No video found under Narrative Presentation.</p>';
             }
             ?>
 
@@ -61,21 +65,34 @@
                 while ($row = $result->fetch_assoc()) {
                     $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                     $fileName = basename($filePath);
-                    echo '<div class="col-lg-5 mx-auto mt-3 p-0 row">
-                            <div class="col-lg-12 mx-auto my-3 p-0 m-0 text-center">
-                                <iframe src="' . htmlspecialchars($filePath) . '#toolbar=0&navpanes=0&scrollbar=0" id="n_report" frameborder="0" style="min-height: 500px; min-width: 50%;"></iframe>
-                            </div>
-                        </div>';
+
+                    $cleanPath = preg_replace('/^\.\.\//', '', $filePath);
+                     echo '
+        <div class="col-lg-7 mx-auto mb-3 mt-3 p-0 row">
+            <div class="col-lg-12 mx-auto my-3 p-0 m-0 text-center">
+               
+                <iframe 
+                    src="' . htmlspecialchars($cleanPath) . '#toolbar=0&navpanes=0&scrollbar=0"
+                    frameborder="0"
+                    style="min-height: 500px; width: 100%; border-radius: 10px;">
+                </iframe>
+                 <a href="' . htmlspecialchars($cleanPath) . '" 
+                   target="_blank" 
+                   class="btn btn-sm btn-secondary mb-2">
+                   View Fullscreen
+                </a>
+            </div>
+        </div>';
                 }
             } else {
-                echo '<p class="alert p-0 alert-warning fs-5 text-center text-muted">No report found under Narrative Report.</p>';
+                echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No report found under Narrative Report.</p>';
             }
             ?>
 
             <div class=" col-lg-12 col-md-12 col-sm-12 mt-3 mb-5 d-flex align-items-center justify-start flex-column mx-auto" style="background:<?php echo $bg; ?>">
                 <h5 class=" text-start text-white mt-2" style="font-weight: bolder; ">Attachments</h5>
             </div>
-            <div class="col-lg-5 mx-auto">
+            <div class="col-lg-10 mx-auto mb-3">
                 <h5 class=" text-dark mb-3">Administration Support for Research</h5>
 
                 <?php
@@ -89,7 +106,7 @@
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
                         echo '
-        <div class="col-lg-8 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 mx-auto hover-container"
+        <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
 
             <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
@@ -101,13 +118,13 @@
         </div>';
                     }
                 } else {
-                    echo '<p class="alert p-0 alert-warning fs-5 text-center text-muted">No files found under Research & Administration Support.</p>';
+                    echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No files found under Research & Administration Support.</p>';
                 }
                 ?>
 
             </div>
 
-            <div class="col-lg-5 mx-auto">
+            <div class="col-lg-10 mx-auto mb-3">
                 <h5 class=" text-dark mb-3">Campus and College RDE Agenda</h5>
 
                 <?php
@@ -120,7 +137,7 @@
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
                         echo '
-                        <div class="col-lg-8 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 mx-auto hover-container"
+                        <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
 
                 <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
@@ -132,13 +149,13 @@
                     </div>';
                     }
                 } else {
-                    echo '<p class="alert p-0 alert-warning text-center text-muted fs-5">No files found under Campus and College RDE Agenda.</p>';
+                    echo '<p class="alert p-1 alert-warning text-center text-muted " style="font-size: 0.8em;">No files found under Campus and College RDE Agenda.</p>';
                 }
                 ?>
 
             </div>
 
-            <div class="col-lg-5 mx-auto">
+            <div class="col-lg-10 mx-auto mb-3">
                 <h5 class=" text-dark mb-3">Copyrights AVP</h5>
 
                 <?php
@@ -152,7 +169,7 @@
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
                         echo '
-                        <div class="col-lg-8 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 mx-auto hover-container"
+                        <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
         
                 <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
@@ -164,12 +181,12 @@
                     </div>';
                     }
                 } else {
-                    echo '<p class="alert p-0 alert-warning fs-5 text-center text-muted">No files found under Copyrights AVP.</p>';
+                    echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No files found under Copyrights AVP.</p>';
                 }
                 ?>
 
             </div>
-            <div class="col-lg-5 mx-auto">
+            <div class="col-lg-10 mx-auto mb-3">
                 <h5 class=" text-dark mb-3">Faculty Research Awards</h5>
 
                 <?php
@@ -183,7 +200,7 @@
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
                         echo '
-                        <div class="col-lg-8 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 mx-auto hover-container"
+                        <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
         
                 <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
@@ -195,12 +212,12 @@
                     </div>';
                     }
                 } else {
-                    echo '<p class="alert p-0 alert-warning fs-5 text-center text-muted">No files found under Faculty Research Awards.</p>';
+                    echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No files found under Faculty Research Awards.</p>';
                 }
                 ?>
 
             </div>
-            <div class="col-lg-5 mx-auto">
+            <div class="col-lg-10 mx-auto mb-3">
                 <h5 class=" text-dark mb-3">Student Research Awards</h5>
 
                 <?php
@@ -214,7 +231,7 @@
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
                         echo '
-                        <div class="col-lg-8 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 mx-auto hover-container"
+                        <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
         
                 <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
@@ -226,12 +243,12 @@
                     </div>';
                     }
                 } else {
-                    echo '<p class="alert p-0 alert-warning fs-5 text-center text-muted">No files found under Student Research Awards.</p>';
+                    echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No files found under Student Research Awards.</p>';
                 }
                 ?>
 
             </div>
-            <div class="col-lg-5 mx-auto">
+            <div class="col-lg-10 mx-auto mb-3">
                 <h5 class=" text-dark mb-3">Special Order On Institutionally Funded Research</h5>
 
                 <?php
@@ -245,7 +262,7 @@
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
                         echo '
-                        <div class="col-lg-8 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 mx-auto hover-container"
+                        <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
         
                 <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
@@ -257,12 +274,12 @@
                     </div>';
                     }
                 } else {
-                    echo '<p class="alert p-0 alert-warning fs-5 text-center text-muted">No files found under Special Order On Institutionally Funded Research.</p>';
+                    echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No files found under Special Order On Institutionally Funded Research.</p>';
                 }
                 ?>
 
             </div>
-            <div class="col-lg-5 mx-auto">
+            <div class="col-lg-10 mx-auto mb-3">
                 <h5 class=" text-dark mb-3">Others</h5>
 
                 <?php
@@ -278,7 +295,7 @@
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
                         echo '
-                        <div class="col-lg-8 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 mx-auto hover-container"
+                        <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
         
                 <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
@@ -290,7 +307,7 @@
                     </div>';
                     }
                 } else {
-                    echo '<p class="alert p-0 alert-warning fs-5 text-center text-muted">No files found under Others.</p>';
+                    echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No files found under Others.</p>';
                 }
                 $mysqli->close();
                 ?>
@@ -361,6 +378,19 @@
             }
         });
     </script>
+    <script>
+        function openFullscreen(id) {
+            const iframe = document.getElementById(id);
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+
 
 </body>
 

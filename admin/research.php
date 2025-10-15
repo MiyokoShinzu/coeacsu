@@ -362,6 +362,7 @@
     </script>
     <script>
         $(document).on('click', '#delete_file_btn', function() {
+        
             var id = $(this).attr("data-id");
             var url = $(this).attr("data-url");
             console.log(`./handlers/delete_file.php?id=${id}&url=${url}`)
