@@ -10,12 +10,12 @@
                 <div class="row w-100">
                     <div class="col-lg-5 mx-auto   p-3">
                         <div class="row">
-                            
+
                         </div>
-                        <div class="row" id="files_row" ></div>
+                        <div class="row" id="files_row"></div>
                     </div>
-                    
-                    <div class="col-lg-5  mx-auto p-3 " >
+
+                    <div class="col-lg-5  mx-auto p-3 ">
                         <form id="uploadForm">
                             <div class="row border p-3 shadow">
                                 <div class="col-lg-12 w-100 mx-auto">
@@ -39,6 +39,11 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="col-lg-12 mx-auto mt-3">
+                                    <div class="progress">
+                                        <div id="uploadProgress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                    </div>
+                                </div>
                                 <div class="col-lg-12 mx-auto mt-3 text-end">
                                     <div class="form-group">
                                         <button type="button" class="btn btn-primary w-100" style="background: var(--bs-info)" id="upload">Upload</button>
@@ -53,9 +58,9 @@
                                 .folder-card {
                                     position: relative;
                                     border: 1px solid #ccc;
-                                    
-                                  
-                                  
+
+
+
                                 }
 
                                 .folder-tab {
@@ -65,8 +70,8 @@
                                     background-color: var(--bs-cyan);
                                     color: #fff;
                                     padding: 2px 10px;
-                                
-                                    
+
+
                                 }
                             </style>
                         </form>

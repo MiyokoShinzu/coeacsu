@@ -6,8 +6,8 @@
     <!-- Main content -->
 
     <div id="main">
-        <nav class="breadcrumb mt-5">
-            <span class="breadcrumb-item active h3" aria-current="page"><b>COMPLIANCE REPORT</b></span>
+        <nav class="breadcrumb mt-5 border-none border-start border-5 border-danger shadow-sm bg-white py-1 px-5">
+            <span class="breadcrumb-item active h3" aria-current="page"><b>Compliance Report</b></span>
         </nav>
         <div class="row w-90 mx-auto mt-2">
             <div class="col-lg-11 p-5 mx-auto shadow border">
@@ -220,8 +220,6 @@
             formData.append('area', 'Compliance Report');
             formData.append('section', section);
 
-
-
             $.ajax({
                 url: './handlers/upload_file.php',
                 type: 'POST',
@@ -229,23 +227,31 @@
                 contentType: false,
                 processData: false,
 
+                xhr: function() {
+                    const xhr = new window.XMLHttpRequest();
+                    // Upload progress
+                    xhr.upload.addEventListener('progress', function(e) {
+                        if (e.lengthComputable) {
+                            const percentComplete = (e.loaded / e.total) * 100;
+                            $('#progress-bar').css('width', percentComplete + '%');
+                            $('#progress-text').text(Math.round(percentComplete) + '%');
+                        }
+                    }, false);
+                    return xhr;
+                },
+
                 success: function(data) {
                     try {
                         var response = JSON.parse(data);
 
                         if (response.success) {
-                            $('#upload').addClass('bg-success')
-
-                            $('#upload').html(`<i class='bi bi-check text-white' style="font-size: 1em;">File successfully uploaded</i>`)
+                            $('#upload').addClass('bg-success');
+                            $('#upload').html(`<i class='bi bi-check text-white' style="font-size: 1em;">File successfully uploaded</i>`);
 
                             setTimeout(() => {
                                 console.log('File uploaded successfully:', response.success);
-
                                 window.location.reload();
                             }, 800);
-
-
-
                         } else {
                             $('#upload').html('Upload');
                             console.error('File upload failed:', response.error);
@@ -263,7 +269,6 @@
                     console.error('Error uploading file:', error);
                     $('#upload').html('Upload');
                     alert('Upload Failed');
-
                     window.location.reload();
                 }
             });
@@ -299,13 +304,69 @@
         //         alert('Please select a file.');
         //     }
         // });
+        /*  $(document).on('click', '#upload', function(e) {
+              e.preventDefault();
+              var section = $('#section').val();
+              var fileType = $('#file_type').val();
+              const file = $('#file')[0].files[0];
+
+              $('#upload').html(`<div class="spinner-border text-white" role="status"></div>`);
+
+              if (!fileType) {
+                  $('#upload').html('Upload');
+                  alert('Please select a file type.');
+                  return;
+              }
+
+              if (!file) {
+                  $('#upload').html('Upload');
+                  alert('Please select a file.');
+                  return;
+              }
+
+              const fileSizeLimit = 100 * 1024 * 1024; // 100MB for video
+
+              if (fileType === 'pdf') {
+                  if (file.type !== 'application/pdf') {
+                      $('#upload').html('Upload');
+                      alert('Please select a valid PDF file.');
+                      return;
+                  }
+
+                  if (file.size > 20 * 1024 * 1024) {
+                      $('#upload').html('Upload');
+                      alert('PDF file size exceeds 20MB limit.');
+                      return;
+                  }
+
+              } else if (fileType === 'video') {
+                  const allowedVideoTypes = ['video/mp4', 'video/webm', 'video/ogg'];
+                  if (!allowedVideoTypes.includes(file.type)) {
+                      $('#upload').html('Upload');
+                      alert('Please select a valid video file (MP4, WebM, Ogg).');
+                      return;
+                  }
+
+                  if (file.size > fileSizeLimit) {
+                      $('#upload').html('Upload');
+                      alert('Video file size exceeds 100MB limit.');
+                      return;
+                  }
+              }
+
+              // Proceed with upload
+              uploadFile(file, section);
+          }); */
         $(document).on('click', '#upload', function(e) {
             e.preventDefault();
             var section = $('#section').val();
             var fileType = $('#file_type').val();
             const file = $('#file')[0].files[0];
-
-            $('#upload').html(`<div class="spinner-border text-white" role="status"></div>`);
+            $('#upload').attr('class', 'bg-white btn btn-white w-100')
+            $('#upload').html(`<div class="progress">
+                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" id="progress-bar"></div>
+                      </div>
+                      <span id="progress-text">0%</span>`);
 
             if (!fileType) {
                 $('#upload').html('Upload');
@@ -333,7 +394,6 @@
                     alert('PDF file size exceeds 20MB limit.');
                     return;
                 }
-
             } else if (fileType === 'video') {
                 const allowedVideoTypes = ['video/mp4', 'video/webm', 'video/ogg'];
                 if (!allowedVideoTypes.includes(file.type)) {
@@ -349,9 +409,44 @@
                 }
             }
 
-            // Proceed with upload
+            // Proceed with upload using XMLHttpRequest
             uploadFile(file, section);
         });
+
+        function uploadFileWithProgress(file, section) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', './handlers/upload_file.php'); // Replace with your upload endpoint
+
+            // Update progress
+            xhr.upload.addEventListener('progress', function(e) {
+                if (e.lengthComputable) {
+                    const percentComplete = (e.loaded / e.total) * 100;
+                    $('#progress-bar').css('width', percentComplete + '%');
+                    $('#progress-text').text(Math.round(percentComplete) + '%');
+                }
+            });
+
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    $('#upload').html('Upload Complete');
+                    // Handle successful upload response here
+                } else {
+                    $('#upload').html('Upload');
+                    alert('Upload failed. Please try again.');
+                }
+            };
+
+            xhr.onerror = function() {
+                $('#upload').html('Upload');
+                alert('An error occurred while uploading the file.');
+            };
+
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('section', section);
+
+            xhr.send(formData);
+        }
     </script>
     <script>
         $(document).on('click', '#delete_file_btn', function() {
