@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if ($upload_success) {
-        $sql = "INSERT INTO files (path, section, area, department,datetime) VALUES ('$file_path', '$section', '$area', '$department', '$d')";
+        $sql = "INSERT INTO files (path, section, area, department,datetime_update) VALUES ('$file_path', '$section', '$area', '$department', '$d')";
         $result = $mysqli->query($sql);
         if ($result) {
             echo json_encode(['success' => '1']);
