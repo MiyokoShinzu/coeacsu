@@ -259,7 +259,7 @@
 
                             setTimeout(() => {
                                 alert('File uploaded successfully:', response.success);
-                            }, 1000);
+                            }, 200);
                         } else {
                             $('#upload').html('Upload');
                             console.error('File upload failed:', response.error);
