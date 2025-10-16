@@ -10,10 +10,10 @@
             <span class="breadcrumb-item active h3" aria-current="page"><b>Research</b></span>
         </nav>
         <div class="row w-90 mx-auto mt-2">
-        
+
             <div class="col-lg-11 p-5 mx-auto shadow border">
                 <div class="table-responsive">
-                    
+
                     <div class="wrapper w-100 text-end">
                         <button class="btn btn-sm mb-2 mt-2" style="background: rgba(6, 98, 210, 1); color: #fff;" data-bs-toggle="modal" data-bs-target="#files_modal"><i class="bi bi-upload"></i> Upload New File</button>
                     </div>
@@ -259,6 +259,10 @@
 
                             setTimeout(() => {
                                 alert('File uploaded successfully:', response.success);
+                                setTimeout(() => {
+                                    window.location.reload();
+                                }, 200)
+
                             }, 200);
                         } else {
                             $('#upload').html('Upload');
@@ -420,8 +424,6 @@
             // Proceed with upload using XMLHttpRequest
             uploadFile(file, section);
         });
-
-     
     </script>
     <script>
         $(document).on('click', '#delete_file_btn', function() {
