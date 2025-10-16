@@ -12,17 +12,20 @@
         <div class="row w-90 mx-auto mt-2">
 
             <div class="col-lg-11 p-5 mx-auto shadow border">
+                <h3 class="text-secondary border border-0 border-bottom  border-top border-secondary border-2 text-center p-2">Files</h3>
                 <div class="table-responsive">
 
                     <div class="wrapper w-100 text-end">
                         <button class="btn btn-sm mb-2 mt-2" style="background: rgba(6, 98, 210, 1); color: #fff;" data-bs-toggle="modal" data-bs-target="#files_modal"><i class="bi bi-upload"></i> Upload New File</button>
                     </div>
+
                     <table id="research_table" class="table p-2 table-hover border table-bordered shadow">
                         <thead>
                             <tr class="">
                                 <th class="text-dark">Path</th>
                                 <th class="text-dark">Section</th>
                                 <th class="text-dark">Area</th>
+                                <th class="text-dark">DateTime Updated</th>
                                 <th class="text-dark">Actions</th>
 
                             </tr>
@@ -182,6 +185,7 @@
               <td>${file.path}</td>
               <td>${file.section}</td>
               <td>${file.area}</td>
+              <td>${file.datetime_update}</td>
               <td class="text-center d-flex justify-content-center align-items-center">
 <a href="${file.path}" 
    class="bi bi-eye-fill me-3 fs-5" 
