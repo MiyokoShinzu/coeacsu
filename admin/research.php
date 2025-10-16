@@ -181,13 +181,13 @@
               <td>${file.section}</td>
               <td>${file.area}</td>
               <td class="text-center d-flex justify-content-center align-items-center">
-<a href="handlers/${file.path}" 
+<a href="${file.path}" 
    class="bi bi-eye-fill me-3 fs-5" 
    target="_blank" 
    data-bs-toggle="tooltip" 
    title="View File"></a>
 
-<a href="#" 
+<a href="${file.path}" 
    class="bi bi-trash text-danger fs-5" 
    id="delete_file_btn" 
    data-id="${file.id}" 
