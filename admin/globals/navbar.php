@@ -23,10 +23,6 @@
             <i class="bi bi-list"></i>
         </button>
         <img src="../assets/csu_logo.png" alt="" style="height: 35px; width: 35px;" class="me-2">
-        <h6 class="text-white">Cagayan State University - Carig Campus</h6>
-        <ul class="navbar-nav ms-auto d-xs-none d-sm-none d-lg-flex">
-            <li class="nav-item dropdown">
-                <i class="bi bi-person-circle me-1"></i> Program Chair
-            </li>
-        </ul>
+        <h6 class="text-white">Cagayan State University</h6>
+        
     </nav>

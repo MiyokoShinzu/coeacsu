@@ -17,11 +17,11 @@
                     </div>
                     <table id="research_table" class="table p-2 table-hover border table-bordered shadow">
                         <thead>
-                            <tr class="border">
-                                <th class="text-secondary">Path</th>
-                                <th class="text-secondary">Section</th>
-                                <th class="text-secondary">Area</th>
-                                <th class="text-secondary">Actions</th>
+                            <tr class="">
+                                <th class="text-dark">Path</th>
+                                <th class="text-dark">Section</th>
+                                <th class="text-dark">Area</th>
+                                <th class="text-dark">Actions</th>
 
                             </tr>
                         </thead>
