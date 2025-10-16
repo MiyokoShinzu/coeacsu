@@ -117,7 +117,7 @@ $mysqli->close();
                             </p>
                         </div>
 
-                        <div class="card ">
+                        <div class="card border shadow ">
                             <div class="card-body">
 
                                 <div class="m-sm-3">

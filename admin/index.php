@@ -78,7 +78,7 @@
     <?php include "./globals/navbar.php"; ?>
     <!-- Main content -->
     <div id="main">
-        <div class="container py-5 mt-5 d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+        <div class="container py-2 mt-5 d-flex justify-content-center align-items-center" style="min-height: 80vh;">
             <div class="card shadow-lg border-0 w-100">
                 <div class="card-body text-center">
                     <div class="mb-3">

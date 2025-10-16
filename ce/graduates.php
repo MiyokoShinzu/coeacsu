@@ -12,137 +12,158 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
+<?php include '../src/connection.php'; ?>
 
 <body class="position-relative" style="overflow-x: hidden; font-family: 'Poppins', sans-serif;">
 
-    <div class="main min-vh-100 ">
+    <div class="main min-vh-100 w-100">
         <?php include "./globals/header.php" ?>
         <?php include "./globals/banner.php" ?>
 
 
         <!-- background: #ff4C01; #FE904D-->
-        <div class="row d-flex gs-1 justify-content-center align-items-center">
-            <div data-aos="fade-down" data-aos-delay="600" class=" col-lg-12  col-md-12 col-sm-12 d-flex align-items-center justify-content-center flex-column mx-auto" style="">
-                <i class="bi bi-mortarboard" style="font-size: 3em;"></i>
-                <h2 class="text-center " style="font-weight: bolder; ">PERFORMANCE OF GRADUATES</h2>
-
-                <hr class="w-75 mx-auto" style="border: 3px solid #FE904D;">
+        <?php $bg = "linear-gradient(to right, #ff4C01, #FE904D)"; ?>
+        <div class="row d-flex gs-1 mt-1 justify-content-center align-items-center " style="width: 100%; margin: 0 auto;">
+            <div class=" col-lg-12  col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:<?php echo $bg; ?>">
+                <h1 class=" text-start text-white mt-2 p-2" style="font-weight: bolder; font-size: 4em">PERFORMANCE OF GRADUATES</h1>
+                <p class="text-white">Narrative Presentation</p>
             </div>
-            <div class="col-lg-7 col-md-8 col-sm-12 mx-auto mt-5">
-                <div class="card shadow-sm border rounded-4 overflow-hidden">
-                    <div class="ratio ratio-16x9">
-                        <iframe
-                            src="https://www.youtube.com/embed/U6fC4Ij608A?si=rRFliXd3VlQqzL6l"
-                            title="BSCE Program Introduction"
-                            allowfullscreen
-                            class="border">
-                        </iframe>
-                    </div>
-                    <div class="card-body bg-light text-center">
-                        <h5 class="card-title text-dark fw-semibold mb-2">Performance of Graduates</h5>
-                        <p class="card-text text-muted" style="font-size: 0.95rem;">
-                            Learn more about the Bachelor of Science in Civil Engineering Graduates performance through this short video presentation.
-                        </p>
-                    </div>
+            <?php
+            $sql = "SELECT * FROM files WHERE area = 'Graduates' AND section = 'Narrative Presentation' and department='ce' ORDER BY id DESC";
+            $result = $mysqli->query($sql);
+            if ($result && $result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
+                    $fileName = basename($filePath);
+                    $cleanPath = preg_replace('/^\.\.\//', '', $filePath);
+
+
+                    echo '<div class="col-lg-7 mx-auto mt-3 p-0 border shadow">
+                            <div class="col-lg-12 mx-auto my-3 p-0 m-0">
+                                <div class="ratio ratio-16x9 p-0 m-0 w-100 h-100">
+                                    <video class="w-100 h-100" style="object-fit: cover;" controls loop>
+                                        <source src="' . $cleanPath . '" type="video/mp4">
+                                       
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>';
+                }
+            } else {
+                echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No video found under Narrative Presentation.</p>';
+            }
+            ?>
+
+            <div class="mt-3 col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:<?php echo $bg; ?>">
+                <h5 class="text-white p-3">Narrative Report</h5>
+            </div>
+            <?php
+            $sql = "SELECT * FROM files WHERE area = 'Graduates' AND section = 'Narrative Report' and department='ce' ORDER BY id DESC";
+            $result = $mysqli->query($sql);
+            if ($result && $result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
+                    $fileName = basename($filePath);
+
+                    $cleanPath = preg_replace('/^\.\.\//', '', $filePath);
+                    echo '
+        <div class="col-lg-7 mx-auto mb-3 mt-3 p-0 row">
+            <div class="col-lg-12 mx-auto my-3 p-0 m-0 text-center">
+               
+                <iframe 
+                    src="' . htmlspecialchars($cleanPath) . '#toolbar=0&navpanes=0&scrollbar=0"
+                    frameborder="0"
+                    style="min-height: 500px; width: 100%; border-radius: 10px;">
+                </iframe>
+                 <a href="' . htmlspecialchars($cleanPath) . '" 
+                   target="_blank" 
+                   class="btn btn-sm btn-secondary mb-2">
+                   View Fullscreen
+                </a>
+            </div>
+        </div>';
+                }
+            } else {
+                echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No report found under Narrative Report.</p>';
+            }
+            ?>
+
+            <div class=" col-lg-12 col-md-12 col-sm-12 mt-3 mb-5 d-flex align-items-center justify-start flex-column mx-auto" style="background:<?php echo $bg; ?>">
+                <h5 class=" text-start text-white mt-2" style="font-weight: bolder; ">Attachments</h5>
+            </div>
+            <div class="col-lg-11 mx-auto mb-3">
+
+
+                <?php
+                // adjust path as needed
+
+                $sql = "SELECT * FROM files WHERE area = 'Graduates' AND section = 'Attachment' and department='ce' ORDER BY id DESC";
+                $result = $mysqli->query($sql);
+
+                if ($result && $result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
+                        $fileName = basename($filePath);
+                        echo '
+        <div class="col-lg-11 mx-auto mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
+            style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
+
+            <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
+                <div class="drive-preview d-flex align-items-center">
+                    <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
+                    <span class="file-name" style="font-size: 0.7em;">' . '' . htmlspecialchars($fileName) . '</span>
                 </div>
-            </div>
-            <div class="col-lg-7 col-md-8 col-sm-12 mx-auto mt-5">
-                <div class="card shadow-sm border rounded-4 overflow-hidden">
-                    <div class="ratio ratio-16x9">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/MLpWrANjFbI?si=bv_pEmT-Zj2Krzuc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="card-body bg-light text-center">
-                        <h5 class="card-title text-dark fw-semibold mb-2">Testimonial of Graduates</h5>
-                        <p class="card-text text-muted" style="font-size: 0.95rem;">
-                            Learn more about the Bachelor of Science in Civil Engineering Graduates testimonial through this short video presentation.
-                        </p>
-                    </div>
-                </div>
+            </a>
+        </div>';
+                    }
+                } else {
+                    echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No files found</p>';
+                }
+                ?>
+
             </div>
 
-            <div class=" col-lg-12  col-md-12 mt-3 col-sm-12 d-flex align-items-center justify-content-center flex-column mx-auto" style="">
-                <i class="bi bi-card-list" style="font-size: 3em;"></i>
-                <h2 class="text-center " style="font-weight: bolder; ">NARRATIVE REPORT</h2>
 
-                <hr class="w-75 mx-auto" style="border: 3px solid #FE904D;">
+            <div class=" col-lg-12 col-md-12 col-sm-12 mt-3 mb-5 d-flex align-items-center justify-start flex-column mx-auto" style="background:<?php echo $bg; ?>">
+                <h5 class=" text-start text-white mt-2" style="font-weight: bolder; ">BSCE's Tracer Study</h5>
             </div>
-            <div class="col-lg-5">
-                <div class="card shadow-sm border rounded-4 overflow-hidden">
-                    <div class="ratio ratio-4x3">
-                        <iframe
-                            src="../uploads/ce/basic.pdf"
-                            type="application/pdf"
-                            title="BSCE Basic PDF Preview"
-                            class="border">
-                        </iframe>
-                    </div>
-                    <div class="card-body bg-light text-center">
-                        <h5 class="card-title fw-semibold text-dark">Narrative Profile</h5>
-                        <p class="card-text text-muted mb-0">
-                            You can preview the PDF document directly on this page.
-                            <a href="../uploads/ce/basic.pdf" target="_blank" class="text-decoration-underline fw-bold">Open in new tab</a> if needed.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class=" col-lg-12  col-md-12 col-sm-12 d-flex align-items-center justify-content-center flex-column mx-auto mt-3" style="">
-                <i class="bi bi-paperclip" style="font-size: 3em;"></i>
-                <h2 class="text-center " style="font-weight: bolder; ">ATTACHMENTS</h2>
+            <?php
+            $sql = "SELECT * FROM files WHERE area = 'Graduates' AND section = 'Tracer Study' and department='ce' ORDER BY id DESC";
+            $result = $mysqli->query($sql);
+            if ($result && $result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
+                    $fileName = basename($filePath);
 
-                <hr class="w-75 mx-auto" style="border: 3px solid #FE904D;">
+                    $cleanPath = preg_replace('/^\.\.\//', '', $filePath);
+                    echo '
+        <div class="col-lg-7 mx-auto mb-3 mt-3 p-0 row">
+            <div class="col-lg-12 mx-auto my-3 p-0 m-0 text-center">
+               
+                <iframe 
+                    src="' . htmlspecialchars($cleanPath) . '#toolbar=0&navpanes=0&scrollbar=0"
+                    frameborder="0"
+                    style="min-height: 500px; width: 100%; border-radius: 10px;">
+                </iframe>
+                 <a href="' . htmlspecialchars($cleanPath) . '" 
+                   target="_blank" 
+                   class="btn btn-sm btn-secondary mb-2">
+                   View Fullscreen
+                </a>
             </div>
-            <div class="col-lg-5">
-                <div class="card shadow-sm border rounded-4 overflow-hidden">
-                    <div class="ratio ratio-4x3">
-                        <iframe
-                            src="../uploads/ce/basic.pdf"
-                            type="application/pdf"
-                            title="BSCE Basic PDF Preview"
-                            class="border">
-                        </iframe>
-                    </div>
-                    <div class="card-body bg-light text-center">
-                        <h5 class="card-title fw-semibold text-dark">ATTACHMENTS</h5>
-                        <p class="card-text text-muted mb-0">
-                            You can preview the PDF document directly on this page.
-                            <a href="../uploads/ce/basic.pdf" target="_blank" class="text-decoration-underline fw-bold">Open in new tab</a> if needed.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class=" col-lg-12  col-md-12 col-sm-12 d-flex align-items-center justify-content-center flex-column mx-auto mt-3" style="">
-                <i class="bi bi-pin-map" style="font-size: 3em;"></i>
-                <h2 class="text-center " style="font-weight: bolder; ">Tracer Study</h2>
-
-                <hr class="w-75 mx-auto" style="border: 3px solid #FE904D;">
-            </div>
-
-            <div class="col-lg-5">
-                <div class="card shadow-sm border rounded-4 overflow-hidden">
-                    <div class="ratio ratio-4x3">
-                        <iframe
-                            src="../uploads/ce/basic.pdf"
-                            type="application/pdf"
-                            title="BSCE Basic PDF Preview"
-                            class="border">
-                        </iframe>
-                    </div>
-                    <div class="card-body bg-light text-center">
-                        <h5 class="card-title fw-semibold text-dark">Tracer Study</h5>
-                        <p class="card-text text-muted mb-0">
-                            You can preview the PDF document directly on this page.
-                            <a href="../uploads/ce/basic.pdf" target="_blank" class="text-decoration-underline fw-bold">Open in new tab</a> if needed.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
+        </div>';
+                }
+            } else {
+                echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No file found under Tracer Study.</p>';
+            }
+            ?>
 
 
 
 
         </div>
+    </div>
     </div>
 
 
@@ -188,6 +209,33 @@
             filter: blur(4px);
         }
     </style>
+
+    <script>
+        const img = document.getElementById('n_report');
+
+        img.addEventListener('click', () => {
+            if (img.requestFullscreen) {
+                img.requestFullscreen();
+            } else if (img.webkitRequestFullscreen) { // Safari
+                img.webkitRequestFullscreen();
+            } else if (img.msRequestFullscreen) { // IE11
+                img.msRequestFullscreen();
+            }
+        });
+    </script>
+    <script>
+        function openFullscreen(id) {
+            const iframe = document.getElementById(id);
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+
 
 </body>
 

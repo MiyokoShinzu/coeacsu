@@ -7,13 +7,13 @@
 
     <div id="main">
         <nav class="breadcrumb mt-5">
-            <span class="breadcrumb-item active" aria-current="page">Research</span>
+            <span class="breadcrumb-item active h3" aria-current="page"><b>RESEARCH</b></span>
         </nav>
         <div class="row w-90 mx-auto mt-2">
             <div class="col-lg-11 p-5 mx-auto shadow border">
                 <div class="table-responsive">
                     <div class="wrapper w-100 text-end">
-                        <button class="btn btn-sm mb-2 mt-2" style="background: rgba(174, 4, 4, 1); color: #fff;" data-bs-toggle="modal" data-bs-target="#files_modal"><i class="bi bi-upload"></i> Upload New File</button>
+                        <button class="btn btn-sm mb-2 mt-2" style="background: rgba(6, 98, 210, 1); color: #fff;" data-bs-toggle="modal" data-bs-target="#files_modal"><i class="bi bi-upload"></i> Upload New File</button>
                     </div>
                     <table id="research_table" class="table p-2 table-hover border table-bordered shadow">
                         <thead>
@@ -170,7 +170,7 @@
         });
     </script>
     <script>
-        fetch(`../api/select_files.php`)
+        fetch(`../api/select_files.php?area=Research`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

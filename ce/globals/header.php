@@ -33,13 +33,13 @@
                         <a class="nav-link" href="graduates.php">Graduates</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Extension</a>
+                        <a class="nav-link" href="extension.php">Extension</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">International Linkages</a>
+                        <a class="nav-link" href="linkages.php">International Linkages</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Planning</a>
+                        <a class="nav-link" href="planning.php">Planning</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="compliance.php">Compliance Report</a>
