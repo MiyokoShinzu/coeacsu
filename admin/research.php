@@ -258,9 +258,8 @@
                             $('#upload').html(`<i class='bi bi-check text-white' style="font-size: 1em;">File successfully uploaded</i>`);
 
                             setTimeout(() => {
-                                console.log('File uploaded successfully:', response.success);
-                                window.location.reload();
-                            }, 800);
+                                alert('File uploaded successfully:', response.success);
+                            }, 1000);
                         } else {
                             $('#upload').html('Upload');
                             console.error('File upload failed:', response.error);
@@ -422,40 +421,7 @@
             uploadFile(file, section);
         });
 
-        function uploadFileWithProgress(file, section) {
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', './handlers/upload_file.php'); // Replace with your upload endpoint
-
-            // Update progress
-            xhr.upload.addEventListener('progress', function(e) {
-                if (e.lengthComputable) {
-                    const percentComplete = (e.loaded / e.total) * 100;
-                    $('#progress-bar').css('width', percentComplete + '%');
-                    $('#progress-text').text(Math.round(percentComplete) + '%');
-                }
-            });
-
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    $('#upload').html('Upload Complete');
-                    // Handle successful upload response here
-                } else {
-                    $('#upload').html('Upload');
-                    alert('Upload failed. Please try again.');
-                }
-            };
-
-            xhr.onerror = function() {
-                $('#upload').html('Upload');
-                alert('An error occurred while uploading the file.');
-            };
-
-            const formData = new FormData();
-            formData.append('file', file);
-            formData.append('section', section);
-
-            xhr.send(formData);
-        }
+     
     </script>
     <script>
         $(document).on('click', '#delete_file_btn', function() {
