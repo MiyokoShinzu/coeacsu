@@ -251,9 +251,12 @@
                             $('#upload').html(`<i class='bi bi-check text-white' style="font-size: 1em;">File successfully uploaded</i>`);
 
                             setTimeout(() => {
-                                console.log('File uploaded successfully:', response.success);
-                                window.location.reload();
-                            }, 800);
+                                alert('File uploaded successfully:', response.success);
+                                setTimeout(() => {
+                                    window.location.reload();
+                                }, 200)
+
+                            }, 200);
                         } else {
                             $('#upload').html('Upload');
                             console.error('File upload failed:', response.error);
