@@ -187,7 +187,7 @@
    data-bs-toggle="tooltip" 
    title="View File"></a>
 
-<a href="${file.path}" 
+<a href="#" 
    class="bi bi-trash text-danger fs-5" 
    id="delete_file_btn" 
    data-id="${file.id}" 
