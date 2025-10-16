@@ -252,6 +252,8 @@
 
                             setTimeout(() => {
                                 alert('File uploaded successfully:', response.success);
+                                setTimeout(() => {
+                                    window.location.reload();}, 200)
                                
                             }, 200);
                         } else {
