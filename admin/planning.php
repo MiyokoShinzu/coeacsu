@@ -67,6 +67,12 @@
                                     </div>
                                     <div class="col-lg-12 mx-auto mb-3">
                                         <div class="form-group">
+                                            <label class="mb-2" for="">File Label</label>
+                                            <input type="text" name="label" id="label" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 mx-auto mb-3">
+                                        <div class="form-group">
                                             <label class="mb-2" for="">File Type</label>
                                             <select name="file_type" id="file_type" class="form-select" required>
                                                 <option value="">-- Select File Type --</option>
