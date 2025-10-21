@@ -83,7 +83,6 @@
                                                 <option value="Narrative Presentation">Narrative Presentation</option>
                                                 <option value="Narrative Report">Narrative Report</option>
                                                 <option value="Campus College RDE Agenda">Campus College RDE Agenda</option>
-                                                <option value="Completed Extension Project">Completed Extension Project</option>
                                                 <option value="On-going Extension Project">On-going Extension Project</option>
                                                 <option value="Impact Studies of Extension Projects">Impact Studies of Extension Projects</option>
                                                 <option value="Matrix of Extension Project">Matrix of Extension Project</option>
