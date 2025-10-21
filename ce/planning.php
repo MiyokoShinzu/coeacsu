@@ -105,7 +105,12 @@
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
+                        $label = $row['label']; 
                         echo '
+                        <div class="col-lg-11 mx-auto">
+            <h6 class="text-start text-dark mt-2 mb-1" style="font-weight: bolder; ">'.htmlspecialchars($label).'</h6>
+                        </div>
+
         <div class="col-lg-11 mx-auto mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
 
