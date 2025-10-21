@@ -38,11 +38,11 @@
                 <div class="col-lg-11 mx-auto mt-2">
                     <div class="row">
                         <div class="col-md-5 mx-auto" style="border-bottom: 5px solid red;">
-                            <video src="./assets/institutional_video.mp4" class="img-fluid" controls ></video>
+                            <video src="./assets/institutional_video.mp4" class="img-fluid" controls></video>
                             <h4 class="text-center">Institutional Video</h4>
                         </div>
                         <div class="col-md-5 mx-auto" style="border-bottom: 5px solid red;">
-                            <video src="./assets/campus_tour.mp4" class="img-fluid" controls ></video>
+                            <video src="./assets/campus_tour.mp4" class="img-fluid" controls></video>
                             <h4 class="text-center"> Campus Tour Video</h4>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
             <h4 class="text-center text-white mt-3 p-3" style="font-weight: bolder; ">College History</h4>
         </div>
         <div class="col-lg-12 mx-auto row">
-            <div class="col-md-8 mx-auto" data-aos="fade-up">
+            <div class="col-md-10 mx-auto" data-aos="fade-up">
                 <img src="./assets/program_faculty_pic.png" alt="" class="img-fluid">
             </div>
             <div data-aos="fade-up" class="col-lg-11 col-md-12 col-sm-12 mb-5  d-flex align-items-center mt-3 justify-content-center flex-column mx-auto">
@@ -73,16 +73,19 @@
         <div class="col-lg-12 col-md-12 col-sm-12 mb-5  d-flex align-items-center mt-3 justify-content-center flex-column mx-auto" style="background:rgb(174,14,14)">
             <h4 class="text-center text-white mt-3" style="font-weight: bolder; ">Program History</h4>
         </div>
+
         <div class="col-lg-12 mx-auto row">
-            <div class="col-md-8 mx-auto d-flex align-items-center justify-content-center" data-aos="fade-up">
-                <img src="./assets/coea_faculty_pic.png" alt="" class="img-fluid">
-            </div>
-            <div class="col-md-8 mx-auto d-flex align-items-center justify-content-center" data-aos="fade-up">
-                <img src="./assets/ce_faculty.jfif" alt="" class="img-fluid">
+            <div class="col-lg-5">
+                <div class="col-md-12 mb-3 mx-auto d-flex align-items-center justify-content-center" data-aos="fade-up">
+                    <img src="./assets/coea_faculty_pic.png" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-12 mx-auto mb-3 d-flex align-items-center justify-content-center" data-aos="fade-up">
+                    <img src="./assets/ce_faculty.jfif" alt="" class="img-fluid">
+                </div>
             </div>
 
-            <div class="col-lg-11 col-md-12 col-sm-12 mb-2  p-5 d-flex align-items-center mt-3 justify-content-center flex-column mx-auto">
-                <p>
+            <div class="col-lg-7 col-md-6 col-sm-12 mb-2   mx-auto" style="text-align: justify">
+                <p style="font-size: 0.9em">
                     <span style="font-size: 2em; color: red;">T</span>he program was opened in response to the labor demand of the region for infrastructure development, an essential factor to spur regional socio-economic growth and development.
 
                     Competent instructors and professors with graduate degrees, local and abroad, staff this program.
@@ -106,7 +109,7 @@
                 <div class="col-lg-12 mx-auto bg-white p-4">
                     <div class="row d-flex  justify-content-center align-items-center">
 
-                        <div class="col-sm-12 col-lg-10 mb-4 mt-3 mx-auto  bg-white m-2 image-container" style="position: relative; overflow: hidden;">
+                        <div class="col-sm-12 col-lg-12 mb-4 mt-3 mx-auto  bg-white m-2 image-container" style="position: relative; overflow: hidden;">
 
                             <img src="./assets/pubmat/ce.png" alt="" class="img-fluid" />
                             <div class="overlay">
@@ -115,80 +118,77 @@
                             </div>
 
                         </div>
-                        <!-- <div  class="col-lg-8 mb-4 mt-3   mx-auto shadow bg-white m-2 image-container" style="position: relative; overflow: hidden;">
-
-                <img src="./assets/pubmat/cpe.png" alt="" style="height: 100%; width: 100%;" />
-                <div class="overlay w-100 text-center">
-                    <h4 class="text-white">Computer Engineering Department</h4>
-                    <a href="./ge" style="text-decoration: hidden;"><button style="background: rgb(174,14,14)" class="btn btn-sm  text-white text-end"><i class="bi bi-link me-2"></i>VISIT</button></a>
-                </div>
-
-            </div>
-            <div  class="col-lg-8 mb-4 mt-3  mx-auto   shadow bg-white m-2 image-container" style="position: relative; overflow: hidden;">
-
-                <img src="./assets/pubmat/abe.png" alt="" style="height: 100%; width: 100%;" />
-                <div class="overlay w-100 text-center">
-                    <h4 class="text-white">Agricultural and Biosystems Engineering Department</h4>
-                    <a href="./ge" style="text-decoration: hidden;"><button style="background: rgb(174,14,14)" class="btn btn-sm  text-white text-end"><i class="bi bi-link me-2"></i>VISIT</button></a>
-                </div>
-
-            </div>
-            <div  class="col-lg-8 mb-4 mt-3  mx-auto   shadow bg-white m-2 image-container" style="position: relative; overflow: hidden;">
-
-                <img src="./assets/pubmat/ece.png" alt="" style="height: 100%; width: 100%;" />
-                <div class="overlay w-100 text-center">
-                    <h4 class="text-white">Electronics Engineering Department</h4>
-                    <a href="./ece" style="text-decoration: hidden;"><button style="background: rgb(174,14,14)" class="btn btn-sm  text-white text-end"><i class="bi bi-link me-2"></i>VISIT</button></a>
-                </div>
-
-            </div> -->
 
 
                     </div>
                 </div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 mb-5  d-flex align-items-center mt-3 justify-content-center flex-column mx-auto" style="background:rgb(174,14,14)">
-                <h4 class="text-center text-white mt-3" style="font-weight: bolder; ">Top Notchers</h4>
+                <h4 class="text-center text-white mt-3 p-1" style="font-weight: bolder; ">Topnotchers</h4>
             </div>
             <div class="col-lg-12 mx-auto d-flex align-items-center justify-content-center">
-                <div class="row w-100">
-                    <div class="col-md-6 mx-auto mb-3" data-aos="fade-up">
-                        <img src="./assets/performing_school.jfif" alt="" class="img-fluid">
-                    </div>
-                    <div class="col-md-6 mx-auto mb-3" data-aos="fade-up">
-                        <img src="./assets/top_notchers4.jfif" alt="" class="img-fluid">
-                    </div>
-                    <div class="col-md-6 mx-auto mb-3" data-aos="fade-up">
-                        <img src="./assets/top_notchers2.jfif" alt="" class="img-fluid">
-                    </div>
-                    <div class="col-md-6 mx-auto mb-3" data-aos="fade-up">
-                        <img src="./assets/top_notchers3.jfif" alt="" class="img-fluid">
-                    </div>
-                    <div class="col-md-6 mx-auto mb-3" data-aos="fade-up">
-                        <img src="./assets/top_notchers1.jfif" alt="" class="img-fluid">
-                    </div>
+                <div class="row">
+                    <div class="col-md-7 mx-auto">
+                        <!-- Carousel -->
+                        <div id="topNotchersCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <!-- Indicators -->
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="0" class="active"></button>
+                                <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="2"></button>
+                                <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="3"></button>
+                                <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="4"></button>
+                                <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="5"></button>
+                                <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="6"></button>
+                                <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="7"></button>
+                            </div>
 
-                    <div class="col-md-6 mb-3" data-aos="fade-up">
-                        <img src="./assets/top_notchers5.jfif" alt="" class="img-fluid">
+                            <!-- Inner -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="./assets/performing_school.jfif" class="d-block w-100 img-fluid" alt="">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./assets/top_notchers4.jfif" class="d-block w-100 img-fluid" alt="">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./assets/top_notchers2.jfif" class="d-block w-100 img-fluid" alt="">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./assets/top_notchers3.jfif" class="d-block w-100 img-fluid" alt="">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./assets/top_notchers1.jfif" class="d-block w-100 img-fluid" alt="">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./assets/top_notchers5.jfif" class="d-block w-100 img-fluid" alt="">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./assets/top_notchers6.jfif" class="d-block w-100 img-fluid" alt="">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./assets/top_notchers8.jfif" class="d-block w-100 img-fluid" alt="">
+                                </div>
+                            </div>
+
+                            <!-- Controls -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#topNotchersCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#topNotchersCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
                     </div>
-
-                    <div class="col-md-6  mb-3" data-aos="fade-up">
-                        <img src="./assets/top_notchers6.jfif" alt="" class="img-fluid">
-                    </div>
-
-
-                    <div class="col-md-6  mb-3" data-aos="fade-up">
-                        <img src="./assets/top_notchers8.jfif" alt="" class="img-fluid">
-                    </div>
-
                 </div>
+
             </div>
 
         </div>
         <!-- background: #ff4C01; #FE904D-->
 
     </div>
-    </div>
+
 
 
 
@@ -233,7 +233,13 @@
             filter: blur(4px);
         }
     </style>
-
+    <script>
+        const myCarousel = document.querySelector('#topNotchersCarousel');
+        const carousel = new bootstrap.Carousel(myCarousel, {
+            interval: 3000, // 3 seconds
+            ride: 'carousel'
+        });
+    </script>
 </body>
 
 </html>

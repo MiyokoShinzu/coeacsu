@@ -35,6 +35,7 @@
                 while ($row = $result->fetch_assoc()) {
                     $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                     $fileName = basename($filePath);
+                    
                     $cleanPath = preg_replace('/^\.\.\//', '', $filePath);
 
 
@@ -65,6 +66,7 @@
                 while ($row = $result->fetch_assoc()) {
                     $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                     $fileName = basename($filePath);
+                    
 
                     $cleanPath = preg_replace('/^\.\.\//', '', $filePath);
                      echo '
@@ -105,6 +107,7 @@
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
+                        
                         echo '
         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
@@ -136,6 +139,7 @@
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
+                        
                         echo '
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
@@ -168,6 +172,7 @@
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
+                        
                         echo '
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
@@ -199,6 +204,7 @@
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
+                        
                         echo '
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
@@ -230,6 +236,7 @@
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
+                        
                         echo '
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
@@ -261,6 +268,7 @@
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
+                        
                         echo '
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
@@ -294,6 +302,7 @@
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
+                        
                         echo '
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
