@@ -178,6 +178,7 @@
               <td>${file.path}</td>
               <td>${file.section}</td>
               <td>${file.area}</td>
+              <td>${file.label}</td>
               <td>${file.datetime_update}</td>
               <td class="text-center d-flex justify-content-center align-items-center">
 <a href="handlers/${file.path}" 

@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $section = mysqli_real_escape_string($mysqli, $_POST['section'] ?? '');
     $department = mysqli_real_escape_string($mysqli, $_POST['department'] ?? '');
     $area = mysqli_real_escape_string($mysqli, $_POST['area'] ?? '');
+    $label = mysqli_real_escape_string($mysqli, $_POST['label'] ?? '');
     $file_type = $_POST['file_type'] ?? '';
 
     if (isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK) {
@@ -43,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if ($upload_success) {
-        $sql = "INSERT INTO files (path, section, area, department,datetime_update) VALUES ('$file_path', '$section', '$area', '$department', '$d')";
+        $sql = "INSERT INTO files (path, section, area, department,datetime_update, label) VALUES ('$file_path', '$section', '$area', '$department', '$d', '$label')";
         $result = $mysqli->query($sql);
         if ($result) {
             echo json_encode(['success' => '1']);
