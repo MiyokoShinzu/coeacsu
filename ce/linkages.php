@@ -126,7 +126,7 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'International Linkages' AND section = 'Higher Institutions' and department='ce' ORDER BY id DESC";
+                $sql = "SELECT * FROM files WHERE area = 'International Linkages' AND section = 'Organizations' and department='ce' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
@@ -153,7 +153,7 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'International Linkages' AND section = 'Higher Institutions' and department='ce' ORDER BY id DESC";
+                $sql = "SELECT * FROM files WHERE area = 'International Linkages' AND section = 'Other Documents' and department='ce' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
