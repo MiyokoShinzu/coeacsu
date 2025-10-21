@@ -75,7 +75,7 @@
         </div>
         <div class="col-lg-12 mx-auto row">
             <div class="col-md-8 mx-auto d-flex align-items-center justify-content-center" data-aos="fade-up">
-                <img src="./assets/ce_faculty.jfif" alt="" class="img-fluid">
+                <img src="./assets/coea_faculty_pic.png" alt="" class="img-fluid">
             </div>
             <div class="col-md-8 mx-auto d-flex align-items-center justify-content-center" data-aos="fade-up">
                 <img src="./assets/ce_faculty.jfif" alt="" class="img-fluid">
