@@ -93,7 +93,7 @@
                 <h5 class=" text-start text-white mt-2 p-2" style="font-weight: bolder; ">Attachments</h5>
             </div>
             <div class="col-lg-11 mx-auto mb-3">
-                <h6 class="text-start text-dark mt-2 mb-1" style="font-weight: bolder; ">University Level</h6>
+                <h6 class="text-start text-dark mt-2 mb-3" style="font-weight: bolder; ">University Level</h6>
 
                 <?php
                 // adjust path as needed
@@ -134,7 +134,7 @@
 
 
             <div class="col-lg-11 mx-auto mb-3">
-                <h6 class="text-start text-dark mt-2 mb-1" style="font-weight: bolder; ">Campus Level</h6>
+                <h6 class="text-start text-dark mt-2 mb-3" style="font-weight: bolder; ">Campus Level</h6>
 
                 <?php
                 // adjust path as needed
@@ -178,7 +178,7 @@
 
 
             <div class="col-lg-11 mx-auto mb-3">
-                    <h6 class="text-start text-dark mt-2 mb-1" style="font-weight: bolder; ">College Level</h6>
+                    <h6 class="text-start text-dark mt-2 mb-3" style="font-weight: bolder; ">College Level</h6>
 
                 <?php
                 // adjust path as needed
@@ -222,7 +222,7 @@
 
 
             <div class="col-lg-11 mx-auto mb-3">
-                    <h6 class="text-start text-dark mt-2 mb-1" style="font-weight: bolder; ">Department Level</h6>
+                    <h6 class="text-start text-dark mt-2 mb-3" style="font-weight: bolder; ">Department Level</h6>
 
                 <?php
                 // adjust path as needed
@@ -265,7 +265,7 @@
 
 
             <div class="col-lg-11 mx-auto mb-3">
-                    <h6 class="text-start text-dark mt-2 mb-1" style="font-weight: bolder; ">Best Practices</h6>
+                    <h6 class="text-start text-dark mt-2 mb-3" style="font-weight: bolder; ">Best Practices</h6>
 
                 <?php
                 // adjust path as needed
