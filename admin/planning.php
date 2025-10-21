@@ -68,7 +68,13 @@
                                     <div class="col-lg-12 mx-auto mb-3">
                                         <div class="form-group">
                                             <label class="mb-2" for="">File Label</label>
-                                            <input type="text" name="label" id="label" class="form-control" required>
+                                            <select name="label" id="label" class="form-select" required>
+                                                <option value="University Level">University Level</option>
+                                                <option value="Campus Level">Campus Level</option>
+                                                <option value="College Level">College Level</option>
+                                                <option value="Department Level">Department Level</option>
+                                                <option value="Best Practices">Best Practices</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 mx-auto mb-3">
