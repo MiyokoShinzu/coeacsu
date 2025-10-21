@@ -24,6 +24,7 @@
                                 <th class="text-dark">Section</th>
                                 <th class="text-dark">Area</th>
                                 <th class="text-dark">Datetime Updated</th>
+                                <th class="text-dark">Label</th>
                                 <th class="text-dark">Actions</th>
 
                             </tr>
