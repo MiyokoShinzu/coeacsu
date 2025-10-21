@@ -26,50 +26,19 @@
         <div class="row d-flex gs-1 mt-1 justify-content-center align-items-center " style="width: 100%; margin: 0 auto;">
             <div class=" col-lg-12  col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:<?php echo $bg; ?>">
                 <h1 class=" text-start text-white mt-2 p-2" style="font-weight: bolder; font-size: 4em">Compliance Report</h1>
-               
-            </div>
-           
-            <?php
-            $sql = "SELECT * FROM files WHERE area = 'Compliance Report' AND section = 'Report' and department='ce' ORDER BY id DESC";
-            $result = $mysqli->query($sql);
-            if ($result && $result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
-                    $fileName = basename($filePath);
-
-                    $cleanPath = preg_replace('/^\.\.\//', '', $filePath);
-                    echo '
-        <div class="col-lg-7 mx-auto mb-3 mt-3 p-0 row">
-            <div class="col-lg-12 mx-auto my-3 p-0 m-0 text-center">
-               
-                <iframe 
-                    src="' . htmlspecialchars($cleanPath) . '#toolbar=0&navpanes=0&scrollbar=0"
-                    frameborder="0"
-                    style="min-height: 500px; width: 100%; border-radius: 10px;">
-                </iframe>
-                 <a href="' . htmlspecialchars($cleanPath) . '" 
-                   target="_blank" 
-                   class="btn btn-sm btn-secondary mb-2">
-                   View Fullscreen
-                </a>
-            </div>
-        </div>';
-                }
-            } else {
-                echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No report found under Narrative Report.</p>';
-            }
-            ?>
-
-         
 
             </div>
 
-
-
-
-
+            <a href="https://drive.google.com/drive/folders/19BRVF18g-7isSF8t74jfj73EXspiblwt?usp=sharing">Compliance Report</a>
 
         </div>
+
+
+
+
+
+
+    </div>
     </div>
     </div>
 
