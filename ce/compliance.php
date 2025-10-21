@@ -28,8 +28,12 @@
                 <h1 class=" text-start text-white mt-2 p-2" style="font-weight: bolder; font-size: 4em">Compliance Report</h1>
 
             </div>
+            <div class="col-lg-4 mx-auto d-flex align-items-center justify-content-center flex-row mb-5 border shadow p-3">
+                <img src="../assets/drive_logo.svg" alt="" style="height: 50px; width: 50px;" class="mb-2 me-2">
+                <a href="https://drive.google.com/drive/folders/19BRVF18g-7isSF8t74jfj73EXspiblwt?usp=sharing" target="_blank" >Compliance Report Link</a>
+            </div>
 
-            <a href="https://drive.google.com/drive/folders/19BRVF18g-7isSF8t74jfj73EXspiblwt?usp=sharing">Compliance Report</a>
+
 
         </div>
 
