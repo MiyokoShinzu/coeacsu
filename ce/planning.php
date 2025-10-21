@@ -183,7 +183,7 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='College Level' ORDER BY datetime_update DESC";
+                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='College Level' ORDER BY datetime_update ASC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
