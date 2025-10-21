@@ -29,7 +29,7 @@
                 <p class="text-white">Narrative Presentation</p>
             </div>
             <?php
-            $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Narrative Presentation' and department='ce' ORDER BY datetime_updated DESC";
+            $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Narrative Presentation' and department='ce' ORDER BY datetime_updated ASC";
             $result = $mysqli->query($sql);
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
@@ -59,7 +59,7 @@
                 <h5 class="text-white p-3">Narrative Report</h5>
             </div>
             <?php
-            $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Narrative Report' and department='ce' ORDER BY datetime_updated DESC";
+            $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Narrative Report' and department='ce' ORDER BY datetime_updated ASC";
             $result = $mysqli->query($sql);
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
@@ -98,7 +98,7 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='University Level' ORDER BY datetime_updated DESC";
+                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='University Level' ORDER BY datetime_updated ASC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
@@ -139,7 +139,7 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='Campus Level' ORDER BY datetime_updated DESC";
+                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='Campus Level' ORDER BY datetime_updated ASC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
@@ -183,7 +183,7 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='College Level' ORDER BY datetime_updated DESC";
+                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='College Level' ORDER BY datetime_updated ASC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
@@ -227,7 +227,7 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='Department Level' ORDER BY datetime_updated DESC";
+                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='Department Level' ORDER BY datetime_updated ASC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
@@ -270,7 +270,7 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='Best Practices' ORDER BY datetime_updated DESC";
+                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='Best Practices' ORDER BY datetime_updated ASC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
