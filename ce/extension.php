@@ -121,35 +121,10 @@
                     echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No files found </p>';
                 }
                 ?>
-                <h6>Completed Extension Projects</h6>
+               
 
-                <?php
-                // adjust path as needed
-
-                $sql = "SELECT * FROM files WHERE area = 'Extension' AND section = 'Completed Extension Project' and department='ce' ORDER BY id DESC";
-                $result = $mysqli->query($sql);
-
-                if ($result && $result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
-                        $fileName = basename($filePath);
-                        echo '
-        <div class="col-lg-11 mx-auto mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
-            style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
-
-            <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
-                <div class="drive-preview d-flex align-items-center">
-                    <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
-                    <span class="file-name" style="font-size: 0.7em;">' . '' . htmlspecialchars($fileName) . '</span>
-                </div>
-            </a>
-        </div>';
-                    }
-                } else {
-                    echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No files found </p>';
-                }
-                ?>
-                <h6>On-going Extension Projects</h6>
+              
+                <h6>Extension Projects</h6>
 
                 <?php
                 // adjust path as needed
