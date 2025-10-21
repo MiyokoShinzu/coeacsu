@@ -22,16 +22,13 @@
 
         <!-- background: #ff4C01; #FE904D-->
         <div class="row d-flex gs-1 mt-2 justify-content-center align-items-center">
-            <div class="col-lg-6 mx-auto my-3 p-0 m-0">
-                <div class="ratio ratio-16x9 p-0 m-0 w-100 h-100">
-                    <video class="w-100 h-100" style="object-fit: cover;" controls loop autoplay>
-                        <source src="./assets/overview_video.mp4" type="video/mp4">
+            <div class="col-lg-11 mx-auto d-flex align-items-center justify-content-center flex-row mb-5 border shadow p-3">
+                
+                    <video src="../assets/overview_video.mp4" controls autoplay loop></video>
 
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
+               
             </div>
-            <div data-aos="fade-down" data-aos-delay="600" class="col-lg-6 col-md-6 col-sm-12 p-4 mt-4 mx-auto intro-container">
+            <div data-aos="fade-down" data-aos-delay="600" class="col-lg-6 col-md-10 col-sm-12 p-4 mt-4 mx-auto intro-container">
                 <p class="intro-text text-dark">
                     Welcome to the accreditation portal of the <strong>Bachelor of Science in Civil Engineering (BSCE)</strong> program. <br>
                     This section is thoughtfully curated to assist our esteemed accreditors in navigating key areas of our academic and institutional performance. Here, you will find essential information about our program’s <strong>Home</strong> profile, ongoing <strong>Research</strong> and development initiatives, the achievements of our <strong>Graduates</strong>, community-engaged <strong>Extension</strong> activities, strategic <strong>International Linkages</strong>, forward-looking <strong>Planning</strong> efforts, and our documented <strong>Compliance Reports</strong>. Each link provides relevant data and documentation that reflect the BSCE program’s commitment to excellence, continuous improvement, and adherence to accreditation standards.
