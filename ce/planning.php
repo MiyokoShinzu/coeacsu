@@ -98,7 +98,7 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='University Level' ORDER BY id DESC";
+                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='University Level' ORDER BY datetime_update ASC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
@@ -139,7 +139,7 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='Campus Level' ORDER BY id DESC";
+                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='Campus Level' ORDER BY datetime_update ASC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
@@ -227,7 +227,7 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='Department Level' ORDER BY id DESC";
+                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='Department Level' ORDER BY datetime_update ASC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
@@ -270,7 +270,7 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='Best Practices' ORDER BY id DESC";
+                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='Best Practices' ORDER BY datetime_update ASC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
