@@ -22,7 +22,7 @@
 
         <!-- background: #ff4C01; #FE904D-->
         <div class="row d-flex gs-1 mt-2 justify-content-center align-items-center">
-            <div class="col-lg-11 mx-auto d-flex align-items-center justify-content-center flex-row mb-5 border shadow p-3">
+            <div class="col-lg-4 mx-auto d-flex align-items-center justify-content-center">
                 
                     <video src="../assets/overview_video.mp4" controls autoplay loop></video>
 
