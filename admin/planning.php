@@ -227,11 +227,12 @@
             .catch(err => console.error(err))
     </script>
     <script>
-        function uploadFile(file, section) {
+        function uploadFile(file, section, label) {
             const formData = new FormData();
             formData.append('file', file);
             formData.append('department', "ce");
             formData.append('area', 'Planning');
+            formData.append('label', label);
             formData.append('section', section);
 
             $.ajax({
@@ -377,6 +378,7 @@
         $(document).on('click', '#upload', function(e) {
             e.preventDefault();
             var section = $('#section').val();
+            var label = $('#label').val();
             var fileType = $('#file_type').val();
             const file = $('#file')[0].files[0];
             $('#upload').attr('class', 'bg-white btn btn-white w-100')
@@ -427,7 +429,7 @@
             }
 
             // Proceed with upload using XMLHttpRequest
-            uploadFile(file, section);
+            uploadFile(file, section, label);
         });
 
         function uploadFileWithProgress(file, section) {
