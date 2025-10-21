@@ -98,7 +98,7 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' ORDER BY id DESC";
+                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='University Level' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
