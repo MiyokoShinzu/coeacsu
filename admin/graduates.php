@@ -389,7 +389,7 @@
                 return;
             }
 
-            const fileSizeLimit = 1000 * 1024 * 1024; // 100MB for video
+            const fileSizeLimit = 2000 * 1024 * 1024; // 100MB for video
 
             if (fileType === 'pdf') {
                 if (file.type !== 'application/pdf') {
