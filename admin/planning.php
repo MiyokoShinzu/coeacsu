@@ -414,9 +414,9 @@
                     return;
                 }
 
-                if (file.size > 100 * 1024 * 1024) {
+                if (file.size > 1000 * 1024 * 1024) {
                     $('#upload').html('Upload');
-                    alert('PDF file size exceeds 20MB limit.');
+                    alert('PDF file size exceeds 1000MB limit.');
                     return;
                 }
             } else if (fileType === 'video') {
