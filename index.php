@@ -38,11 +38,11 @@
                 <div class="col-lg-11 mx-auto mt-2">
                     <div class="row">
                         <div class="col-md-5 mx-auto" style="border-bottom: 5px solid red;">
-                            <video src="./assets/institutional_video.mp4" class="img-fluid" controls autoplay></video>
+                            <video src="./assets/institutional_video.mp4" class="img-fluid" controls ></video>
                             <h4 class="text-center">Institutional Video</h4>
                         </div>
                         <div class="col-md-5 mx-auto" style="border-bottom: 5px solid red;">
-                            <video src="./assets/campus_tour.mp4" class="img-fluid" controls autoplay></video>
+                            <video src="./assets/campus_tour.mp4" class="img-fluid" controls ></video>
                             <h4 class="text-center"> Campus Tour Video</h4>
                         </div>
                     </div>
