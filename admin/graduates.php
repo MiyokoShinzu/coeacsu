@@ -389,7 +389,7 @@
                 return;
             }
 
-            const fileSizeLimit = 100 * 1024 * 1024; // 100MB for video
+            const fileSizeLimit = 1000 * 1024 * 1024; // 100MB for video
 
             if (fileType === 'pdf') {
                 if (file.type !== 'application/pdf') {
@@ -398,7 +398,7 @@
                     return;
                 }
 
-                if (file.size > 20 * 1024 * 1024) {
+                if (file.size > 200 * 1024 * 1024) {
                     $('#upload').html('Upload');
                     alert('PDF file size exceeds 20MB limit.');
                     return;
