@@ -93,7 +93,7 @@
                 <h5 class=" text-start text-white mt-2 p-2" style="font-weight: bolder; ">Attachments</h5>
             </div>
             <div class="col-lg-11 mx-auto mb-3">
-               
+
 
                 <?php
                 // adjust path as needed
@@ -105,10 +105,10 @@
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
-                        $label = $row['label']; 
+                        $label = $row['label'];
                         echo '
                         <div class="col-lg-11 mx-auto">
-            <h6 class="text-start text-dark mt-2 mb-1" style="font-weight: bolder; ">'.htmlspecialchars($label).'</h6>
+            <h6 class="text-start text-dark mt-2 mb-1" style="font-weight: bolder; ">' . htmlspecialchars($label) . '</h6>
                         </div>
 
         <div class="col-lg-11 mx-auto mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
@@ -126,12 +126,182 @@
                     echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No files found </p>';
                 }
                 ?>
-               
+
 
 
             </div>
 
 
+
+            <div class="col-lg-11 mx-auto mb-3">
+
+
+                <?php
+                // adjust path as needed
+
+                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='Campus Level' ORDER BY id DESC";
+                $result = $mysqli->query($sql);
+
+                if ($result && $result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
+                        $fileName = basename($filePath);
+                        $label = $row['label'];
+                        echo '
+                        <div class="col-lg-11 mx-auto">
+            <h6 class="text-start text-dark mt-2 mb-1" style="font-weight: bolder; ">' . htmlspecialchars($label) . '</h6>
+                        </div>
+
+        <div class="col-lg-11 mx-auto mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
+            style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
+
+            <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
+                <div class="drive-preview d-flex align-items-center">
+                    <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
+                    <span class="file-name" style="font-size: 0.7em;">' . '' . htmlspecialchars($fileName) . '</span>
+                </div>
+            </a>
+        </div>';
+                    }
+                } else {
+                    echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No files found </p>';
+                }
+                ?>
+
+
+
+            </div>
+
+
+
+
+
+
+            <div class="col-lg-11 mx-auto mb-3">
+
+
+                <?php
+                // adjust path as needed
+
+                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='College Level' ORDER BY id DESC";
+                $result = $mysqli->query($sql);
+
+                if ($result && $result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
+                        $fileName = basename($filePath);
+                        $label = $row['label'];
+                        echo '
+                        <div class="col-lg-11 mx-auto">
+            <h6 class="text-start text-dark mt-2 mb-1" style="font-weight: bolder; ">' . htmlspecialchars($label) . '</h6>
+                        </div>
+
+        <div class="col-lg-11 mx-auto mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
+            style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
+
+            <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
+                <div class="drive-preview d-flex align-items-center">
+                    <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
+                    <span class="file-name" style="font-size: 0.7em;">' . '' . htmlspecialchars($fileName) . '</span>
+                </div>
+            </a>
+        </div>';
+                    }
+                } else {
+                    echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No files found </p>';
+                }
+                ?>
+
+
+
+            </div>
+
+
+
+
+
+
+            <div class="col-lg-11 mx-auto mb-3">
+
+
+                <?php
+                // adjust path as needed
+
+                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='Department Level' ORDER BY id DESC";
+                $result = $mysqli->query($sql);
+
+                if ($result && $result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
+                        $fileName = basename($filePath);
+                        $label = $row['label'];
+                        echo '
+                        <div class="col-lg-11 mx-auto">
+            <h6 class="text-start text-dark mt-2 mb-1" style="font-weight: bolder; ">' . htmlspecialchars($label) . '</h6>
+                        </div>
+
+        <div class="col-lg-11 mx-auto mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
+            style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
+
+            <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
+                <div class="drive-preview d-flex align-items-center">
+                    <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
+                    <span class="file-name" style="font-size: 0.7em;">' . '' . htmlspecialchars($fileName) . '</span>
+                </div>
+            </a>
+        </div>';
+                    }
+                } else {
+                    echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No files found </p>';
+                }
+                ?>
+
+
+
+            </div>
+
+
+
+
+
+            <div class="col-lg-11 mx-auto mb-3">
+
+
+                <?php
+                // adjust path as needed
+
+                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' and department='ce' and label='Best Practices' ORDER BY id DESC";
+                $result = $mysqli->query($sql);
+
+                if ($result && $result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
+                        $fileName = basename($filePath);
+                        $label = $row['label'];
+                        echo '
+                        <div class="col-lg-11 mx-auto">
+            <h6 class="text-start text-dark mt-2 mb-1" style="font-weight: bolder; ">' . htmlspecialchars($label) . '</h6>
+                        </div>
+
+        <div class="col-lg-11 mx-auto mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
+            style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
+
+            <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
+                <div class="drive-preview d-flex align-items-center">
+                    <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
+                    <span class="file-name" style="font-size: 0.7em;">' . '' . htmlspecialchars($fileName) . '</span>
+                </div>
+            </a>
+        </div>';
+                    }
+                } else {
+                    echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No files found </p>';
+                }
+                ?>
+
+
+
+            </div>
 
 
 
