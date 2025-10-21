@@ -179,8 +179,8 @@
               <td>${file.path}</td>
               <td>${file.section}</td>
               <td>${file.area}</td>
-              <td>${file.label}</td>
               <td>${file.datetime_update}</td>
+              <td>${file.label}</td>
               <td class="text-center d-flex justify-content-center align-items-center">
 <a href="handlers/${file.path}" 
    class="bi bi-eye-fill me-3 fs-5" 
