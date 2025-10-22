@@ -40,7 +40,7 @@
 
 
                     echo '<div class="col-lg-7 mx-auto mt-3 p-0 ">
-                            <h5 class="text-center border-0 border-bottom border-danger mb-2 border-3" >' . htmlspecialchars($label) . '</h5>
+                            <h5 class="text-center border-0 border-bottom border-danger mb-2 p-2 border-3" >' . htmlspecialchars($label) . '</h5>
                             <div class="col-lg-12 mx-auto my-3 p-0 m-0">
                                 <div class="ratio ratio-16x9 p-0 m-0 w-100 h-100">
                                     <video class="w-100 h-100" style="object-fit: cover;" controls loop autoplay>
