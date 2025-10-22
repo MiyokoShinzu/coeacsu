@@ -34,11 +34,13 @@
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
+                    $label = $row['label']; // assuming this contains relative path like: uploads/ce/basic.pdf
                     $fileName = basename($filePath);
                     $cleanPath = preg_replace('/^\.\.\//', '', $filePath);
 
 
                     echo '<div class="col-lg-7 mx-auto mt-3 p-0 border shadow">
+                            <h5 class="text-center">' . htmlspecialchars($label) . '</h5>
                             <div class="col-lg-12 mx-auto my-3 p-0 m-0">
                                 <div class="ratio ratio-16x9 p-0 m-0 w-100 h-100">
                                     <video class="w-100 h-100" style="object-fit: cover;" controls loop autoplay>
