@@ -26,9 +26,13 @@
                 <div class="col-lg-12 d-flex align-items-center justify-content-center flex-column mb-4" data-aos="fade-up">
                     <img src="./assets/accreditors_header.png" alt="" class="img-fluid">
                 </div>
+                <div class="col-lg-12 text-left p-0 m-0 position-relative">
+                    <a href="https://csu.edu.ph" style="position: absolute; top: -10px; left: 10px;"><span>CSU Official Website</span></a>
+                </div>
                 <div class="col-sm-11 col-lg-8 mx-auto">
                     <h5 class="text-start" style="font-weight: bolder;">WELCOME, ACCREDITORS</h5>
-                    <p class="text-start mt-1" style="font-size: 0.9em; letter-spacing: 1.5px;">This is the virtual room for the College of Engineering and Architecture. You're currently in its landing page. For you to proceed to different pages of this site, scroll down to see every departments below and click it.</p>
+                    <p class="text-start mt-1" style="font-size: 0.9em; letter-spacing: 1.5px;">This is the virtual room for the College of Engineering and Architecture. You're currently in its landing page.
+                    </p> <a href="./ce" class="btn btn-danger">BSCE Level IV Accreditation Link</a>
                     <p class="text-start" style="font-size: 0.9em; letter-spacing: 1.5px;">We wish you a great experience navigating this site. Thank you and God bless.</p>
                 </div>
                 <div class="wrapper w-100 d-flex align-items-center justify-content-center ">
@@ -59,7 +63,7 @@
                 <img src="./assets/program_faculty_pic.png" alt="" class="img-fluid">
             </div>
             <div data-aos="fade-up" class="col-lg-11 col-md-12 col-sm-12 mb-5  d-flex align-items-center mt-3 justify-content-center flex-column mx-auto">
-                <p>
+                <p style="text-align: justify; font-size: 0.9em;">
                     <span style="font-size: 2em; color: red;">T</span>he College of Engineering of the Cagayan State University was conceived in 1981 pursuant to the national development goal of providing the manpower requirements of the country, particularly Region 02, in rural development through Science and Technology. It provides avenues to quality Engineering education to all students who have the propensity to Mathematics and Science regardless of race, sex, socio-economic status, religion and political affiliation or ideology.
 
                     In 1981, with Dr. Manuel T. Corpuz as the University President and under the pioneer Dean, Engr. Jose Borja, Bachelor of Science in Civil Engineering was the lone course offering. In 1988, six years later, under Dean Dominador T. Agatep, Bachelor of Science in Electrical Engineering and Bachelor of Science in Agricultural Engineering were offered. The offering of the latter in Tuguegarao Campus closed the same program in Lallo Campus and Piat Campus. In 1990, two years later, Bachelor of Science in Electronics and Communications Engineering and Bachelor of Science in Computer Engineering.

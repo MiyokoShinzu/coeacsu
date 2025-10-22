@@ -42,7 +42,7 @@
                     echo '<div class="col-lg-7 mx-auto mt-3 p-0 border shadow">
                             <div class="col-lg-12 mx-auto my-3 p-0 m-0">
                                 <div class="ratio ratio-16x9 p-0 m-0 w-100 h-100">
-                                    <video class="w-100 h-100" style="object-fit: cover;" controls loop>
+                                    <video class="w-100 h-100" style="object-fit: cover;" controls loop autoplay>
                                         <source src="' . $cleanPath . '" type="video/mp4">
                                        
                                         Your browser does not support the video tag.

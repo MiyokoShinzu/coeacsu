@@ -33,7 +33,7 @@
                         <a class="nav-link" href="graduates.php">Graduates</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="extension.php">Community Services</a>
+                        <a class="nav-link" href="extension.php">Community Service</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="linkages.php">International Linkages</a>
