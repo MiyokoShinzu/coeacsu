@@ -160,7 +160,7 @@
             </div>
 
             <div class="col-lg-10 mx-auto mb-3">
-                <h5 class=" text-dark mb-3">Copyrights AVP</h5>
+                <h5 class=" text-dark mb-3">Intellectual Property Rights</h5>
 
                 <?php
                 // adjust path as needed
