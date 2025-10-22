@@ -26,14 +26,15 @@
                 <div class="col-lg-12 d-flex align-items-center justify-content-center flex-column mb-4" data-aos="fade-up">
                     <img src="./assets/accreditors_header.png" alt="" class="img-fluid">
                 </div>
-                <div class="col-lg-12 text-left p-0 m-0 position-relative">
-                    <a href="https://csu.edu.ph" style="position: absolute; top: -10px; left: 10px;"><span>CSU Official Website</span></a>
-                </div>
+
                 <div class="col-sm-11 col-lg-8 mx-auto">
                     <h5 class="text-start" style="font-weight: bolder;">WELCOME, ACCREDITORS</h5>
                     <p class="text-start mt-1" style="font-size: 0.9em; letter-spacing: 1.5px;">This is the virtual room for the College of Engineering and Architecture. You're currently in its landing page.
                     </p> <a href="./ce" class="btn btn-danger">BSCE Level IV Accreditation Link</a>
-                    <p class="text-start" style="font-size: 0.9em; letter-spacing: 1.5px;">We wish you a great experience navigating this site. Thank you and God bless.</p>
+                    <a href="https://csu.edu.ph" class="btn btn-outline-warning"><span>CSU Official Website</span></a>
+                    <a href="https://www.facebook.com/csucarigcoea" class="btn btn-outline-primary"><span>COEA Official Facebook Page</span></a>
+
+                    <p class="text-start mt-3" style="font-size: 0.9em; letter-spacing: 1.5px;">We wish you a great experience navigating this site. Thank you and God bless.</p>
                 </div>
                 <div class="wrapper w-100 d-flex align-items-center justify-content-center ">
                     <hr style="height: 2px; background-color: black; width: 800px; " class="mt-4 mb-4">
