@@ -39,7 +39,7 @@
                     $cleanPath = preg_replace('/^\.\.\//', '', $filePath);
 
 
-                    echo '<div class="col-lg-7 mx-auto mt-3 p-0 border shadow">
+                    echo '<div class="col-lg-7 mx-auto mt-3 p-0 ">
                             <h5 class="text-center">' . htmlspecialchars($label) . '</h5>
                             <div class="col-lg-12 mx-auto my-3 p-0 m-0">
                                 <div class="ratio ratio-16x9 p-0 m-0 w-100 h-100">
