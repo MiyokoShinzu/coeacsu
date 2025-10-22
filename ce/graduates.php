@@ -29,7 +29,7 @@
                 <p class="text-white">Narrative Presentation</p>
             </div>
             <?php
-            $sql = "SELECT * FROM files WHERE area = 'Graduates' AND section = 'Narrative Presentation' and department='ce' ORDER BY id DESC";
+            $sql = "SELECT * FROM files WHERE area = 'Graduates' AND section = 'Narrative Presentation' and department='ce' ORDER BY id ASC";
             $result = $mysqli->query($sql);
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
@@ -43,7 +43,7 @@
                             <h5 class="text-center border-0 border-bottom border-danger mb-2 p-2 border-3" >' . htmlspecialchars($label) . '</h5>
                             <div class="col-lg-12 mx-auto my-3 p-0 m-0">
                                 <div class="ratio ratio-16x9 p-0 m-0 w-100 h-100">
-                                    <video class="w-100 h-100" style="object-fit: cover;" controls loop autoplay>
+                                    <video class="w-100 h-100" style="object-fit: cover;" controls loop>
                                         <source src="' . $cleanPath . '" type="video/mp4">
                                        
                                         Your browser does not support the video tag.
