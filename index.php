@@ -23,11 +23,15 @@
         <div class="row w-100">
 
             <div class="banner row mx-auto mt-2">
-                <div class="col-lg-8 mx-auto d-flex align-items-center justify-content-center flex-column mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <img src="./assets/accreditors_header2.png" alt="" sizes="" class="w-50" style="height: auto; width: auto">
-                    <img src="./assets/accreditors_header.png" alt="" sizes="" class="w-50" style="height: auto; width: auto">
+                <div class="col-lg-6  mx-auto d-flex align-items-center justify-content-center flex-column mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <img src="./assets/accreditation_header2.jpg" alt="" sizes="" class="img-fluid" style="height: auto; width: auto">
+
                 </div>
-                <div class="col-sm-11 col-lg-5 mx-auto" data-aos="fade-left" data-aos-delay="500">
+                <div class="col-lg-6 mx-auto d-flex align-items-center justify-content-center flex-column mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <img src="./assets/accreditors_header.png" alt="" sizes="" class="img-fluid" style="height: auto; width: auto">
+
+                </div>
+                <div class="col-sm-11 col-lg-5 mx-auto border shadow p-2" data-aos="fade-left" data-aos-delay="500">
                     <img src="./assets/accreditors.jfif" alt="" class="img-fluid mb-2">
                 </div>
                 <div class="col-sm-11 col-lg-6 mx-auto" data-aos="fade-right" data-aos-delay="500">
@@ -46,19 +50,19 @@
                 </div>
                 <div class="col-lg-12 mx-auto mt-2">
                     <div class="row">
-                        <div class="col-md-5 mx-auto" style="border-bottom: 5px solid red;">
-                            <video controls poster="./assets/template_iv.png" class="img-fluid">
+                        <div class="col-md-5 mx-auto border shadow d-flex align-items-center flex-column p-2" style="border-bottom: 5px solid red;">
+                            <video controls poster="./assets/template_csu.jfif" class="img-fluid mb-2">
                                 <source src="./assets/institutional_video.mp4" class="img-fluid" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
-                            <h4 class="text-center">Institutional Video</h4>
+                            <h5 class="text-center">Institutional Video</h5>
                         </div>
-                        <div class="col-md-5 mx-auto" style="border-bottom: 5px solid red;">
-                            <video controls poster="./assets/template_ct.png" class="img-fluid">
+                        <div class="col-md-5 mx-auto  border shadow d-flex align-items-center flex-column p-2" style="border-bottom: 5px solid red;">
+                            <video controls poster="./assets/template_iv.jfif" class="img-fluid mb-2">
                                 <source src="./assets/campus_tour.mp4" class="img-fluid" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
-                            <h4 class="text-center">Campus Tour Video</h4>
+                            <h5 class="text-center">Campus Tour Video</h5>
                         </div>
                     </div>
                 </div>
@@ -70,7 +74,7 @@
             <h4 class="text-center text-white mt-3 p-3" style="font-weight: bolder; ">College History</h4>
         </div>
         <div class="col-lg-12 mx-auto row">
-            <div class="col-md-10 mx-auto" data-aos="fade-up">
+            <div class="col-md-10 mx-auto border shadow p-2" data-aos="fade-up">
                 <img src="./assets/program_faculty_pic.png" alt="" class="img-fluid">
             </div>
             <div data-aos="fade-up" class="col-lg-10 col-md-10 col-sm-12 mb-5  d-flex align-items-center mt-3 justify-content-center flex-column mx-auto">
@@ -91,15 +95,15 @@
 
         <div class="col-lg-12 mx-auto row">
             <div class="col-lg-5 mx-auto" data-aos="fade-up">
-                <div class="col-md-12 mb-3 mx-auto d-flex align-items-center justify-content-center">
+                <div class="col-md-12 border shadow p-2 mb-3 mx-auto d-flex align-items-center justify-content-center">
                     <img src="./assets/coea_faculty_pic.png" alt="" class="img-fluid">
                 </div>
-                <div class="col-md-12 mx-auto mb-3 d-flex align-items-center justify-content-center">
+                <div class="col-md-12 border shadow p-2 mx-auto mb-3 d-flex align-items-center justify-content-center">
                     <img src="./assets/ce_faculty.jfif" alt="" class="img-fluid">
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-6 col-sm-12 mb-2   mx-auto" style="text-align: justify" data-aos="fade-up">
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-2  mx-auto" style="text-align: justify" data-aos="fade-up">
                 <p style="font-size: 0.9em">
                     <span style="font-size: 2em; color: red;">T</span>he program was opened in response to the labor demand of the region for infrastructure development, an essential factor to spur regional socio-economic growth and development.
 
@@ -124,7 +128,7 @@
                 <div class="col-lg-12 mx-auto bg-white p-4">
                     <div class="row d-flex  justify-content-center align-items-center">
 
-                        <div class="col-sm-12 col-lg-12 mb-4 mt-3 mx-auto  bg-white m-2 image-container" style="position: relative; overflow: hidden;">
+                        <div class="col-sm-12 border shadow p-2 col-lg-12 mb-4 mt-3 mx-auto  bg-white m-2 image-container" style="position: relative; overflow: hidden;">
 
                             <img src="./assets/pubmat/ce.png" alt="" class="img-fluid" />
                             <div class="overlay">
@@ -143,7 +147,7 @@
             </div>
             <div class="col-lg-12 mx-auto d-flex align-items-center justify-content-center">
                 <div class="row">
-                    <div class="col-md-6 mx-auto" data-aos="zoom-in">
+                    <div class="col-md-6 mx-auto border shadow p-2" data-aos="zoom-in">
                         <!-- Carousel -->
                         <div id="topNotchersCarousel" class="carousel slide" data-bs-ride="carousel">
                             <!-- Indicators -->
