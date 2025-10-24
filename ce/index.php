@@ -21,26 +21,25 @@
 
 
         <!-- background: #ff4C01; #FE904D-->
-        <div class="row d-flex gs-1 mt-2 justify-content-center align-items-center">
-            <div class="col-lg-6 mx-auto d-flex align-items-center justify-content-center">
-                
-                    <video src="../assets/overview_video.mp4" controls autoplay class="img-fluid"></video>
+        <div class="row d-flex gs-1 mt-2 justify-content-center align-items-center" style="border-bottom: 2px solid #FE904D;border-top: 2px solid #FE904D; ">
 
-               
+
+            <div class="col-lg-5 mb-2 mx-auto border shadow p-4 mt-4" style="border-bottom: 5px solid #FE904D;" data-aos="fade-up">
+                <video src="../assets/overview_video.mp4" controls autoplay class="img-fluid border shadow"></video>
             </div>
-            <div data-aos="fade-down" data-aos-delay="600" class="col-lg-5 col-md-10 col-sm-12 p-4 mt-4 mx-auto intro-container">
-                <p class="intro-text text-dark">
+            <div data-aos="fade-up"  class="shadow mb-2 col-lg-7 col-md-10 col-sm-12 p-4 mt-4 mx-auto intro-container">
+                <p class="intro-text text-dark" style="font-size: 0.8em;">
                     Welcome to the accreditation portal of the <strong>Bachelor of Science in Civil Engineering (BSCE)</strong> program. <br>
-                    This section is thoughtfully curated to assist our esteemed accreditors in navigating key areas of our academic and institutional performance. Here, you will find essential information about our program’s <strong>Home</strong> profile, ongoing <strong>Research</strong> and development initiatives, the achievements of our <strong>Graduates</strong>, community-engaged <strong>Extension</strong> activities, strategic <strong>International Linkages</strong>, forward-looking <strong>Planning</strong> efforts, and our documented <strong>Compliance Reports</strong>. Each link provides relevant data and documentation that reflect the BSCE program’s commitment to excellence, continuous improvement, and adherence to accreditation standards.
+                    This section is thoughtfully curated to assist our esteemed accreditors in navigating key areas of our academic and institutional performance.
+                    Here, you will find essential information about our program’s <strong>Home</strong> profile, ongoing <strong>Research</strong> and development initiatives, the achievements of our <strong>Graduates</strong>, community-engaged <strong>Community Service</strong> activities, strategic <strong>International Linkages</strong>, forward-looking <strong>Planning</strong> efforts, and our documented <strong>Compliance Reports</strong>. Each link provides relevant data and documentation that reflect the BSCE program’s commitment to excellence, continuous improvement, and adherence to accreditation standards.
                 </p>
             </div>
 
             <style>
                 .intro-container {
-                    border-bottom: 3px solid #FE904D;
+
                     /* underline color and thickness */
-                    padding-bottom: 1rem;
-                    margin-bottom: 2rem;
+                  
                 }
 
                 .intro-text {

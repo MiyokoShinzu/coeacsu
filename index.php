@@ -18,37 +18,47 @@
     <div class="main min-vh-100 ">
         <?php include "./globals/coea_header_nav.php" ?>
         <img src="./assets/coea_pub.png" class="mx-auto" alt="COEA Banner"
-            style="width: 100vw; height: auto; ">
+            style="width: 100vw; height: auto; " data-aos="fade-up">
 
         <div class="row w-100">
 
-            <div class="banner row mx-auto">
-                <div class="col-lg-12 d-flex align-items-center justify-content-center flex-column mb-4" data-aos="fade-up">
-                    <img src="./assets/accreditors_header.png" alt="" class="img-fluid">
+            <div class="banner row mx-auto mt-2">
+                <div class="col-lg-8 mx-auto d-flex align-items-center justify-content-center flex-column mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <img src="./assets/accreditors_header2.png" alt="" sizes="" class="w-50" style="height: auto; width: auto">
+                    <img src="./assets/accreditors_header.png" alt="" sizes="" class="w-50" style="height: auto; width: auto">
                 </div>
-
-                <div class="col-sm-11 col-lg-8 mx-auto">
+                <div class="col-sm-11 col-lg-5 mx-auto" data-aos="fade-left" data-aos-delay="500">
+                    <img src="./assets/accreditors.jfif" alt="" class="img-fluid mb-2">
+                </div>
+                <div class="col-sm-11 col-lg-6 mx-auto" data-aos="fade-right" data-aos-delay="500">
                     <h5 class="text-start" style="font-weight: bolder;">WELCOME, ACCREDITORS</h5>
-                    <p class="text-start mt-1" style="font-size: 0.9em; letter-spacing: 1.5px;">This is the virtual room for the College of Engineering and Architecture. You're currently in its landing page.
-                    </p> <a href="./ce" class="btn btn-danger">BSCE Level IV Accreditation Link</a>
-                    <a href="https://csu.edu.ph" class="btn btn-outline-warning"><span>CSU Official Website</span></a>
-                    <a href="https://www.facebook.com/csucarigcoea" class="btn btn-outline-primary"><span>COEA Official Facebook Page</span></a>
+                    <p class=" mt-1" style="font-size: 1.2em; letter-spacing: 1.1px; text-align: justify;">We extend our warmest welcome and sincere appreciation for visiting the virtual room of the College of Engineering and Architecture. As you explore this site, we hope you gain a meaningful and enriching experience while navigating through its various sections and resources. May this platform provide you with valuable insights into the college’s
+                        academic excellence, institutional achievements,
+                        and commitment to quality education.
+                    </p> <a href="./ce" class="btn btn-danger mb-2 w-100"> <img src="./assets/logos/pices.png" alt=" " class="me-2" style="height: 25px; width: 25px;">BSCE Level IV Accreditation Link</a>
+                    <a href="https://csu.edu.ph" class="btn btn-outline-success mb-2 w-100 d-flex align-items-center justify-content-center"><span><img src="./assets/csu_logo.png" alt="" class="me-2" style="height: 25px; width: 25px;">CSU Official Website</span></a>
+                    <a href="https://www.facebook.com/csucarigcoea" class="btn btn-outline-primary mb-2 w-100    d-flex align-items-center justify-content-center"><span><img src="./assets/facebook_logo.svg" alt="" class="me-2" style="height: 25px; width: 25px;">COEA Official Facebook Page</span></a>
 
-                    <p class="text-start mt-3" style="font-size: 0.9em; letter-spacing: 1.5px;">We wish you a great experience navigating this site. Thank you and God bless.</p>
                 </div>
                 <div class="wrapper w-100 d-flex align-items-center justify-content-center ">
                     <hr style="height: 2px; background-color: black; width: 800px; " class="mt-4 mb-4">
 
                 </div>
-                <div class="col-lg-11 mx-auto mt-2">
+                <div class="col-lg-12 mx-auto mt-2">
                     <div class="row">
                         <div class="col-md-5 mx-auto" style="border-bottom: 5px solid red;">
-                            <video src="./assets/institutional_video.mp4" class="img-fluid" controls></video>
+                            <video controls poster="./assets/template_iv.png" class="img-fluid">
+                                <source src="./assets/institutional_video.mp4" class="img-fluid" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                             <h4 class="text-center">Institutional Video</h4>
                         </div>
                         <div class="col-md-5 mx-auto" style="border-bottom: 5px solid red;">
-                            <video src="./assets/campus_tour.mp4" class="img-fluid" controls></video>
-                            <h4 class="text-center"> Campus Tour Video</h4>
+                            <video controls poster="./assets/template_ct.png" class="img-fluid">
+                                <source src="./assets/campus_tour.mp4" class="img-fluid" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <h4 class="text-center">Campus Tour Video</h4>
                         </div>
                     </div>
                 </div>
@@ -63,7 +73,7 @@
             <div class="col-md-10 mx-auto" data-aos="fade-up">
                 <img src="./assets/program_faculty_pic.png" alt="" class="img-fluid">
             </div>
-            <div data-aos="fade-up" class="col-lg-11 col-md-12 col-sm-12 mb-5  d-flex align-items-center mt-3 justify-content-center flex-column mx-auto">
+            <div data-aos="fade-up" class="col-lg-10 col-md-10 col-sm-12 mb-5  d-flex align-items-center mt-3 justify-content-center flex-column mx-auto">
                 <p style="text-align: justify; font-size: 0.9em;">
                     <span style="font-size: 2em; color: red;">T</span>he College of Engineering of the Cagayan State University was conceived in 1981 pursuant to the national development goal of providing the manpower requirements of the country, particularly Region 02, in rural development through Science and Technology. It provides avenues to quality Engineering education to all students who have the propensity to Mathematics and Science regardless of race, sex, socio-economic status, religion and political affiliation or ideology.
 
@@ -80,16 +90,16 @@
         </div>
 
         <div class="col-lg-12 mx-auto row">
-            <div class="col-lg-5">
-                <div class="col-md-12 mb-3 mx-auto d-flex align-items-center justify-content-center" data-aos="fade-up">
+            <div class="col-lg-5 mx-auto" data-aos="fade-up">
+                <div class="col-md-12 mb-3 mx-auto d-flex align-items-center justify-content-center">
                     <img src="./assets/coea_faculty_pic.png" alt="" class="img-fluid">
                 </div>
-                <div class="col-md-12 mx-auto mb-3 d-flex align-items-center justify-content-center" data-aos="fade-up">
+                <div class="col-md-12 mx-auto mb-3 d-flex align-items-center justify-content-center">
                     <img src="./assets/ce_faculty.jfif" alt="" class="img-fluid">
                 </div>
             </div>
 
-            <div class="col-lg-7 col-md-6 col-sm-12 mb-2   mx-auto" style="text-align: justify">
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-2   mx-auto" style="text-align: justify" data-aos="fade-up">
                 <p style="font-size: 0.9em">
                     <span style="font-size: 2em; color: red;">T</span>he program was opened in response to the labor demand of the region for infrastructure development, an essential factor to spur regional socio-economic growth and development.
 
@@ -133,7 +143,7 @@
             </div>
             <div class="col-lg-12 mx-auto d-flex align-items-center justify-content-center">
                 <div class="row">
-                    <div class="col-md-7 mx-auto">
+                    <div class="col-md-6 mx-auto" data-aos="zoom-in">
                         <!-- Carousel -->
                         <div id="topNotchersCarousel" class="carousel slide" data-bs-ride="carousel">
                             <!-- Indicators -->
