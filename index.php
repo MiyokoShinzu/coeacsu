@@ -307,6 +307,109 @@
             outline-offset: 3px;
         }
 
+
+        /* Animated image gallery */
+        .image-frame,
+        .content-card figure,
+        figure.content-card,
+        .department-card {
+            position: relative;
+        }
+
+        .image-frame img,
+        figure.content-card img,
+        .history-section figure img,
+        .department-card>img {
+            transition: transform .55s cubic-bezier(.2, .7, .2, 1), filter .4s ease;
+            will-change: transform;
+        }
+
+        .image-frame:hover img,
+        figure.content-card:hover img,
+        .history-section figure:hover img,
+        .department-card:hover>img {
+            transform: scale(1.045);
+            filter: saturate(1.08);
+        }
+
+        /* Gallery-like presentation for the first accreditation image row */
+        .intro-section .row.g-4.align-items-stretch.mb-4>div {
+            min-width: 0;
+        }
+
+        .intro-section .row.g-4.align-items-stretch.mb-4 .image-frame {
+            position: relative;
+            isolation: isolate;
+            height: 100%;
+            min-height: 220px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(18, 48, 74, .10);
+            border: 1px solid var(--line);
+        }
+
+        .intro-section .row.g-4.align-items-stretch.mb-4 .image-frame img {
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            object-fit: cover;
+            transition: transform .65s cubic-bezier(.2, .7, .2, 1), filter .45s ease;
+        }
+
+        .intro-section .row.g-4.align-items-stretch.mb-4 .image-frame::after {
+            content: "View image";
+            position: absolute;
+            inset: auto 0 0;
+            z-index: 1;
+            padding: 2.5rem 1rem 1rem;
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: .03em;
+            opacity: 0;
+            transform: translateY(8px);
+            background: linear-gradient(transparent, rgba(8, 28, 45, .82));
+            transition: opacity .35s ease, transform .35s ease;
+            pointer-events: none;
+        }
+
+        .intro-section .row.g-4.align-items-stretch.mb-4 .image-frame:hover img {
+            transform: scale(1.06);
+            filter: brightness(.82) saturate(1.08);
+        }
+
+        .intro-section .row.g-4.align-items-stretch.mb-4 .image-frame:hover::after {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .content-card,
+        .image-frame,
+        .history-section figure,
+        .department-card {
+            transition: box-shadow .35s ease, border-color .35s ease, transform .35s ease;
+        }
+
+        .content-card:hover,
+        .image-frame:hover,
+        .history-section figure:hover {
+            box-shadow: 0 18px 38px rgba(18, 48, 74, .15);
+        }
+
+        .achievement-carousel img {
+            transition: transform .5s ease, filter .5s ease;
+        }
+
+        .achievement-carousel .carousel-item.active:hover img {
+            transform: scale(1.015);
+            filter: saturate(1.06);
+        }
+
+        @media (hover: none) {
+            .intro-section .row.g-4.align-items-stretch.mb-4 .image-frame::after {
+                opacity: .85;
+                transform: none;
+            }
+        }
+
         @media (max-width: 767.98px) {
             .page-wrap {
                 width: min(100% - 1.25rem, 1200px);
@@ -370,12 +473,12 @@
                     <div class="row g-4 align-items-stretch mb-4">
                         <div class="col-12 col-lg-6">
                             <div class="image-frame h-100 d-flex align-items-center justify-content-center">
-                                <img src="./assets/accreditation_header2.jpg" alt="Accreditation information" width="900" height="500" fetchpriority="high" decoding="async">
+                                <img src="./assets/accreditation_header2.jpg" alt="Accreditation information" width="900" height="500" fetchpriority="high" decoding="async" title="Accreditation Information">
                             </div>
                         </div>
                         <div class="col-12 col-lg-6">
                             <div class="image-frame h-100 d-flex align-items-center justify-content-center">
-                                <img src="./assets/accreditors_header.png" alt="Accreditation team and evaluation" width="900" height="500" fetchpriority="high" decoding="async">
+                                <img src="./assets/accreditors_header.png" alt="Accreditation team and evaluation" width="900" height="500" fetchpriority="high" decoding="async" title="Accreditation Team and Evaluation">
                             </div>
                         </div>
                     </div>
