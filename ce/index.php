@@ -995,7 +995,7 @@
                                 <div class="ratio ratio-16x9 video-frame">
 
                                     <iframe
-                                        src="https://www.youtube-nocookie.com/embed/kGt_wCJVLcQ?playsinline=1"
+                                        src="https://www.youtube-nocookie.com/embed/yRgSFguROO0"
                                         title="COEA Civil Engineering Program Overview"
                                         loading="eager"
                                         allow="encrypted-media; picture-in-picture; fullscreen"
