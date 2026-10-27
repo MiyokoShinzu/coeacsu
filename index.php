@@ -2,6 +2,12 @@
 <html lang="en">
 
 <head>
+    <?php
+    // Build asset URLs from the current script directory so images work in root or subfolder installs.
+    $scriptDirectory = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/'));
+    $scriptDirectory = rtrim($scriptDirectory, '/');
+    $assetBase = ($scriptDirectory === '' ? '' : $scriptDirectory) . '/assets/';
+    ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COEA</title>
@@ -13,18 +19,21 @@
 
     <style>
         :root {
-            --navy: #12304a;
-            --navy-deep: #0b2236;
-            --blue: #245b78;
-            --red: #a62932;
-            --gold: #c49a48;
-            --ink: #243342;
-            --muted: #617181;
+            --orange: #f47721;
+            --orange-dark: #c94f0b;
+            --orange-deep: #8f3507;
+            --navy: #9a3d08;
+            --navy-deep: #542606;
+            --blue: #b65316;
+            --red: #e96817;
+            --gold: #ffb347;
+            --ink: #30271f;
+            --muted: #716254;
             --paper: #ffffff;
-            --canvas: #f4f7fa;
-            --line: #dce4eb;
+            --canvas: #fff8f1;
+            --line: #f0d9c7;
             --radius: 18px;
-            --shadow: 0 12px 34px rgba(18, 48, 74, .09);
+            --shadow: 0 12px 34px rgba(143, 53, 7, .10);
         }
 
         * {
@@ -40,7 +49,7 @@
             margin: 0;
             color: var(--ink);
             background: var(--canvas);
-            font-family: "DM Sans", Arial, sans-serif;
+            font-family: "Poppins", Arial, sans-serif;
             line-height: 1.7;
             overflow-x: clip;
         }
@@ -77,7 +86,7 @@
             max-height: 430px;
             object-fit: cover;
             object-position: center;
-            background: #e8edf2;
+            background: #fff0e2;
         }
 
         .intro-section {
@@ -115,7 +124,7 @@
 
         .image-frame {
             overflow: hidden;
-            background: #e9eef3;
+            background: #fff0e2;
             border-radius: 12px;
         }
 
@@ -158,7 +167,7 @@
 
         .action-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 7px 18px rgba(18, 48, 74, .13);
+            box-shadow: 0 7px 18px rgba(143, 53, 7, .16);
         }
 
         .action-link img {
@@ -174,7 +183,7 @@
 
         .action-primary:hover {
             color: #fff;
-            background: #861f28;
+            background: var(--orange-dark);
         }
 
         .action-outline {
@@ -185,7 +194,7 @@
 
         .action-outline:hover {
             color: var(--navy-deep);
-            background: #edf3f7;
+            background: #fff0e2;
         }
 
         .heading-band {
@@ -223,7 +232,7 @@
             display: block;
             width: 100%;
             aspect-ratio: 16 / 9;
-            background: #0b2236;
+            background: var(--orange-deep);
             border-radius: 10px;
         }
 
@@ -249,7 +258,7 @@
             inset: auto 0 0;
             padding: 2rem 1.5rem 1.5rem;
             color: #fff;
-            background: linear-gradient(transparent, rgba(8, 28, 45, .94));
+            background: linear-gradient(transparent, rgba(84, 38, 6, .94));
         }
 
         .department-overlay h3 {
@@ -265,7 +274,7 @@
         }
 
         .department-overlay .btn:hover {
-            background: #861f28;
+            background: var(--orange-dark);
         }
 
         .carousel-shell {
@@ -279,7 +288,7 @@
             width: 100%;
             height: clamp(250px, 55vw, 560px);
             object-fit: contain;
-            background: #f0f3f6;
+            background: #fff4e9;
             border-radius: 10px;
         }
 
@@ -337,7 +346,7 @@
             height: 100%;
             min-height: 220px;
             border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(18, 48, 74, .10);
+            box-shadow: 0 8px 24px rgba(143, 53, 7, .10);
             border: 1px solid var(--line);
         }
 
@@ -360,7 +369,7 @@
             letter-spacing: .03em;
             opacity: 0;
             transform: translateY(8px);
-            background: linear-gradient(transparent, rgba(8, 28, 45, .82));
+            background: linear-gradient(transparent, rgba(84, 38, 6, .82));
             transition: opacity .35s ease, transform .35s ease;
             pointer-events: none;
         }
@@ -385,7 +394,7 @@
         .content-card:hover,
         .image-frame:hover,
         .history-section figure:hover {
-            box-shadow: 0 18px 38px rgba(18, 48, 74, .15);
+            box-shadow: 0 18px 38px rgba(143, 53, 7, .16);
         }
 
         .achievement-carousel img {
@@ -447,11 +456,11 @@
     </style>
 </head>
 
-<body class="position-relative" style="overflow-x: hidden; font-family: 'Poppins', sans-serif;">
+<body class="position-relative">
 
     <div class="main min-vh-100 ">
         <?php include "./globals/coea_header_nav.php" ?>
-        <img src="./assets/coea_pub.png" class="mx-auto" alt="COEA Banner"
+        <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES, 'UTF-8') ?>coea_pub.png" class="mx-auto" alt="COEA Banner"
             style="width: 100vw; height: auto; " data-aos="fade-up">
 
         <section class="intro-section">
@@ -459,7 +468,7 @@
                 <div class="row g-4 align-items-stretch mb-4">
                     <div class="col-12 col-lg-6">
                         <div class="image-frame h-100 d-flex align-items-center justify-content-center">
-                            <img src="./assets/accreditation_header2.jpg"
+                            <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES, 'UTF-8') ?>accreditation_header2.jpg"
                                 alt="Accreditation information"
                                 width="900" height="500" fetchpriority="high" decoding="async"
                                 title="Accreditation Information">
@@ -467,7 +476,7 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <div class="image-frame h-100 d-flex align-items-center justify-content-center">
-                            <img src="./assets/accreditors_header.png"
+                            <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES, 'UTF-8') ?>accreditors_header.png"
                                 alt="Accreditation team and evaluation"
                                 width="900" height="500" fetchpriority="high" decoding="async"
                                 title="Accreditation Team and Evaluation">
@@ -479,7 +488,7 @@
 
         <section class="topnotchers-section" aria-labelledby="topNotchersHeading">
             <div class="text-center text-white py-3 mb-4"
-                style="background: rgb(174, 14, 14);">
+                style="background: var(--orange);">
                 <h2 id="topNotchersHeading" class="h4 mb-0 fw-bold">Topnotchers</h2>
             </div>
 
@@ -502,28 +511,28 @@
 
                                 <div class="carousel-inner achievement-carousel">
                                     <div class="carousel-item active">
-                                        <img src="./assets/performing_school.jfif" class="d-block w-100 img-fluid" alt="Performing school achievement">
+                                        <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES, 'UTF-8') ?>performing_school.jfif" class="d-block w-100 img-fluid" alt="Performing school achievement">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="./assets/top_notchers4.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 1" loading="lazy">
+                                        <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES, 'UTF-8') ?>top_notchers4.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 1" loading="lazy">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="./assets/top_notchers2.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 2" loading="lazy">
+                                        <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES, 'UTF-8') ?>top_notchers2.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 2" loading="lazy">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="./assets/top_notchers3.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 3" loading="lazy">
+                                        <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES, 'UTF-8') ?>top_notchers3.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 3" loading="lazy">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="./assets/top_notchers1.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 4" loading="lazy">
+                                        <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES, 'UTF-8') ?>top_notchers1.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 4" loading="lazy">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="./assets/top_notchers5.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 5" loading="lazy">
+                                        <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES, 'UTF-8') ?>top_notchers5.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 5" loading="lazy">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="./assets/top_notchers6.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 6" loading="lazy">
+                                        <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES, 'UTF-8') ?>top_notchers6.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 6" loading="lazy">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="./assets/top_notchers8.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 7" loading="lazy">
+                                        <img src="<?= htmlspecialchars($assetBase, ENT_QUOTES, 'UTF-8') ?>top_notchers8.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 7" loading="lazy">
                                     </div>
                                 </div>
 
@@ -560,7 +569,7 @@
             left: 0;
             height: 100%;
             width: 100%;
-            background: linear-gradient(5deg, rgba(254, 145, 77, 0.67) 1px, rgba(0, 0, 0, 0.7));
+            background: linear-gradient(5deg, rgba(244, 119, 33, 0.72) 1px, rgba(0, 0, 0, 0.7));
 
             display: flex;
             justify-content: center;
