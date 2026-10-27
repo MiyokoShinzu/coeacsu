@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-<<<<<<< HEAD
     <style>
         :root {
             --navy: #12304a;
@@ -446,8 +445,6 @@
             }
         }
     </style>
-=======
->>>>>>> parent of 707dac2 (Update index.php)
 </head>
 
 <body class="position-relative" style="overflow-x: hidden; font-family: 'Poppins', sans-serif;">
@@ -457,95 +454,97 @@
         <img src="./assets/coea_pub.png" class="mx-auto" alt="COEA Banner"
             style="width: 100vw; height: auto; " data-aos="fade-up">
 
-            <section class="intro-section">
-                <div class="page-wrap">
-                    <div class="row g-4 align-items-stretch mb-4">
-                        <div class="col-12 col-lg-6">
-                            <div class="image-frame h-100 d-flex align-items-center justify-content-center">
-                                <img src="./assets/accreditation_header2.jpg" alt="Accreditation information" width="900" height="500" fetchpriority="high" decoding="async" title="Accreditation Information">
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-6">
-                            <div class="image-frame h-100 d-flex align-items-center justify-content-center">
-                                <img src="./assets/accreditors_header.png" alt="Accreditation team and evaluation" width="900" height="500" fetchpriority="high" decoding="async" title="Accreditation Team and Evaluation">
-                            </div>
+        <section class="intro-section">
+            <div class="page-wrap">
+                <div class="row g-4 align-items-stretch mb-4">
+                    <div class="col-12 col-lg-6">
+                        <div class="image-frame h-100 d-flex align-items-center justify-content-center">
+                            <img src="./assets/accreditation_header2.jpg"
+                                alt="Accreditation information"
+                                width="900" height="500" fetchpriority="high" decoding="async"
+                                title="Accreditation Information">
                         </div>
                     </div>
-
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 mb-5  d-flex align-items-center mt-3 justify-content-center flex-column mx-auto" style="background:rgb(174,14,14)">
-                <h4 class="text-center text-white mt-3 p-1" style="font-weight: bolder; ">Topnotchers</h4>
-            </div>
-            <div class="col-lg-12 mx-auto d-flex align-items-center justify-content-center">
-                <div class="row">
-                    <div class="col-md-6 mx-auto border shadow p-2" data-aos="zoom-in">
-                        <!-- Carousel -->
-                        <div id="topNotchersCarousel" class="carousel slide" data-bs-ride="carousel">
-                            <!-- Indicators -->
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="0" class="active"></button>
-                                <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="1"></button>
-                                <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="2"></button>
-                                <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="3"></button>
-                                <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="4"></button>
-                                <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="5"></button>
-                                <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="6"></button>
-                                <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="7"></button>
-                            </div>
-
-                            <!-- Inner -->
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="./assets/performing_school.jfif" class="d-block w-100 img-fluid" alt="">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./assets/top_notchers4.jfif" class="d-block w-100 img-fluid" alt="">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./assets/top_notchers2.jfif" class="d-block w-100 img-fluid" alt="">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./assets/top_notchers3.jfif" class="d-block w-100 img-fluid" alt="">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./assets/top_notchers1.jfif" class="d-block w-100 img-fluid" alt="">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./assets/top_notchers5.jfif" class="d-block w-100 img-fluid" alt="">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./assets/top_notchers6.jfif" class="d-block w-100 img-fluid" alt="">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./assets/top_notchers8.jfif" class="d-block w-100 img-fluid" alt="">
-                                </div>
-                            </div>
-
-                            <!-- Controls -->
-                            <button class="carousel-control-prev" type="button" data-bs-target="#topNotchersCarousel" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon"></span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#topNotchersCarousel" data-bs-slide="next">
-                                <span class="carousel-control-next-icon"></span>
-                            </button>
+                    <div class="col-12 col-lg-6">
+                        <div class="image-frame h-100 d-flex align-items-center justify-content-center">
+                            <img src="./assets/accreditors_header.png"
+                                alt="Accreditation team and evaluation"
+                                width="900" height="500" fetchpriority="high" decoding="async"
+                                title="Accreditation Team and Evaluation">
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
+        <section class="topnotchers-section" aria-labelledby="topNotchersHeading">
+            <div class="text-center text-white py-3 mb-4"
+                style="background: rgb(174, 14, 14);">
+                <h2 id="topNotchersHeading" class="h4 mb-0 fw-bold">Topnotchers</h2>
             </div>
 
-        </div>
-        <!-- background: #ff4C01; #FE904D-->
+            <div class="container pb-4">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6" data-aos="zoom-in">
+                        <div class="border rounded shadow-sm p-2">
+                            <div id="topNotchersCarousel" class="carousel slide"
+                                data-bs-ride="carousel" data-bs-interval="3000">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                    <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                    <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                    <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                                    <button type="button" data-bs-target="#topNotchersCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                                </div>
+
+                                <div class="carousel-inner achievement-carousel">
+                                    <div class="carousel-item active">
+                                        <img src="./assets/performing_school.jfif" class="d-block w-100 img-fluid" alt="Performing school achievement">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./assets/top_notchers4.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 1" loading="lazy">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./assets/top_notchers2.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 2" loading="lazy">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./assets/top_notchers3.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 3" loading="lazy">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./assets/top_notchers1.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 4" loading="lazy">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./assets/top_notchers5.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 5" loading="lazy">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./assets/top_notchers6.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 6" loading="lazy">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./assets/top_notchers8.jfif" class="d-block w-100 img-fluid" alt="Topnotchers achievement 7" loading="lazy">
+                                    </div>
+                                </div>
+
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#topNotchersCarousel" data-bs-slide="prev"
+                                    aria-label="Previous slide">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#topNotchersCarousel" data-bs-slide="next"
+                                    aria-label="Next slide">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </div>
-
-
-
 
     <?php include "globals/footer.php"; ?>
 
@@ -588,11 +587,29 @@
             filter: blur(4px);
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        const myCarousel = document.querySelector('#topNotchersCarousel');
-        const carousel = new bootstrap.Carousel(myCarousel, {
-            interval: 3000, // 3 seconds
-            ride: 'carousel'
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.AOS) {
+                AOS.init({
+                    once: true,
+                    duration: 650,
+                    offset: 80
+                });
+            }
+
+            const carouselElement = document.querySelector('#topNotchersCarousel');
+            if (carouselElement && window.bootstrap) {
+                bootstrap.Carousel.getOrCreateInstance(carouselElement, {
+                    interval: 3000,
+                    ride: 'carousel',
+                    pause: 'hover',
+                    touch: true
+                });
+            }
         });
     </script>
 </body>
