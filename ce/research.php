@@ -36,9 +36,9 @@ $departmentSql = $mysqli->real_escape_string($department);
 
         $bannerImage = '../assets/ce_faculty.jfif';
 
-        $bannerColor = '#0056B3';
+        $bannerColor = '#ff4C01';
         $bannerTextColor = '#FFFFFF';
-        $bannerOverlayColor = '#0056B3';
+        $bannerOverlayColor = '#ff4C01';
         $bannerOverlayOpacity = 0.5;
 
         include './globals/banner.php';
@@ -672,7 +672,7 @@ $departmentSql = $mysqli->real_escape_string($department);
         if ($result && $result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $filePath = $row['path'];
-                $fileName = basename($filePath);
+                $fileName = pathinfo(preg_replace('/^\d+_/', '', basename($filePath)), PATHINFO_FILENAME);
                 $cleanPath = preg_replace('/^\.\.\//', '', $filePath);
                 $pdfUrl = htmlspecialchars($cleanPath, ENT_QUOTES, 'UTF-8');
                 $viewerId = 'narrative-pdf-' . (int)$row['id'];
@@ -736,7 +736,7 @@ $departmentSql = $mysqli->real_escape_string($department);
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
-                    $fileName = basename($filePath);
+                    $fileName = pathinfo(preg_replace('/^\d+_/', '', basename($filePath)), PATHINFO_FILENAME);
 
                     echo '
         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
@@ -768,7 +768,7 @@ $departmentSql = $mysqli->real_escape_string($department);
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
-                    $fileName = basename($filePath);
+                    $fileName = pathinfo(preg_replace('/^\d+_/', '', basename($filePath)), PATHINFO_FILENAME);
 
                     echo '
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
@@ -801,7 +801,7 @@ $departmentSql = $mysqli->real_escape_string($department);
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
-                    $fileName = basename($filePath);
+                    $fileName = pathinfo(preg_replace('/^\d+_/', '', basename($filePath)), PATHINFO_FILENAME);
 
                     echo '
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
@@ -833,7 +833,7 @@ $departmentSql = $mysqli->real_escape_string($department);
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
-                    $fileName = basename($filePath);
+                    $fileName = pathinfo(preg_replace('/^\d+_/', '', basename($filePath)), PATHINFO_FILENAME);
 
                     echo '
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
@@ -865,7 +865,7 @@ $departmentSql = $mysqli->real_escape_string($department);
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
-                    $fileName = basename($filePath);
+                    $fileName = pathinfo(preg_replace('/^\d+_/', '', basename($filePath)), PATHINFO_FILENAME);
 
                     echo '
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
@@ -897,7 +897,7 @@ $departmentSql = $mysqli->real_escape_string($department);
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
-                    $fileName = basename($filePath);
+                    $fileName = pathinfo(preg_replace('/^\d+_/', '', basename($filePath)), PATHINFO_FILENAME);
 
                     echo '
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
@@ -931,7 +931,7 @@ $departmentSql = $mysqli->real_escape_string($department);
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
-                    $fileName = basename($filePath);
+                    $fileName = pathinfo(preg_replace('/^\d+_/', '', basename($filePath)), PATHINFO_FILENAME);
 
                     echo '
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
