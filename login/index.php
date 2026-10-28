@@ -25,10 +25,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($row && password_verify($password, $row['password'])) {
                 // Prevent session fixation after successful authentication.
                 session_regenerate_id(true);
+
                 $_SESSION['username'] = $row['username'];
                 $_SESSION['department'] = $row['department'];
 
-                header('Location: ../admin');
+                if (strtolower(trim($row['department'])) === 'ce') {
+                    header('Location: ../ce_admin');
+                } else {
+                    header('Location: ../ee_admin');
+                }
                 exit;
             }
 
