@@ -958,7 +958,7 @@ $departmentSql = $mysqli->real_escape_string($department);
 
 
     <?php include "../globals/footer.php"; ?>
-
+ 
     <style>
         .image-container {
             position: relative;
