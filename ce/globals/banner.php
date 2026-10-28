@@ -60,9 +60,11 @@ $bannerId = 'coea-banner-' . bin2hex(random_bytes(4));
     .coea-page-banner {
         position: relative;
         isolation: isolate;
-        width: 100%;
+        width: 100vw;
+        max-width: none;
         min-width: 0;
-        margin: 0;
+        min-height: 100vh;
+        margin: 0 0 0 calc(50% - 50vw);
         overflow: hidden;
         background: <?php echo htmlspecialchars($bannerColor, ENT_QUOTES, 'UTF-8'); ?>;
         font-family: 'Poppins', sans-serif;
@@ -104,7 +106,7 @@ $bannerId = 'coea-banner-' . bin2hex(random_bytes(4));
         justify-content: center;
         align-items: flex-start;
         width: 100%;
-        min-height: clamp(300px, 40vw, 580px);
+        min-height: 100vh;
         padding: clamp(32px, 6vw, 88px);
         color: <?php echo htmlspecialchars($bannerTextColor, ENT_QUOTES, 'UTF-8'); ?>;
         text-align: left;
@@ -262,8 +264,14 @@ $bannerId = 'coea-banner-' . bin2hex(random_bytes(4));
     }
 
     @media (max-width: 767.98px) {
+
+        .coea-page-banner,
         .coea-page-banner__content {
-            min-height: clamp(280px, 72vw, 390px);
+            min-height: 100vh;
+            min-height: 100svh;
+        }
+
+        .coea-page-banner__content {
             padding: 32px 22px;
         }
 

@@ -242,35 +242,187 @@ $departmentSql = $mysqli->real_escape_string($department);
         <div class="mt-3 col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:<?php echo $bg; ?>">
             <h5 class="text-white p-3">Narrative Report</h5>
         </div>
+        <style>
+            /* Narrative report PDF viewer */
+            .narrative-report-area {
+                width: min(1180px, calc(100% - 32px));
+                margin: 28px auto 48px;
+            }
+            .narrative-report-card {
+                overflow: hidden;
+                border: 1px solid #e7eaf0;
+                border-radius: 20px;
+                background: #fff;
+                box-shadow: 0 16px 45px rgba(25, 39, 58, .10);
+            }
+            .narrative-report-toolbar {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 16px;
+                padding: 18px 22px;
+                background: linear-gradient(115deg, #fff7f2, #fff 72%);
+                border-bottom: 1px solid #eceff3;
+            }
+            .narrative-report-fileinfo {
+                display: flex;
+                align-items: center;
+                gap: 13px;
+                min-width: 0;
+            }
+            .narrative-report-pdficon {
+                display: grid;
+                place-items: center;
+                flex: 0 0 46px;
+                width: 46px;
+                height: 46px;
+                border-radius: 14px;
+                background: #fff0e8;
+                color: #f15a24;
+                font-size: 1.45rem;
+            }
+            .narrative-report-fileinfo h3 {
+                margin: 0 0 4px;
+                color: #202938;
+                font-size: 1rem;
+                font-weight: 750;
+                overflow-wrap: anywhere;
+            }
+            .narrative-report-fileinfo p {
+                margin: 0;
+                color: #737b88;
+                font-size: .8rem;
+            }
+            .narrative-report-actions {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            .narrative-report-actions a,
+            .narrative-report-actions button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 7px;
+                min-height: 39px;
+                padding: 8px 13px;
+                border: 1px solid #e0e4ea;
+                border-radius: 10px;
+                background: #fff;
+                color: #303947;
+                font-size: .82rem;
+                font-weight: 650;
+                text-decoration: none;
+                cursor: pointer;
+                transition: background .2s ease, border-color .2s ease, transform .2s ease;
+            }
+            .narrative-report-actions a:hover,
+            .narrative-report-actions button:hover {
+                border-color: #ff7b43;
+                background: #fff6f1;
+                color: #d94b13;
+                transform: translateY(-1px);
+            }
+            .narrative-report-actions .report-open-btn {
+                border-color: #f15a24;
+                background: #f15a24;
+                color: #fff;
+            }
+            .narrative-report-actions .report-open-btn:hover {
+                background: #d94b13;
+                color: #fff;
+            }
+            .narrative-report-viewer {
+                position: relative;
+                padding: 14px;
+                background: #edf0f4;
+            }
+            .narrative-report-viewer iframe {
+                display: block;
+                width: 100%;
+                height: clamp(560px, 78vh, 980px);
+                border: 0;
+                border-radius: 12px;
+                background: #fff;
+            }
+            .narrative-report-hint {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 11px 18px;
+                border-top: 1px solid #e9edf2;
+                color: #6d7582;
+                font-size: .78rem;
+            }
+            .narrative-report-hint i { color: #f15a24; }
+            @media (max-width: 640px) {
+                .narrative-report-area { width: calc(100% - 20px); margin: 20px auto 34px; }
+                .narrative-report-card { border-radius: 15px; }
+                .narrative-report-toolbar { padding: 15px; }
+                .narrative-report-actions { width: 100%; }
+                .narrative-report-actions a,
+                .narrative-report-actions button { flex: 1 1 auto; padding: 8px 10px; }
+                .narrative-report-viewer { padding: 7px; }
+                .narrative-report-viewer iframe { height: 72vh; min-height: 460px; border-radius: 9px; }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                .narrative-report-actions a,
+                .narrative-report-actions button { transition: none; }
+            }
+        </style>
+
         <?php
-        $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Narrative Report' and department = '$departmentSql' ORDER BY id DESC";
+        $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Narrative Report' AND department = '$departmentSql' ORDER BY id DESC";
         $result = $mysqli->query($sql);
         if ($result && $result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
+                $filePath = $row['path'];
                 $fileName = basename($filePath);
-
-
                 $cleanPath = preg_replace('/^\.\.\//', '', $filePath);
+                $pdfUrl = htmlspecialchars($cleanPath, ENT_QUOTES, 'UTF-8');
+                $viewerId = 'narrative-pdf-' . (int)$row['id'];
                 echo '
-        <div class="col-lg-7 mx-auto mb-3 mt-3 p-0 row">
-            <div class="col-lg-12 mx-auto my-3 p-0 m-0 text-center">
-               
-                <iframe 
-                    src="' . htmlspecialchars($cleanPath) . '#toolbar=0&navpanes=0&scrollbar=0"
-                    frameborder="0"
-                    style="min-height: 500px; width: 100%; border-radius: 10px;">
-                </iframe>
-                 <a href="' . htmlspecialchars($cleanPath) . '" 
-                   target="_blank" 
-                   class="btn btn-sm btn-secondary mb-2">
-                   View Fullscreen
-                </a>
-            </div>
-        </div>';
+                <section class="narrative-report-area" aria-label="Narrative report PDF">
+                    <div class="narrative-report-card" data-aos="fade-up">
+                        <div class="narrative-report-toolbar">
+                            <div class="narrative-report-fileinfo">
+                                <span class="narrative-report-pdficon"><i class="bi bi-file-earmark-pdf-fill" aria-hidden="true"></i></span>
+                                <div>
+                                    <h3>' . htmlspecialchars($fileName, ENT_QUOTES, 'UTF-8') . '</h3>
+                                    <p>Official narrative report <span aria-hidden="true">·</span> PDF document</p>
+                                </div>
+                            </div>
+                            <div class="narrative-report-actions">
+                                <button type="button" onclick="toggleNarrativePdfFullscreen(\'' . $viewerId . '\')" aria-label="Toggle PDF viewer fullscreen">
+                                    <i class="bi bi-arrows-fullscreen" aria-hidden="true"></i> Fullscreen
+                                </button>
+                                <a href="' . $pdfUrl . '" download>
+                                    <i class="bi bi-download" aria-hidden="true"></i> Download
+                                </a>
+                                <a class="report-open-btn" href="' . $pdfUrl . '" target="_blank" rel="noopener noreferrer">
+                                    <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Open PDF
+                                </a>
+                            </div>
+                        </div>
+                        <div class="narrative-report-viewer" id="' . $viewerId . '">
+                            <iframe
+                                src="' . $pdfUrl . '#toolbar=1&navpanes=0&view=FitH"
+                                title="PDF viewer: ' . htmlspecialchars($fileName, ENT_QUOTES, 'UTF-8') . '"
+                                loading="lazy"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="narrative-report-hint">
+                            <i class="bi bi-info-circle-fill" aria-hidden="true"></i>
+                            If the preview does not load in your browser, use Open PDF to view it in a new tab.
+                        </div>
+                    </div>
+                </section>';
             }
         } else {
-            echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No report found under Narrative Report.</p>';
+            echo '<div class="narrative-report-area"><p class="alert alert-warning text-center mb-0">No report found under Narrative Report.</p></div>';
         }
         ?>
 
@@ -565,6 +717,19 @@ $departmentSql = $mysqli->real_escape_string($department);
                 else if (img.webkitRequestFullscreen) img.webkitRequestFullscreen();
                 else if (img.msRequestFullscreen) img.msRequestFullscreen();
             });
+        }
+    </script>
+    <script>
+        function toggleNarrativePdfFullscreen(id) {
+            const viewer = document.getElementById(id);
+            if (!viewer) return;
+            if (document.fullscreenElement) {
+                document.exitFullscreen?.();
+            } else if (viewer.requestFullscreen) {
+                viewer.requestFullscreen();
+            } else if (viewer.webkitRequestFullscreen) {
+                viewer.webkitRequestFullscreen();
+            }
         }
     </script>
     <script>
