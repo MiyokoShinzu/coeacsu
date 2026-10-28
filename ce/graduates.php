@@ -57,9 +57,6 @@ $departmentSql = $mysqli->real_escape_string($department);
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen></iframe>
                         </div>
-                        <a class="video-open-link" href="https://youtu.be/z825J4H_83M" target="_blank" rel="noopener noreferrer">
-                            <i class="bi bi-youtube" aria-hidden="true"></i> Watch on YouTube <i class="bi bi-arrow-up-right ms-auto" aria-hidden="true"></i>
-                        </a>
                     </article>
 
                     <article class="video-card" data-aos="fade-up" data-aos-delay="100">
@@ -78,9 +75,6 @@ $departmentSql = $mysqli->real_escape_string($department);
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen></iframe>
                         </div>
-                        <a class="video-open-link" href="https://youtu.be/kGt_wCJVLcQ" target="_blank" rel="noopener noreferrer">
-                            <i class="bi bi-youtube" aria-hidden="true"></i> Watch on YouTube <i class="bi bi-arrow-up-right ms-auto" aria-hidden="true"></i>
-                        </a>
                     </article>
                 </div>
             </section>
@@ -339,27 +333,6 @@ $departmentSql = $mysqli->real_escape_string($department);
             width: 100%;
             height: 100%;
             border: 0
-        }
-
-        .video-open-link {
-            display: flex;
-            align-items: center;
-            gap: 9px;
-            margin-top: 14px;
-            padding: 12px 14px;
-            border: 1px solid #ffcfba;
-            border-radius: 11px;
-            color: var(--coea-orange);
-            font-size: .88rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: background .2s ease, border-color .2s ease
-        }
-
-        .video-open-link:hover {
-            background: #fff4ee;
-            border-color: var(--coea-orange);
-            color: #d94300
         }
 
         .document-heading {
@@ -653,7 +626,6 @@ $departmentSql = $mysqli->real_escape_string($department);
         @media(prefers-reduced-motion:reduce) {
 
             .video-card,
-            .video-open-link,
             .attachment-item,
             .document-actions a,
             .document-actions button {

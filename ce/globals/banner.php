@@ -315,7 +315,7 @@ $bannerId = 'coea-banner-' . bin2hex(random_bytes(4));
     }
 </style>
 
-<section class="coea-page-banner"
+<section class="coea-page-banner mt-5"
     id="<?php echo htmlspecialchars($bannerId, ENT_QUOTES, 'UTF-8'); ?>"
     aria-label="<?php echo htmlspecialchars($bannerTitle, ENT_QUOTES, 'UTF-8'); ?> banner">
     <img class="coea-page-banner__image"
