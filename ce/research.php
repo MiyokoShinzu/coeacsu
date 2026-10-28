@@ -12,7 +12,17 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
-<?php include '../src/connection.php'; ?>
+<?php
+include '../src/connection.php';
+
+/*
+ * PAGE CONFIGURATION
+ * Change this value when reusing this page for another department.
+ * Examples: 'ce', 'ee', 'me' (use the exact value stored in your database).
+ */
+$department = '$departmentSql';
+$departmentSql = $mysqli->real_escape_string($department);
+?>
 
 <body class="position-relative" style="overflow-x: hidden; font-family: 'Poppins', sans-serif;">
 
@@ -29,13 +39,13 @@
                 <p class="text-white">Narrative Presentation</p>
             </div>
             <?php
-            $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Narrative Presentation' and department='ce' ORDER BY id DESC";
+            $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Narrative Presentation' and department = '$departmentSql' ORDER BY id DESC";
             $result = $mysqli->query($sql);
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                     $fileName = basename($filePath);
-                    
+
                     $cleanPath = preg_replace('/^\.\.\//', '', $filePath);
 
 
@@ -60,16 +70,16 @@
                 <h5 class="text-white p-3">Narrative Report</h5>
             </div>
             <?php
-            $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Narrative Report' and department='ce' ORDER BY id DESC";
+            $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Narrative Report' and department = '$departmentSql' ORDER BY id DESC";
             $result = $mysqli->query($sql);
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                     $fileName = basename($filePath);
-                    
+
 
                     $cleanPath = preg_replace('/^\.\.\//', '', $filePath);
-                     echo '
+                    echo '
         <div class="col-lg-7 mx-auto mb-3 mt-3 p-0 row">
             <div class="col-lg-12 mx-auto my-3 p-0 m-0 text-center">
                
@@ -100,14 +110,14 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Administration Support for Research' and department='ce' ORDER BY id DESC";
+                $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Administration Support for Research' and department = '$departmentSql' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
-                        
+
                         echo '
         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
@@ -132,14 +142,14 @@
 
                 <?php
 
-                $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Campus and College RDE Agenda' and department= 'ce' ORDER BY id DESC";
+                $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Campus and College RDE Agenda' and department = '$departmentSql' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
-                        
+
                         echo '
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
@@ -165,14 +175,14 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Copyrights AVP' and department= 'ce' ORDER BY id DESC";
+                $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Copyrights AVP' and department = '$departmentSql' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
-                        
+
                         echo '
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
@@ -197,14 +207,14 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Faculty Research Awards' and department= 'ce' ORDER BY id DESC";
+                $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Faculty Research Awards' and department = '$departmentSql' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
-                        
+
                         echo '
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
@@ -229,14 +239,14 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Student Research Awards' and department= 'ce' ORDER BY id DESC";
+                $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Student Research Awards' and department = '$departmentSql' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
-                        
+
                         echo '
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
@@ -261,14 +271,14 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Special Order On Institutionally Funded Research' and department= 'ce' ORDER BY id DESC";
+                $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Special Order On Institutionally Funded Research' and department = '$departmentSql' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
 
                 if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
-                        
+
                         echo '
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
@@ -293,7 +303,7 @@
                 <?php
                 // adjust path as needed
 
-                $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Others' and department= 'ce' ORDER BY id DESC";
+                $sql = "SELECT * FROM files WHERE area = 'Research' AND section = 'Others' and department = '$departmentSql' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
 
 
@@ -302,7 +312,7 @@
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
                         $fileName = basename($filePath);
-                        
+
                         echo '
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
