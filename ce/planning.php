@@ -62,7 +62,7 @@ $bannerOverlayOpacity = 0.2;
                     $filePath = (string)$row['path'];
                     $fileName = pathinfo(preg_replace('/^\d+_/', '', basename($filePath)), PATHINFO_FILENAME);
                     $cleanPath = preg_replace('/^(\.\.\/)+/', '', $filePath);
-                    $pdfUrl = htmlspecialchars('' . ltrim($cleanPath, '/'), ENT_QUOTES, 'UTF-8');
+                    $pdfUrl = htmlspecialchars($filePath, ENT_QUOTES, 'UTF-8');
                     $viewerId = 'planning-report-' . (int)$row['id'];
                     echo '<section class="document-area" aria-label="Planning narrative report PDF"><div class="document-card" data-aos="fade-up">
         <div class="document-toolbar"><div class="document-fileinfo"><span class="pdf-icon"><i class="bi bi-file-earmark-pdf-fill" aria-hidden="true"></i></span><div><h3>' . htmlspecialchars($fileName, ENT_QUOTES, 'UTF-8') . '</h3><p>Planning report · PDF document</p></div></div>
@@ -97,7 +97,7 @@ $bannerOverlayOpacity = 0.2;
                         $filePath = (string)$row['path'];
                         $fileName = pathinfo(preg_replace('/^\d+_/', '', basename($filePath)), PATHINFO_FILENAME);
                         $attachmentPath = ltrim(preg_replace('/^(\.\.\/)+/', '', $filePath), '/');
-                        $attachmentUrl = '' . $attachmentPath;
+                        $attachmentUrl = $filePath;
                         echo '<div class="attachment-item" data-aos="fade-up"><a href="' . htmlspecialchars($attachmentUrl, ENT_QUOTES, 'UTF-8') . '" target="_blank" rel="noopener noreferrer" class="attachment-link"><span class="attachment-icon"><i class="bi bi-file-earmark-pdf-fill" aria-hidden="true"></i></span><span class="file-name">' . htmlspecialchars($fileName, ENT_QUOTES, 'UTF-8') . '</span><span class="attachment-action">Open file <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a></div>';
                     }
                 } else {
