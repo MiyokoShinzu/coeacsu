@@ -239,15 +239,180 @@ $departmentSql = $mysqli->real_escape_string($department);
             }
         </style>
 
-        <div class="mt-3 col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:<?php echo $bg; ?>">
-            <h5 class="text-white p-3">Narrative Report</h5>
-        </div>
+        <section class="coea-document-heading" data-aos="fade-up" aria-labelledby="narrativeReportTitle">
+            <span class="document-kicker"><i class="bi bi-file-earmark-pdf-fill me-2" aria-hidden="true"></i>OFFICIAL DOCUMENT</span>
+            <h2 id="narrativeReportTitle">Narrative <span>Report</span></h2>
+            <p>Read or download the College of Engineering and Architecture narrative report.</p>
+        </section>
+        <style>
+            /* Match the Narrative Presentation section's typography, spacing, and orange accents. */
+            .coea-document-heading {
+                text-align: center;
+                padding: 18px 16px 8px;
+                margin: 0 auto;
+            }
+
+            .coea-document-heading .document-kicker {
+                display: inline-block;
+                color: #ff4c01;
+                font-size: .76rem;
+                font-weight: 700;
+                letter-spacing: .12em;
+            }
+
+            .coea-document-heading h2 {
+                margin: 10px 0;
+                color: #202938;
+                font-size: clamp(1.7rem, 3vw, 2.35rem);
+                font-weight: 800;
+            }
+
+            .coea-document-heading h2 span {
+                color: #ff4c01;
+            }
+
+            .coea-document-heading p {
+                max-width: 680px;
+                margin: 0 auto;
+                color: #626873;
+            }
+
+            .attachments-heading {
+                margin-top: 18px;
+            }
+
+            .narrative-report-area {
+                width: min(1180px, calc(100% - 32px));
+            }
+
+            .narrative-report-card {
+                border-color: #e5e7eb;
+                border-radius: 18px;
+                box-shadow: 0 12px 34px rgba(0, 0, 0, .06);
+                transition: transform .3s ease, box-shadow .3s ease;
+            }
+
+            .narrative-report-card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 18px 42px rgba(0, 0, 0, .09);
+            }
+
+            .narrative-report-toolbar {
+                background: linear-gradient(115deg, #fff7f2, #fff 72%);
+            }
+
+            .narrative-report-viewer {
+                background: #f4f5f7;
+            }
+
+            .narrative-report-hint {
+                background: #fff;
+            }
+
+            /* Attachment rows become full-width, presentation-style document cards. */
+            .col-lg-10.mx-auto.mb-3>h5 {
+                margin: 22px 0 14px !important;
+                color: #202938 !important;
+                font-size: 1.08rem;
+                font-weight: 750;
+            }
+
+            .hover-container {
+                width: 100% !important;
+                min-height: 66px;
+                margin: 0 0 12px !important;
+                padding: 13px 16px !important;
+                border: 1px solid #e5e7eb !important;
+                border-radius: 14px !important;
+                background: #fff !important;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, .045) !important;
+                text-align: left !important;
+                transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+            }
+
+            .hover-container:hover {
+                transform: translateY(-3px);
+                border-color: #ffb18f !important;
+                box-shadow: 0 14px 30px rgba(241, 90, 36, .10) !important;
+            }
+
+            .hover-container>a {
+                display: block;
+                color: #202938 !important;
+            }
+
+            .hover-container .drive-preview {
+                gap: 12px;
+                min-width: 0;
+            }
+
+            .hover-container .drive-preview img {
+                flex: 0 0 38px;
+                width: 38px !important;
+                height: 38px !important;
+                margin-right: 0 !important;
+                padding: 8px;
+                border-radius: 11px;
+                background: #fff0e8;
+                object-fit: contain;
+            }
+
+            .hover-container .file-name {
+                color: #303947;
+                font-size: .88rem !important;
+                font-weight: 650;
+                overflow-wrap: anywhere;
+                line-height: 1.5;
+            }
+
+            .hover-container .drive-preview::after {
+                content: "Open file  ↗";
+                flex: 0 0 auto;
+                margin-left: auto;
+                color: #f15a24;
+                font-size: .78rem;
+                font-weight: 700;
+            }
+
+            @media (max-width: 640px) {
+                .coea-document-heading {
+                    padding: 16px 14px 6px;
+                }
+
+                .narrative-report-area {
+                    width: calc(100% - 20px);
+                }
+
+                .hover-container {
+                    padding: 12px !important;
+                }
+
+                .hover-container .drive-preview::after {
+                    content: "↗";
+                }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+
+                .narrative-report-card,
+                .hover-container {
+                    transition: none;
+                }
+
+                .narrative-report-card:hover,
+                .hover-container:hover {
+                    transform: none;
+                }
+            }
+        </style>
+
         <style>
             /* Narrative report PDF viewer */
             .narrative-report-area {
                 width: min(1180px, calc(100% - 32px));
                 margin: 28px auto 48px;
             }
+
             .narrative-report-card {
                 overflow: hidden;
                 border: 1px solid #e7eaf0;
@@ -255,6 +420,7 @@ $departmentSql = $mysqli->real_escape_string($department);
                 background: #fff;
                 box-shadow: 0 16px 45px rgba(25, 39, 58, .10);
             }
+
             .narrative-report-toolbar {
                 display: flex;
                 align-items: center;
@@ -265,12 +431,14 @@ $departmentSql = $mysqli->real_escape_string($department);
                 background: linear-gradient(115deg, #fff7f2, #fff 72%);
                 border-bottom: 1px solid #eceff3;
             }
+
             .narrative-report-fileinfo {
                 display: flex;
                 align-items: center;
                 gap: 13px;
                 min-width: 0;
             }
+
             .narrative-report-pdficon {
                 display: grid;
                 place-items: center;
@@ -282,6 +450,7 @@ $departmentSql = $mysqli->real_escape_string($department);
                 color: #f15a24;
                 font-size: 1.45rem;
             }
+
             .narrative-report-fileinfo h3 {
                 margin: 0 0 4px;
                 color: #202938;
@@ -289,17 +458,20 @@ $departmentSql = $mysqli->real_escape_string($department);
                 font-weight: 750;
                 overflow-wrap: anywhere;
             }
+
             .narrative-report-fileinfo p {
                 margin: 0;
                 color: #737b88;
                 font-size: .8rem;
             }
+
             .narrative-report-actions {
                 display: flex;
                 align-items: center;
                 flex-wrap: wrap;
                 gap: 8px;
             }
+
             .narrative-report-actions a,
             .narrative-report-actions button {
                 display: inline-flex;
@@ -318,6 +490,7 @@ $departmentSql = $mysqli->real_escape_string($department);
                 cursor: pointer;
                 transition: background .2s ease, border-color .2s ease, transform .2s ease;
             }
+
             .narrative-report-actions a:hover,
             .narrative-report-actions button:hover {
                 border-color: #ff7b43;
@@ -325,20 +498,24 @@ $departmentSql = $mysqli->real_escape_string($department);
                 color: #d94b13;
                 transform: translateY(-1px);
             }
+
             .narrative-report-actions .report-open-btn {
                 border-color: #f15a24;
                 background: #f15a24;
                 color: #fff;
             }
+
             .narrative-report-actions .report-open-btn:hover {
                 background: #d94b13;
                 color: #fff;
             }
+
             .narrative-report-viewer {
                 position: relative;
                 padding: 14px;
                 background: #edf0f4;
             }
+
             .narrative-report-viewer iframe {
                 display: block;
                 width: 100%;
@@ -347,6 +524,7 @@ $departmentSql = $mysqli->real_escape_string($department);
                 border-radius: 12px;
                 background: #fff;
             }
+
             .narrative-report-hint {
                 display: flex;
                 align-items: center;
@@ -356,20 +534,52 @@ $departmentSql = $mysqli->real_escape_string($department);
                 color: #6d7582;
                 font-size: .78rem;
             }
-            .narrative-report-hint i { color: #f15a24; }
-            @media (max-width: 640px) {
-                .narrative-report-area { width: calc(100% - 20px); margin: 20px auto 34px; }
-                .narrative-report-card { border-radius: 15px; }
-                .narrative-report-toolbar { padding: 15px; }
-                .narrative-report-actions { width: 100%; }
-                .narrative-report-actions a,
-                .narrative-report-actions button { flex: 1 1 auto; padding: 8px 10px; }
-                .narrative-report-viewer { padding: 7px; }
-                .narrative-report-viewer iframe { height: 72vh; min-height: 460px; border-radius: 9px; }
+
+            .narrative-report-hint i {
+                color: #f15a24;
             }
-            @media (prefers-reduced-motion: reduce) {
+
+            @media (max-width: 640px) {
+                .narrative-report-area {
+                    width: calc(100% - 20px);
+                    margin: 20px auto 34px;
+                }
+
+                .narrative-report-card {
+                    border-radius: 15px;
+                }
+
+                .narrative-report-toolbar {
+                    padding: 15px;
+                }
+
+                .narrative-report-actions {
+                    width: 100%;
+                }
+
                 .narrative-report-actions a,
-                .narrative-report-actions button { transition: none; }
+                .narrative-report-actions button {
+                    flex: 1 1 auto;
+                    padding: 8px 10px;
+                }
+
+                .narrative-report-viewer {
+                    padding: 7px;
+                }
+
+                .narrative-report-viewer iframe {
+                    height: 72vh;
+                    min-height: 460px;
+                    border-radius: 9px;
+                }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+
+                .narrative-report-actions a,
+                .narrative-report-actions button {
+                    transition: none;
+                }
             }
         </style>
 
