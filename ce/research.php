@@ -281,6 +281,63 @@ $departmentSql = $mysqli->real_escape_string($department);
                 margin-top: 18px;
             }
 
+            .coea-attachments-heading {
+                text-align: center;
+                padding: 22px 16px 10px;
+                margin: 12px auto 18px;
+            }
+
+            .coea-attachments-heading .attachments-kicker {
+                display: inline-block;
+                color: #ff4c01;
+                font-size: .76rem;
+                font-weight: 700;
+                letter-spacing: .12em;
+            }
+
+            .coea-attachments-heading h2 {
+                margin: 10px 0;
+                color: #202938;
+                font-size: clamp(1.7rem, 3vw, 2.35rem);
+                font-weight: 800;
+            }
+
+            .coea-attachments-heading h2 span {
+                color: #ff4c01;
+            }
+
+            .coea-attachments-heading p {
+                max-width: 680px;
+                margin: 0 auto;
+                color: #626873;
+            }
+
+            .attachment-group {
+                padding: 8px clamp(14px, 2.5vw, 28px) 18px;
+                border: 1px solid #e5e7eb;
+                border-radius: 18px;
+                background: #fff;
+                box-shadow: 0 12px 34px rgba(0, 0, 0, .045);
+            }
+
+            .attachment-group>h5 {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding-bottom: 12px;
+                border-bottom: 1px solid #f0e5df;
+            }
+
+            .attachment-group>h5::before {
+                content: "";
+                display: inline-block;
+                flex: 0 0 4px;
+                width: 4px;
+                height: 25px;
+                border-radius: 99px;
+                background: #ff4c01;
+            }
+
             .narrative-report-area {
                 width: min(1180px, calc(100% - 32px));
             }
@@ -375,8 +432,15 @@ $departmentSql = $mysqli->real_escape_string($department);
             }
 
             @media (max-width: 640px) {
-                .coea-document-heading {
+
+                .coea-document-heading,
+                .coea-attachments-heading {
                     padding: 16px 14px 6px;
+                }
+
+                .attachment-group {
+                    padding: 8px 12px 14px;
+                    border-radius: 14px;
                 }
 
                 .narrative-report-area {
@@ -636,9 +700,11 @@ $departmentSql = $mysqli->real_escape_string($department);
         }
         ?>
 
-        <div class=" col-lg-12 col-md-12 col-sm-12 mt-3 mb-5 d-flex align-items-center justify-start flex-column mx-auto" style="background:<?php echo $bg; ?>">
-            <h5 class=" text-start text-white mt-2" style="font-weight: bolder; ">Attachments</h5>
-        </div>
+        <section class="coea-attachments-heading" data-aos="fade-up" aria-labelledby="attachmentsTitle">
+            <span class="attachments-kicker"><i class="bi bi-folder2-open me-2" aria-hidden="true"></i>SUPPORTING DOCUMENTS</span>
+            <h2 id="attachmentsTitle">Research <span>Attachments</span></h2>
+            <p>Browse supporting documents, research awards, agendas, and intellectual property records.</p>
+        </section>
         <div class="col-lg-10 mx-auto mb-3">
             <h5 class=" text-dark mb-3">Administration Support for Research</h5>
 
