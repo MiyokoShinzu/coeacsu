@@ -366,16 +366,30 @@ $departmentSql = $mysqli->real_escape_string($department);
                 background: #fff;
             }
 
-            /* Attachment rows become full-width, presentation-style document cards. */
+            /* Responsive attachment grid: multiple cards per row on wider screens. */
+            .col-lg-10.mx-auto.mb-3:has(> h5) {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+                align-items: stretch;
+                column-gap: 16px;
+                row-gap: 0;
+            }
+
             .col-lg-10.mx-auto.mb-3>h5 {
+                grid-column: 1 / -1;
                 margin: 22px 0 14px !important;
                 color: #202938 !important;
                 font-size: 1.08rem;
                 font-weight: 750;
             }
 
+            .col-lg-10.mx-auto.mb-3>.alert {
+                grid-column: 1 / -1;
+            }
+
             .hover-container {
                 width: 100% !important;
+                min-width: 0;
                 min-height: 66px;
                 margin: 0 0 12px !important;
                 padding: 13px 16px !important;
@@ -445,6 +459,11 @@ $departmentSql = $mysqli->real_escape_string($department);
 
                 .narrative-report-area {
                     width: calc(100% - 20px);
+                }
+
+                .col-lg-10.mx-auto.mb-3:has(> h5) {
+                    grid-template-columns: minmax(0, 1fr);
+                    column-gap: 0;
                 }
 
                 .hover-container {
