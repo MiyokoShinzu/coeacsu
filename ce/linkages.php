@@ -4,262 +4,635 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COEA</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>International Linkages | COEA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
     <link rel="stylesheet" href=".././globals/global.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
 </head>
 <?php include '../src/connection.php'; ?>
 
-<body class="position-relative" style="overflow-x: hidden; font-family: 'Poppins', sans-serif;">
-
+<body class="position-relative" style="overflow-x:hidden;font-family:'Poppins',sans-serif;">
     <div class="main min-vh-100 w-100">
-        <?php include "./globals/header.php" ?>
-        <?php include "./globals/banner.php" ?>
+        <?php include "./globals/header.php"; ?>
+        <?php
+        $bannerTitle = 'INTERNATIONAL LINKAGES';
+        $bannerSubtitle = 'Explore COEA international partnerships, institutional collaborations, and supporting linkage documents.';
+        $bannerKicker = 'Bachelor of Science in Civil Engineering';
+        $bannerImage = '../assets/ce_faculty.jfif';
+        $bannerColor = '#ff4c01';
+        $bannerTextColor = '#FFFFFF';
+        $bannerOverlayColor = '#ff4c01';
+        $bannerOverlayOpacity = 0.2;
+        include './globals/banner.php';
+        ?>
 
-
-        <!-- background: #ff4C01; #FE904D-->
-        <?php $bg = "linear-gradient(to right, #ff4C01, #FE904D)"; ?>
-        <div class="row d-flex gs-1 mt-1 justify-content-center align-items-center " style="width: 100%; margin: 0 auto;">
-            <div class=" col-lg-12  col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:<?php echo $bg; ?>">
-                <h1 class=" text-start text-white mt-2 p-2" style="font-weight: bolder; font-size: 4em">INTERNATIONAL LINKAGES</h1>
-                <p class="text-white">Narrative Presentation</p>
-            </div>
-            <?php
-            $sql = "SELECT * FROM files WHERE area = 'International Linkages' AND section = 'Narrative Presentation' and department='ce' ORDER BY id DESC";
-            $result = $mysqli->query($sql);
-            if ($result && $result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
-                    $fileName = basename($filePath);
-                    $cleanPath = preg_replace('/^\.\.\//', '', $filePath);
-
-
-                    echo '<div class="col-lg-7 mx-auto mt-3 p-0 border shadow">
-                            <div class="col-lg-12 mx-auto my-3 p-0 m-0">
-                                <div class="ratio ratio-16x9 p-0 m-0 w-100 h-100">
-                                    <video class="w-100 h-100" style="object-fit: cover;" controls loop autoplay>
-                                        <source src="' . $cleanPath . '" type="video/mp4">
-                                       
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </div>
+        <main>
+            <section class="coea-section" aria-labelledby="communityVideoTitle">
+                <header class="section-heading" data-aos="fade-up">
+                    <span class="section-kicker"><i class="bi bi-people-fill me-2" aria-hidden="true"></i>INTERNATIONAL COLLABORATION</span>
+                    <h2 id="communityVideoTitle">Building Global <span>Connections</span></h2>
+                    <p>Watch the international linkages narrative presentation and explore reports and supporting documents about COEA partnerships.</p>
+                </header>
+                <div class="video-grid video-grid-single">
+                    <article class="video-card" data-aos="fade-up">
+                        <div class="video-card-heading">
+                            <span class="video-icon"><i class="bi bi-heart-fill" aria-hidden="true"></i></span>
+                            <div>
+                                <span class="video-kicker">Narrative Presentation</span>
+                                <h3>International Linkages</h3>
+                                <p>A presentation highlighting international partnerships and linkage activities of the Civil Engineering department.</p>
                             </div>
-                        </div>';
-                }
-            } else {
-                echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No video found under Narrative Presentation.</p>';
-            }
-            ?>
+                        </div>
+                        <div class="video-frame-wrap">
+                            <iframe src="https://www.youtube-nocookie.com/embed/5dHsNooM4PQ?playsinline=1"
+                                title="International Linkages Narrative Presentation" loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                    </article>
+                </div>
+            </section>
 
-            <div class="mt-3 col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-start flex-column mx-auto mb-3" style="background:<?php echo $bg; ?>">
-                <h5 class="text-white p-3">Narrative Report</h5>
-            </div>
+            <section class="section-heading document-heading" data-aos="fade-up" aria-labelledby="reportTitle">
+                <span class="section-kicker"><i class="bi bi-file-earmark-pdf-fill me-2" aria-hidden="true"></i>OFFICIAL DOCUMENT</span>
+                <h2 id="reportTitle">Narrative <span>Report</span></h2>
+                <p>Read or open the official international linkages narrative report.</p>
+            </section>
             <?php
             $sql = "SELECT * FROM files WHERE area = 'International Linkages' AND section = 'Narrative Report' and department='ce' ORDER BY id DESC";
             $result = $mysqli->query($sql);
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
-                    $fileName = basename($filePath);
-
+                    $filePath = $row['path'];
+                    $fileName = pathinfo(preg_replace('/^\d+_/', '', basename($filePath)), PATHINFO_FILENAME);
                     $cleanPath = preg_replace('/^\.\.\//', '', $filePath);
+                    $pdfUrl = htmlspecialchars($cleanPath, ENT_QUOTES, 'UTF-8');
+                    $viewerId = 'linkages-report-' . (int)$row['id'];
                     echo '
-        <div class="col-lg-7 mx-auto mb-3 mt-3 p-0 row">
-            <div class="col-lg-12 mx-auto my-3 p-0 m-0 text-center">
-               
-                <iframe 
-                    src="' . htmlspecialchars($cleanPath) . '#toolbar=0&navpanes=0&scrollbar=0"
-                    frameborder="0"
-                    style="min-height: 500px; width: 100%; border-radius: 10px;">
-                </iframe>
-                 <a href="' . htmlspecialchars($cleanPath) . '" 
-                   target="_blank" 
-                   class="btn btn-sm btn-secondary mb-2">
-                   View Fullscreen
-                </a>
-            </div>
-        </div>';
+                <section class="document-area" aria-label="Community service narrative report PDF">
+                    <div class="document-card" data-aos="fade-up">
+                        <div class="document-toolbar">
+                            <div class="document-fileinfo">
+                                <span class="pdf-icon"><i class="bi bi-file-earmark-pdf-fill" aria-hidden="true"></i></span>
+                                <div><h3>' . htmlspecialchars($fileName, ENT_QUOTES, 'UTF-8') . '</h3><p>International linkages report · PDF document</p></div>
+                            </div>
+                            <div class="document-actions">
+                                <button type="button" onclick="togglePdfFullscreen(\'' . $viewerId . '\')"><i class="bi bi-arrows-fullscreen" aria-hidden="true"></i> Fullscreen</button>
+                                <a href="' . $pdfUrl . '" download><i class="bi bi-download" aria-hidden="true"></i> Download</a>
+                                <a class="primary-action" href="' . $pdfUrl . '" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Open PDF</a>
+                            </div>
+                        </div>
+                        <div class="document-viewer" id="' . $viewerId . '">
+                            <iframe src="' . $pdfUrl . '#toolbar=1&navpanes=0&view=FitH" title="PDF viewer: ' . htmlspecialchars($fileName, ENT_QUOTES, 'UTF-8') . '" loading="lazy" allowfullscreen></iframe>
+                        </div>
+                        <div class="document-hint"><i class="bi bi-info-circle-fill" aria-hidden="true"></i> If the preview does not load, choose Open PDF to view it in a new tab.</div>
+                    </div>
+                </section>';
                 }
             } else {
-                echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No report found under Narrative Report.</p>';
+                echo '<div class="document-area"><p class="alert alert-warning text-center">No report found under Narrative Report.</p></div>';
             }
             ?>
 
-            <div class=" col-lg-12 col-md-12 col-sm-12 mt-3 mb-5 d-flex align-items-center justify-start flex-column mx-auto" style="background:<?php echo $bg; ?>">
-                <h5 class=" text-start text-white mt-2 p-2" style="font-weight: bolder; ">Attachments</h5>
-            </div>
-            <div class="col-lg-11 mx-auto mb-3">
-                <h3 class="text-dark mb-3 w-100 text-center">Memorandum of Understanding</h3>
-                <h6 class="text-seondary mb-3">Higher Institutions</h6>
+            <section class="section-heading document-heading" data-aos="fade-up" aria-labelledby="attachmentsTitle">
+                <span class="section-kicker"><i class="bi bi-folder2-open me-2" aria-hidden="true"></i>SUPPORTING DOCUMENTS</span>
+                <h2 id="attachmentsTitle">International Linkages <span>Attachments</span></h2>
+                <p>Browse memoranda of understanding with higher institutions and organizations, along with other supporting documents.</p>
+            </section>
 
-                <?php
-                // adjust path as needed
-
-                $sql = "SELECT * FROM files WHERE area = 'International Linkages' AND section = 'Higher Institutions' and department='ce' ORDER BY id DESC";
+            <?php
+            $attachmentSections = [
+                'Higher Institutions' => 'Memorandum of Understanding — Higher Institutions',
+                'Organizations' => 'Memorandum of Understanding — Organizations',
+                'Others' => 'Other Documents'
+            ];
+            foreach ($attachmentSections as $sectionName => $displayTitle) {
+                echo '<section class="attachment-section" aria-label="' . htmlspecialchars($displayTitle, ENT_QUOTES, 'UTF-8') . '">
+                    <div class="attachment-section-heading"><h3>' . htmlspecialchars($displayTitle, ENT_QUOTES, 'UTF-8') . '</h3></div>
+                    <div class="attachments-list">';
+                $sectionSql = $mysqli->real_escape_string($sectionName);
+                $sql = "SELECT * FROM files WHERE area = 'International Linkages' AND section = '$sectionSql' and department='ce' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
-
                 if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
-                        $fileName = basename($filePath);
-                        echo '
-        <div class="col-lg-11 mx-auto mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
-            style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
-
-            <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
-                <div class="drive-preview d-flex align-items-center">
-                    <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
-                    <span class="file-name" style="font-size: 0.7em;">' . '' . htmlspecialchars($fileName) . '</span>
-                </div>
-            </a>
-        </div>';
+                        $filePath = $row['path'];
+                        $fileName = pathinfo(preg_replace('/^\d+_/', '', basename($filePath)), PATHINFO_FILENAME);
+                        $attachmentUrl = '../admin/handlers/' . ltrim($filePath, '/');
+                        echo '<div class="attachment-item" data-aos="fade-up">
+                            <a href="' . htmlspecialchars($attachmentUrl, ENT_QUOTES, 'UTF-8') . '" target="_blank" rel="noopener noreferrer" class="attachment-link">
+                                <span class="attachment-icon"><i class="bi bi-file-earmark-pdf-fill" aria-hidden="true"></i></span>
+                                <span class="file-name">' . htmlspecialchars($fileName, ENT_QUOTES, 'UTF-8') . '</span>
+                                <span class="attachment-action">Open file <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+                            </a>
+                          </div>';
                     }
                 } else {
-                    echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No files found </p>';
+                    echo '<p class="empty-state">No files found in this section.</p>';
                 }
-                ?>
-                <h6 class="text-seondary mb-3">Organizations</h6>
-                <?php
-                // adjust path as needed
-
-                $sql = "SELECT * FROM files WHERE area = 'International Linkages' AND section = 'Organizations' and department='ce' ORDER BY id DESC";
-                $result = $mysqli->query($sql);
-
-                if ($result && $result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
-                        $fileName = basename($filePath);
-                        echo '
-        <div class="col-lg-11 mx-auto mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
-        style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
-
-            <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
-                <div class="drive-preview d-flex align-items-center">
-                <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
-                <span class="file-name" style="font-size: 0.7em;">' . '' . htmlspecialchars($fileName) . '</span>
-                </div>
-                </a>
-                </div>';
-                    }
-                } else {
-                    echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No files found </p>';
-                }
-                ?>
-                <h6 class="text-seondary mb-3">Other Documents</h6>
-                <?php
-                // adjust path as needed
-
-                $sql = "SELECT * FROM files WHERE area = 'International Linkages' AND section = 'Others' and department='ce' ORDER BY id DESC";
-                $result = $mysqli->query($sql);
-
-                if ($result && $result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $filePath = $row['path']; // assuming this contains relative path like: uploads/ce/basic.pdf
-                        $fileName = basename($filePath);
-                        echo '
-        <div class="col-lg-11 mx-auto mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
-            style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
-
-            <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
-                <div class="drive-preview d-flex align-items-center">
-                    <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
-                    <span class="file-name" style="font-size: 0.7em;">' . '' . htmlspecialchars($fileName) . '</span>
-                </div>
-            </a>
-        </div>';
-                    }
-                } else {
-                    echo '<p class="alert p-1 alert-warning  text-center text-muted" style="font-size: 0.8em;">No files found</p>';
-                }
-                ?>
-                
-
-            </div>
-
-
-
-
-
-
-        </div>
+                echo '</div></section>';
+            }
+            $mysqli->close();
+            ?>
+        </main>
+        <?php include "../globals/footer.php"; ?>
     </div>
-    </div>
-
-
-
-    <?php include "../globals/footer.php"; ?>
-
     <style>
-        .image-container {
+        :root {
+            --coea-orange: #ff4c01;
+            --coea-orange-light: #fe904d;
+            --coea-ink: #202938;
+            --coea-muted: #626873;
+            --coea-border: #e5e7eb
+        }
+
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden
+        }
+
+        .c oea-section,
+        .coea-section {
+            padding: 28px 0 14px
+        }
+
+        .section-heading {
+            text-align: center;
+            padding: 18px 16px 8px;
+            margin: 0 auto
+        }
+
+        .section-kicker {
+            display: inline-block;
+            color: var(--coea-orange);
+            font-size: .76rem;
+            font-weight: 750;
+            letter-spacing: .12em
+        }
+
+        .section-heading h2 {
+            margin: 10px 0;
+            color: var(--coea-ink);
+            font-size: clamp(1.7rem, 3vw, 2.35rem);
+            font-weight: 800
+        }
+
+        .section-heading h2 span {
+            color: var(--coea-orange)
+        }
+
+        .section-heading p {
+            max-width: 720px;
+            margin: 0 auto;
+            color: var(--coea-muted);
+            line-height: 1.7
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            width: min(1180px, calc(100% - 32px));
+            margin: 24px auto 36px
+        }
+
+        .video-card {
+            min-width: 0;
+            padding: clamp(16px, 2vw, 24px);
+            border: 1px solid var(--coea-border);
+            border-radius: 18px;
+            background: #fff;
+            box-shadow: 0 12px 34px rgba(0, 0, 0, .06);
+            transition: transform .25s ease, box-shadow .25s ease
+        }
+
+        .video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 42px rgba(0, 0, 0, .09)
+        }
+
+        .video-card-heading {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            min-height: 112px;
+            margin-bottom: 16px
+        }
+
+        .video-icon {
+            display: flex;
+            flex: 0 0 48px;
+            width: 48px;
+            height: 48px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 13px;
+            background: var(--coea-orange);
+            color: #fff;
+            font-size: 1.35rem
+        }
+
+        .video-kicker {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--coea-orange);
+            font-size: .72rem;
+            font-weight: 750;
+            letter-spacing: .08em;
+            text-transform: uppercase
+        }
+
+        .video-card h3 {
+            margin: 0 0 6px;
+            color: var(--coea-ink);
+            font-size: clamp(1.15rem, 2vw, 1.45rem);
+            font-weight: 750
+        }
+
+        .video-card p {
+            margin: 0;
+            color: #5b616a;
+            line-height: 1.65;
+            font-size: .9rem
+        }
+
+        .video-frame-wrap {
             position: relative;
             overflow: hidden;
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 12px;
+            background: #111
         }
 
-        .overlay {
+        .video-frame-wrap iframe {
             position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
+            inset: 0;
             width: 100%;
-            background: linear-gradient(5deg, rgba(254, 145, 77, 0.67) 1px, rgba(0, 0, 0, 0.7));
+            height: 100%;
+            border: 0
+        }
 
+        .document-heading {
+            padding-top: 24px
+        }
+
+        .document-area {
+            width: min(1180px, calc(100% - 32px));
+            margin: 24px auto 42px
+        }
+
+        .document-card {
+            overflow: hidden;
+            border: 1px solid var(--coea-border);
+            border-radius: 18px;
+            background: #fff;
+            box-shadow: 0 16px 45px rgba(25, 39, 58, .09)
+        }
+
+        .document-toolbar {
             display: flex;
-            justify-content: center;
             align-items: center;
-            flex-direction: column;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-            z-index: 2;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding: 18px 22px;
+            background: linear-gradient(115deg, #fff7f2, #fff 72%);
+            border-bottom: 1px solid #eceff3
         }
 
-        .image-container:hover .overlay {
-            opacity: 1;
-            visibility: visible;
+        .document-fileinfo {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            min-width: 0
         }
 
-        .image {
+        .pdf-icon {
+            display: grid;
+            place-items: center;
+            flex: 0 0 46px;
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            background: #fff0e8;
+            color: var(--coea-orange);
+            font-size: 1.45rem
+        }
+
+        .document-fileinfo h3 {
+            margin: 0 0 4px;
+            color: var(--coea-ink);
+            font-size: 1rem;
+            font-weight: 750;
+            overflow-wrap: anywhere
+        }
+
+        .document-fileinfo p {
+            margin: 0;
+            color: #737b88;
+            font-size: .8rem
+        }
+
+        .document-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px
+        }
+
+        .document-actions a,
+        .document-actions button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            min-height: 39px;
+            padding: 8px 13px;
+            border: 1px solid #e0e4ea;
+            border-radius: 10px;
+            background: #fff;
+            color: #303947;
+            font-size: .82rem;
+            font-weight: 650;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background .2s ease, border-color .2s ease
+        }
+
+        .document-actions a:hover,
+        .document-actions button:hover {
+            border-color: #ff7b43;
+            background: #fff6f1;
+            color: #d94b13
+        }
+
+        .document-actions .primary-action {
+            border-color: var(--coea-orange);
+            background: var(--coea-orange);
+            color: #fff
+        }
+
+        .document-actions .primary-action:hover {
+            background: #d94300;
+            color: #fff
+        }
+
+        .document-viewer {
+            position: relative;
+            padding: 14px;
+            background: #edf0f4
+        }
+
+        .document-viewer iframe {
+            display: block;
             width: 100%;
-            height: 100%;
-            transition: filter 0.5s ease;
+            height: clamp(500px, 75vh, 900px);
+            border: 0;
+            border-radius: 12px;
+            background: #fff
         }
 
-        .image-container:hover .image {
-            filter: blur(4px);
+        .document-hint {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 18px;
+            border-top: 1px solid #e9edf2;
+            color: #6d7582;
+            font-size: .78rem
+        }
+
+        .document-hint i {
+            color: var(--coea-orange)
+        }
+
+        .attachments-list {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 12px;
+            width: min(1180px, calc(100% - 32px));
+            margin: 22px auto 44px
+        }
+
+        .attachment-item {
+            width: 100%;
+            min-width: 0;
+            border: 1px solid #f2d5c8;
+            border-radius: 14px;
+            background: #fff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .045);
+            transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease
+        }
+
+        .attachment-item:hover {
+            transform: translateY(-2px);
+            border-color: #ffb18f;
+            box-shadow: 0 14px 30px rgba(241, 90, 36, .1)
+        }
+
+        .attachment-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            min-width: 0;
+            padding: 14px 16px;
+            color: #292929;
+            text-decoration: none
+        }
+
+        .attachment-icon {
+            display: grid;
+            place-items: center;
+            flex: 0 0 40px;
+            width: 40px;
+            height: 40px;
+            border-radius: 11px;
+            background: #fff0e8;
+            color: var(--coea-orange);
+            font-size: 1.35rem
+        }
+
+        .file-name {
+            min-width: 0;
+            flex: 1;
+            overflow-wrap: anywhere;
+            color: #303947;
+            font-size: .92rem;
+            font-weight: 650;
+            line-height: 1.5;
+            text-align: left
+        }
+
+        .attachment-action {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--coea-orange);
+            font-size: .8rem;
+            font-weight: 700;
+            white-space: nowrap
+        }
+
+        .empty-state {
+            grid-column: 1/-1;
+            padding: 18px;
+            border: 1px dashed #f0b79e;
+            border-radius: 12px;
+            background: #fff9f5;
+            color: #777;
+            text-align: center
+        }
+
+        @media(max-width:767.98px) {
+            .video-grid {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 18px;
+                width: calc(100% - 24px);
+                margin-top: 18px
+            }
+
+            .video-card {
+                border-radius: 15px
+            }
+
+            .video-card-heading {
+                min-height: 0
+            }
+
+            .document-area,
+            .attachments-list {
+                width: calc(100% - 20px)
+            }
+
+            .document-card {
+                border-radius: 15px
+            }
+
+            .document-toolbar {
+                padding: 15px
+            }
+
+            .document-actions {
+                width: 100%
+            }
+
+            .document-actions a,
+            .document-actions button {
+                flex: 1 1 auto;
+                padding: 8px 10px
+            }
+
+            .document-viewer {
+                padding: 7px
+            }
+
+            .document-viewer iframe {
+                height: 70vh;
+                min-height: 420px;
+                border-radius: 9px
+            }
+
+            .attachment-link {
+                gap: 9px;
+                padding: 12px
+            }
+
+            .attachment-action {
+                font-size: .74rem
+            }
+        }
+
+        @media(max-width:420px) {
+            .attachment-action {
+                font-size: 0
+            }
+
+            .attachment-action i {
+                font-size: 1rem
+            }
+
+            .video-icon {
+                flex-basis: 42px;
+                width: 42px;
+                height: 42px
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            .video-card,
+            .attachment-item,
+            .document-actions a,
+            .document-actions button {
+                transition: none
+            }
+
+            .video-card:hover,
+            .attachment-item:hover {
+                transform: none
+            }
+        }
+
+        .video-grid-single {
+            grid-template-columns: minmax(0, 900px);
+            justify-content: center;
+        }
+
+        .attachment-section {
+            width: min(1180px, calc(100% - 32px));
+            margin: 0 auto 32px;
+        }
+
+        .attachment-section-heading {
+            padding: 0 2px 10px;
+            border-bottom: 2px solid #ffe0d2;
+            margin-bottom: 14px;
+        }
+
+        .attachment-section-heading h3 {
+            margin: 0;
+            color: var(--coea-ink);
+            font-size: 1.1rem;
+            font-weight: 750;
+        }
+
+        @media(max-width:767.98px) {
+
+            .video-grid-single,
+            .attachment-section {
+                width: calc(100% - 24px);
+            }
         }
     </style>
-
     <script>
-        const img = document.getElementById('n_report');
-
-        img.addEventListener('click', () => {
-            if (img.requestFullscreen) {
-                img.requestFullscreen();
-            } else if (img.webkitRequestFullscreen) { // Safari
-                img.webkitRequestFullscreen();
-            } else if (img.msRequestFullscreen) { // IE11
-                img.msRequestFullscreen();
+        function togglePdfFullscreen(id) {
+            const viewer = document.getElementById(id);
+            if (!viewer) return;
+            if (document.fullscreenElement) {
+                document.exitFullscreen?.();
+                return;
             }
-        });
-    </script>
-    <script>
-        function openFullscreen(id) {
-            const iframe = document.getElementById(id);
-            if (iframe.requestFullscreen) {
-                iframe.requestFullscreen();
-            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
-                iframe.webkitRequestFullscreen();
-            } else if (iframe.msRequestFullscreen) { // IE/Edge
-                iframe.msRequestFullscreen();
-            }
+            if (viewer.requestFullscreen) viewer.requestFullscreen();
+            else if (viewer.webkitRequestFullscreen) viewer.webkitRequestFullscreen();
         }
     </script>
-
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        if (window.AOS) {
+            window.AOS.init({
+                duration: 750,
+                easing: 'ease-out-cubic',
+                once: true,
+                offset: 35
+            });
+        }
+    </script>
 </body>
 
 </html>
