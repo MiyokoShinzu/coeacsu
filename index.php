@@ -4668,6 +4668,13 @@
             will-change: transform, opacity;
         }
 
+        /* Keep AOS effects enabled at all widths; do not hide animated content on mobile. */
+        @media (max-width: 767.98px) {
+            [data-aos] {
+                pointer-events: auto;
+            }
+        }
+
         .coea-reveal {
             opacity: 0;
             transform: translateY(24px);
@@ -7101,86 +7108,127 @@
     </script>
 
 
-    <!-- AOS: load and initialize scroll animations after the DOM is ready -->
+    <!-- AOS: enabled on desktop, tablet, and mobile; refreshes after responsive layout changes. -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            /* Add AOS to the major content sections/cards without overriding explicit animations. */
-            const aosTargets = [
-                '.welcome-copy', '#accreditation-links .welcome-action',
-                '.video-section-heading', '.video-card', '.coea-topnotchers-heading',
-                '.topnotchers-card', '.college-history-heading', '.college-history-card',
-                '.history-intro', '.history-item', '.history-fact', '.campus-tour-card'
-            ];
-            aosTargets.forEach(function(selector) {
-                document.querySelectorAll(selector).forEach(function(el, index) {
-                    if (!el.hasAttribute('data-aos')) {
-                        el.setAttribute('data-aos', selector.includes('welcome-action') ? 'zoom-in' : 'fade-up');
-                    }
-                    if (!el.hasAttribute('data-aos-duration')) el.setAttribute('data-aos-duration', '700');
-                    if (selector.includes('welcome-action') && !el.hasAttribute('data-aos-delay')) {
-                        el.setAttribute('data-aos-delay', String(Math.min(index * 60, 360)));
-                    }
-                });
-            });
-            if (window.AOS) {
-                AOS.init({
-                    duration: 700,
-                    easing: 'ease-out-cubic',
-                    once: true,
-                    offset: 70,
-                    mirror: false
-                });
-                window.addEventListener('load', function() {
-                    AOS.refreshHard();
-                });
-            }
+        (function() {
+            function initializeCOEAAOS() {
+                /* Add AOS to key content on every viewport size without replacing custom effects. */
+                const aosTargets = [
+                    '.welcome-copy', '#accreditation-links .welcome-action',
+                    '.video-section-heading', '.video-card', '.coea-topnotchers-heading',
+                    '.topnotchers-card', '.college-history-heading', '.college-history-card',
+                    '.history-intro', '.history-item', '.history-fact', '.campus-tour-card'
+                ];
 
-            /* Robust typing effect: use independent text spans and begin only when the heading is ready. */
-            const title = document.getElementById('welcomeAccreditorsTitle');
-            if (title) {
-                const welcome = title.querySelector('.welcome-word');
-                const accreditors = title.querySelector('.accreditors-word');
-                const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-                if (welcome && accreditors && !reducedMotion && !title.dataset.typingStarted) {
-                    title.dataset.typingStarted = 'true';
-                    const welcomeText = 'Welcome,';
-                    const accreditorsText = 'Accreditors';
-                    welcome.textContent = '';
-                    accreditors.textContent = '';
-                    title.classList.add('is-typing');
-                    let wordIndex = 0,
-                        charIndex = 0;
-                    const words = [{
-                        el: welcome,
-                        text: welcomeText
-                    }, {
-                        el: accreditors,
-                        text: accreditorsText
-                    }];
-
-                    function typeNext() {
-                        if (wordIndex >= words.length) {
-                            title.classList.remove('is-typing');
-                            return;
+                aosTargets.forEach(function(selector) {
+                    document.querySelectorAll(selector).forEach(function(el, index) {
+                        if (!el.hasAttribute('data-aos')) {
+                            el.setAttribute('data-aos', selector.includes('welcome-action') ? 'zoom-in' : 'fade-up');
                         }
-                        const current = words[wordIndex];
-                        current.el.textContent = current.text.slice(0, charIndex + 1);
-                        charIndex++;
-                        if (charIndex >= current.text.length) {
-                            wordIndex++;
-                            charIndex = 0;
-                            if (wordIndex < words.length) {
-                                window.setTimeout(typeNext, 220);
+                        if (!el.hasAttribute('data-aos-duration')) el.setAttribute('data-aos-duration', '700');
+                        if (selector.includes('welcome-action') && !el.hasAttribute('data-aos-delay')) {
+                            el.setAttribute('data-aos-delay', String(Math.min(index * 60, 360)));
+                        }
+                    });
+                });
+
+                if (window.AOS && typeof window.AOS.init === 'function') {
+                    window.AOS.init({
+                        disable: false, // Do not disable AOS on phones or tablets.
+                        startEvent: 'DOMContentLoaded',
+                        duration: 700,
+                        easing: 'ease-out-cubic',
+                        once: true,
+                        offset: 45,
+                        mirror: false,
+                        anchorPlacement: 'top-bottom',
+                        disableMutationObserver: false,
+                        debounceDelay: 50,
+                        throttleDelay: 99
+                    });
+
+                    const refreshAOS = function() {
+                        if (window.AOS && typeof window.AOS.refreshHard === 'function') {
+                            window.AOS.refreshHard();
+                        }
+                    };
+                    window.addEventListener('load', refreshAOS, {
+                        once: true
+                    });
+                    window.addEventListener('resize', refreshAOS, {
+                        passive: true
+                    });
+                    window.addEventListener('orientationchange', refreshAOS, {
+                        passive: true
+                    });
+                    document.querySelectorAll('img').forEach(function(img) {
+                        if (!img.complete) img.addEventListener('load', refreshAOS, {
+                            once: true
+                        });
+                    });
+                } else {
+                    /* If the CDN is unavailable, avoid leaving content hidden. */
+                    document.querySelectorAll('[data-aos]').forEach(function(el) {
+                        el.style.opacity = '1';
+                        el.style.transform = 'none';
+                    });
+                }
+
+                /* Keep the existing welcome-heading typing effect. */
+                const title = document.getElementById('welcomeAccreditorsTitle');
+                if (title) {
+                    const welcome = title.querySelector('.welcome-word');
+                    const accreditors = title.querySelector('.accreditors-word');
+                    const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                    if (welcome && accreditors && !reducedMotion && !title.dataset.typingStarted) {
+                        title.dataset.typingStarted = 'true';
+                        const words = [{
+                                el: welcome,
+                                text: 'Welcome,'
+                            },
+                            {
+                                el: accreditors,
+                                text: 'Accreditors'
+                            }
+                        ];
+                        welcome.textContent = '';
+                        accreditors.textContent = '';
+                        title.classList.add('is-typing');
+                        let wordIndex = 0;
+                        let charIndex = 0;
+
+                        function typeNext() {
+                            if (wordIndex >= words.length) {
+                                title.classList.remove('is-typing');
                                 return;
                             }
+                            const current = words[wordIndex];
+                            current.el.textContent = current.text.slice(0, charIndex + 1);
+                            charIndex++;
+                            if (charIndex >= current.text.length) {
+                                wordIndex++;
+                                charIndex = 0;
+                                if (wordIndex < words.length) {
+                                    window.setTimeout(typeNext, 220);
+                                    return;
+                                }
+                            }
+                            window.setTimeout(typeNext, 110);
                         }
-                        window.setTimeout(typeNext, 110);
+                        window.setTimeout(typeNext, 500);
                     }
-                    window.setTimeout(typeNext, 500);
                 }
             }
-        });
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initializeCOEAAOS, {
+                    once: true
+                });
+            } else {
+                initializeCOEAAOS();
+            }
+        })();
     </script>
 
 
