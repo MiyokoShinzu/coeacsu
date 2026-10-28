@@ -105,7 +105,7 @@
                             </div>
                             <div class="video-frame-wrap">
                                 <video controls preload="metadata" poster="./assets/template_iv.jfif" aria-label="Campus Tour Video">
-                                    <source src="./assets/campus_tour.mp4" type="video/mp4">
+                                    <source src="../../accre_standalone_folder/campus_tour.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>

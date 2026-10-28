@@ -921,7 +921,7 @@
                     <div class="accreditors-welcome-caption">
                         <div class="accreditors-welcome-eyebrow">
                             <i class="bi bi-stars"></i>
-                            COEA Accreditation Portal
+                            BSCE Accreditation Portal
                         </div>
                         <h2>
                             Welcome, <span>Esteemed Accreditors!</span>
@@ -955,7 +955,7 @@
 
                     <div class="section-label">
                         <i class="bi bi-mortarboard-fill"></i>
-                        COEA Accreditation Portal
+                        BSCE Accreditation Portal
                     </div>
 
                     <h1 class="section-heading">
