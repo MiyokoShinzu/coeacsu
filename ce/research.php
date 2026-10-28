@@ -31,15 +31,15 @@ $departmentSql = $mysqli->real_escape_string($department);
 
         <?php
         $bannerTitle = 'Research';
-        $bannerSubtitle = 'Research Research';
-        $bannerKicker = 'COEA Reasearch';
+        $bannerSubtitle = 'Advancing Research Excellence Through Innovation, Collaboration, and Academic Development.';
+        $bannerKicker = 'Bachelor of Science in Civil Engineering';
 
         $bannerImage = '../assets/ce_faculty.jfif';
 
         $bannerColor = '#ff4C01';
         $bannerTextColor = '#FFFFFF';
         $bannerOverlayColor = '#ff4C01';
-        $bannerOverlayOpacity = 0.5;
+        $bannerOverlayOpacity = 0.2;
 
         include './globals/banner.php';
         ?>
@@ -366,12 +366,12 @@ $departmentSql = $mysqli->real_escape_string($department);
                 background: #fff;
             }
 
-            /* Responsive attachment grid: multiple cards per row on wider screens. */
+            /* Keep PDF attachment cards in one clean, responsive column. */
             .col-lg-10.mx-auto.mb-3:has(> h5) {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+                grid-template-columns: minmax(0, 1fr);
                 align-items: stretch;
-                column-gap: 16px;
+                column-gap: 0;
                 row-gap: 0;
             }
 
@@ -459,11 +459,6 @@ $departmentSql = $mysqli->real_escape_string($department);
 
                 .narrative-report-area {
                     width: calc(100% - 20px);
-                }
-
-                .col-lg-10.mx-auto.mb-3:has(> h5) {
-                    grid-template-columns: minmax(0, 1fr);
-                    column-gap: 0;
                 }
 
                 .hover-container {
