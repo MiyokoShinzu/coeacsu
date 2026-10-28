@@ -737,7 +737,7 @@ $departmentSql = $mysqli->real_escape_string($department);
         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
 
-            <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
+            <a href="' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
                     <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
                     <span class="file-name" style="font-size: 0.7em;">' . '' . htmlspecialchars($fileName) . '</span>
@@ -769,7 +769,7 @@ $departmentSql = $mysqli->real_escape_string($department);
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
 
-                <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
+                <a href="' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
                     <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
                     <span class="file-name" style="font-size: 0.7em">' . '' . htmlspecialchars($fileName) . '</span>
@@ -802,7 +802,7 @@ $departmentSql = $mysqli->real_escape_string($department);
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
         
-                <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
+                <a href="' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
                     <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
                     <span class="file-name" style="font-size: 0.7em">' . '' . htmlspecialchars($fileName) . '</span>
@@ -834,7 +834,7 @@ $departmentSql = $mysqli->real_escape_string($department);
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
         
-                <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
+                <a href="' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
                     <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
                     <span class="file-name" style="font-size: 0.7em">' . '' . htmlspecialchars($fileName) . '</span>
@@ -866,7 +866,7 @@ $departmentSql = $mysqli->real_escape_string($department);
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
         
-                <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
+                <a href="' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
                     <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
                     <span class="file-name" style="font-size: 0.7em">' . '' . htmlspecialchars($fileName) . '</span>
@@ -898,7 +898,7 @@ $departmentSql = $mysqli->real_escape_string($department);
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
         
-                <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
+                <a href="' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
                     <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
                     <span class="file-name" style="font-size: 0.7em">' . '' . htmlspecialchars($fileName) . '</span>
@@ -932,7 +932,7 @@ $departmentSql = $mysqli->real_escape_string($department);
                         <div class="col-lg-11 mb-3 d-flex align-items-center text-start text-center border shadow-sm p-1 hover-container"
                             style="background:rgba(241, 241, 241, 0.58); border-radius: 6px;">
         
-                <a href="../admin/handlers/' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
+                <a href="' . htmlspecialchars($filePath) . '" target="_blank" class="text-decoration-none text-dark w-100 hover-link">
                 <div class="drive-preview d-flex align-items-center">
                     <img src="../assets/pdf.svg" style="height: 20px; width: 20px; margin-right: 10px;" alt="Drive Icon">
                     <span class="file-name" style="font-size: 0.7em">' . '' . htmlspecialchars($fileName) . '</span>
