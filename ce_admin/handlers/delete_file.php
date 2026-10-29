@@ -32,7 +32,7 @@ if (
     strtolower($parsed_url['scheme'] ?? '') !== 'https' ||
     strpos(
         $parsed_url['path'] ?? '',
-        '/accre_standalone_folder/ee_uploads/'
+        '/accre_standalone_folder/ce_uploads/'
     ) !== 0
 ) {
     echo json_encode([
@@ -55,7 +55,7 @@ if ($filename === '' || $filename === '.' || $filename === '..') {
 
 // Physical upload directory
 $upload_dir = __DIR__
-    . '/../../../accre_standalone_folder/ee_uploads/';
+    . '/../../../accre_standalone_folder/ce_uploads/';
 
 $real_dir = realpath($upload_dir);
 

@@ -9,10 +9,10 @@ $unit = $_SESSION['department'];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Physical directory where uploaded files are stored
-    $upload_dir = '../../../accre_standalone_folder/ee_uploads/';
+    $upload_dir = '../../../accre_standalone_folder/ce_uploads/';
 
     // Public URL saved in the database
-    $upload_url = 'https://csucpe.com/accre_standalone_folder/ee_uploads/';
+    $upload_url = 'https://csucpe.com/accre_standalone_folder/ce_uploads/';
 
     $file_path = '';
     $upload_success = false;
