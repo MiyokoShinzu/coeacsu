@@ -2,7 +2,8 @@
 <?php
 session_start();
 include '../../src/connection.php';
-
+date_default_timezone_set('Asia/Manila');
+$d = date('Y-m-d H:i:s');
 $unit = $_SESSION['department'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -48,8 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($upload_success) {
 
-        $sql = "INSERT INTO files (path, section, area, department)
-                VALUES ('$file_path', '$section', '$area', '$department')";
+        $sql = "INSERT INTO files (path, section, area, department, datetime_update)
+                VALUES ('$file_path', '$section', '$area', '$department', '$d')";
 
         $result = $mysqli->query($sql);
 
