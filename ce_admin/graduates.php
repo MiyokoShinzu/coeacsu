@@ -708,7 +708,7 @@
             }
         }
 
-        fetch('../api/select_files.php?area=' + encodeURIComponent('Graduates'))
+        fetch('../api/select_files.php?department=ce&area=' + encodeURIComponent('Graduates'))
             .then(res => res.json())
             .then(data => {
                 console.log(data);

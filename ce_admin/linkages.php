@@ -709,7 +709,7 @@
             }
         }
 
-        fetch('../api/select_files.php?area=' + encodeURIComponent('International Linkages'))
+        fetch('../api/select_files.php?department=ce&area=' + encodeURIComponent('International Linkages'))
             .then(res => res.json())
             .then(data => {
                 console.log(data);

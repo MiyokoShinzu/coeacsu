@@ -710,7 +710,7 @@
             }
         }
 
-        fetch('../api/select_files.php?area=' + encodeURIComponent('Extension'))
+        fetch('../api/select_files.php?department=ce&area=' + encodeURIComponent('Extension'))
             .then(res => res.json())
             .then(data => {
                 console.log(data);

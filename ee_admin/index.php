@@ -728,7 +728,7 @@ $programName = 'BS' . ($departmentCode !== '' ? $departmentCode : 'PROGRAM');
                 <div class="hero-orbit" aria-hidden="true"></div>
                 <div class="hero-content">
                     <div class="portal-kicker"><span class="kicker-dot" aria-hidden="true"></span> College of Engineering and Architecture</div>
-                    <h1 id="portal-title">BSCE <span>Accreditation Portal</span></h1>
+                    <h1 id="portal-title">BSEE<span>Accreditation Portal</span></h1>
                     <p>Your central workspace for organizing, maintaining, and reviewing accreditation documents and program evidence for the <strong style="color:#fff;"><?php echo htmlspecialchars($programName, ENT_QUOTES, 'UTF-8'); ?> Program</strong>.</p>
                     <div class="hero-chips" aria-label="Portal features">
                         <span class="hero-chip"><i class="bi bi-folder2-open" aria-hidden="true"></i> Organized Records</span>

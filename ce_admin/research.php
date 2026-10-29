@@ -713,7 +713,7 @@
             }
         }
 
-        fetch(`../api/select_files.php?area=Research`)
+        fetch(`../api/select_files.php?area=Research&department=ce`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -772,7 +772,7 @@
             formData.append('area', 'Research');
             // This page uploads to the EE upload folder. The server should validate
             // department permissions using the session, not trust this field alone.
-            formData.append('department', 'ee');
+            formData.append('department', 'ce');
 
             const $button = $('#upload');
             $button.prop('disabled', true)

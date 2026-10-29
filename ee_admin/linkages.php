@@ -709,7 +709,7 @@
             }
         }
 
-        fetch('../api/select_files.php?area=' + encodeURIComponent('International Linkages'))
+        fetch('../api/select_files.php?department=ee&area=' + encodeURIComponent('International Linkages'))
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -768,7 +768,7 @@
             formData.append('area', 'International Linkages');
             // Preserve the International Linkages page's department value. The server should validate
             // department permissions using the session, not trust this field alone.
-            formData.append('department', 'ce');
+            formData.append('department', 'ee');
 
             const $button = $('#upload');
             $button.prop('disabled', true)

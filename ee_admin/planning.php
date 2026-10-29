@@ -789,7 +789,7 @@
             }
         }
 
-        fetch('../api/select_files.php?area=Planning')
+        fetch('../api/select_files.php?department=ee&area=Planning')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Failed to load planning files.');
@@ -905,7 +905,7 @@
             formData.append('section', section);
             formData.append('area', 'Planning');
             formData.append('label', label);
-            formData.append('department', 'ce');
+            formData.append('department', 'ee');
 
             const $button = $('#upload');
 

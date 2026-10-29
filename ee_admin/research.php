@@ -713,7 +713,7 @@
             }
         }
 
-        fetch(`../api/select_files.php?area=Research`)
+        fetch(`../api/select_files.php?department=ee&area=Research`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

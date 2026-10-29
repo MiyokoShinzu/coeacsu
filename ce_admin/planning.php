@@ -789,7 +789,7 @@
             }
         }
 
-        fetch('../api/select_files.php?area=Planning')
+        fetch('../api/select_files.php?area=Planning&department=ce')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Failed to load planning files.');
