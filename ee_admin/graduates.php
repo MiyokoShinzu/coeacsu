@@ -767,7 +767,7 @@
             formData.append('area', 'Graduates');
             // Preserve the original department value. The server should validate
             // department permissions using the session, not trust this field alone.
-            formData.append('department', 'ce');
+            formData.append('department', 'ee');
 
             const $button = $('#upload');
             $button.prop('disabled', true)
