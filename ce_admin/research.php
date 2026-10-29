@@ -700,6 +700,19 @@
         });
     </script>
     <script>
+        // Display only the original filename, hiding the timestamp prefix.
+        // The full URL remains unchanged for viewing and deleting the file.
+        function getDisplayFilename(filePath) {
+            try {
+                const pathname = new URL(filePath, window.location.origin).pathname;
+                const filename = decodeURIComponent(pathname.split('/').pop() || '');
+                return filename.replace(/^\\d+_/, '');
+            } catch (error) {
+                const filename = String(filePath || '').split('/').pop() || '';
+                return filename.replace(/^\\d+_/, '');
+            }
+        }
+
         fetch(`../api/select_files.php?area=Research`)
             .then(res => res.json())
             .then(data => {
@@ -707,7 +720,7 @@
                 data.forEach(file => {
                     const row = document.createElement('tr');
                     row.innerHTML = `
-              <td>${file.path}</td>
+              <td>${getDisplayFilename(file.path)}</td>
               <td>${file.section}</td>
               <td>${file.area}</td>
               <td>${file.datetime_update}</td>
