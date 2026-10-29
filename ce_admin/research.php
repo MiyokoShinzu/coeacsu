@@ -47,34 +47,22 @@
     </div>
     <!-- ASYNC File Upload Modal -->
     <div class="modal fade" tabindex="-1" id="files_modal" aria-labelledby="filesModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable async-files-dialog" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable async-files-dialog" role="document">
             <div class="modal-content async-files-modal">
                 <div class="modal-header async-files-header">
                     <div class="d-flex align-items-center gap-3">
                         <div class="async-files-header-icon">
-                            <i class="bi bi-folder2-open"></i>
+                            <i class="bi bi-cloud-arrow-up"></i>
                         </div>
                         <div>
-                            <h5 class="mb-1" id="filesModalLabel">File Manager</h5>
-                            <p class="mb-0">Upload and manage research documents</p>
+                            <h5 class="mb-1" id="filesModalLabel">Upload Research File</h5>
+                            <p class="mb-0">Upload a PDF document or video to the research library</p>
                         </div>
                     </div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
                 <div class="modal-body async-files-body">
-                    <section class="async-files-library mb-4">
-                        <div class="async-files-section-heading">
-                            <div>
-                                <span class="async-files-eyebrow">YOUR DOCUMENTS</span>
-                                <h6>Available Files</h6>
-                                <p>Browse files associated with this section.</p>
-                            </div>
-                            <span class="async-files-badge"><i class="bi bi-files"></i> File Library</span>
-                        </div>
-                        <div class="row g-3" id="files_row"></div>
-                    </section>
-
                     <section class="async-files-upload">
                         <div class="async-files-section-heading mb-4">
                             <div>
@@ -152,7 +140,7 @@
 
                 <div class="modal-footer async-files-footer">
                     <span><i class="bi bi-shield-check me-1"></i> ASYNC File Management</span>
-                    <span>Research Department</span>
+                    <span>Research File Upload</span>
                 </div>
             </div>
         </div>
@@ -281,7 +269,7 @@
 
         /* Modal */
         #files_modal .async-files-dialog {
-            max-width: 790px;
+            max-width: 650px;
         }
 
         #files_modal .async-files-modal {
@@ -326,7 +314,6 @@
             background: #f9fafb;
         }
 
-        #files_modal .async-files-library,
         #files_modal .async-files-upload {
             padding: 22px;
             border: 1px solid var(--async-border);
@@ -376,46 +363,6 @@
             font-size: 11px;
             font-weight: 700;
             white-space: nowrap;
-        }
-
-        #files_modal #files_row {
-            margin-top: 15px;
-        }
-
-        #files_modal #files_row:empty::after {
-            content: "Your available files will appear here.";
-            display: block;
-            width: 100%;
-            padding: 22px 12px;
-            border: 1px dashed #e2e5e9;
-            border-radius: 10px;
-            color: var(--async-muted);
-            font-size: 12px;
-            text-align: center;
-        }
-
-        #files_modal .folder-card {
-            position: relative;
-            border: 1px solid var(--async-border);
-            border-radius: 10px;
-            background: #fff;
-            transition: border-color .2s ease, box-shadow .2s ease;
-        }
-
-        #files_modal .folder-card:hover {
-            border-color: #ffb18f;
-            box-shadow: 0 5px 16px rgba(255, 76, 1, .07);
-        }
-
-        #files_modal .folder-tab {
-            position: absolute;
-            top: -10px;
-            left: 14px;
-            padding: 3px 9px;
-            border-radius: 5px;
-            background: var(--async-orange);
-            color: #fff;
-            font-size: 10px;
         }
 
         #files_modal .async-files-upload-symbol {
@@ -678,7 +625,6 @@
                 padding: 17px;
             }
 
-            #files_modal .async-files-library,
             #files_modal .async-files-upload {
                 padding: 16px;
             }
@@ -805,209 +751,120 @@
             .catch(err => console.error(err))
     </script>
     <script>
-        function uploadFile(file, section) {
+        function uploadFile(file, section, fileType) {
             const formData = new FormData();
             formData.append('file', file);
-            // Send every field expected by upload_file.php.
-            formData.append('department', "ee");
-            formData.append('area', 'Research');
+            formData.append('file_type', fileType);
             formData.append('section', section);
-            formData.append('file_type', $('#file_type').val());
+            formData.append('area', 'Research');
+            // This page uploads to the EE upload folder. The server should validate
+            // department permissions using the session, not trust this field alone.
+            formData.append('department', 'ee');
+
+            const $button = $('#upload');
+            $button.prop('disabled', true)
+                .html('<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Uploading...');
 
             $.ajax({
                 url: './handlers/upload_file.php',
-                type: 'POST',
+                method: 'POST',
                 data: formData,
                 contentType: false,
                 processData: false,
-
+                dataType: 'json',
                 xhr: function() {
-                    const xhr = new window.XMLHttpRequest();
-                    // Upload progress
-                    xhr.upload.addEventListener('progress', function(e) {
-                        if (e.lengthComputable) {
-                            const percentComplete = (e.loaded / e.total) * 100;
-                            $('#progress-bar').css('width', percentComplete + '%');
-                            $('#progress-text').text(Math.round(percentComplete) + '%');
+                    const xhr = new XMLHttpRequest();
+                    xhr.upload.addEventListener('progress', function(event) {
+                        if (event.lengthComputable) {
+                            const percent = Math.round((event.loaded / event.total) * 100);
+                            $button.html(
+                                '<div class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width:' +
+                                percent + '%"></div></div><span>' + percent + '%</span>'
+                            );
                         }
-                    }, false);
+                    });
                     return xhr;
                 },
-
-                success: function(data, textStatus, xhr) {
-                    // Log the exact server response so PHP warnings/errors can be diagnosed.
-                    console.log('Raw upload response:', data);
-
-                    let response;
-                    try {
-                        response = (typeof data === 'string') ? JSON.parse(data) : data;
-                    } catch (e) {
-                        console.error('Server returned invalid JSON:', data);
-                        $('#upload').html('<i class="bi bi-exclamation-triangle"></i> Try Again');
-                        alert('Unexpected response from server. Open F12 > Console or Network > upload_file.php > Response to see the exact server message.');
-                        return; // Do not reload; preserve the error for debugging.
-                    }
-
+                success: function(response) {
                     if (response && (response.success === '1' || response.success === 1 || response.success === true)) {
-                        $('#upload').addClass('bg-success');
-                        $('#upload').html('<i class="bi bi-check-circle me-1"></i> File successfully uploaded');
+                        $button.html('<i class="bi bi-check-circle me-1"></i> Uploaded');
                         alert('File uploaded successfully.');
-                        setTimeout(function() {
-                            window.location.reload();
-                        }, 500);
-                    } else {
-                        console.error('File upload failed:', response ? response.error : 'Empty server response');
-                        $('#upload').html('<i class="bi bi-cloud-arrow-up"></i><span>Upload File</span>');
-                        alert((response && response.error) ? response.error : 'Upload failed. Check the browser Console for details.');
+                        window.location.reload();
+                        return;
                     }
+
+                    console.error('Upload failed:', response);
+                    alert((response && response.error) ? response.error : 'Upload failed.');
+                    resetUploadButton();
                 },
                 error: function(xhr, status, error) {
-                    console.error('Upload AJAX error:', status, error);
+                    console.error('Upload request failed:', status, error);
                     console.error('HTTP status:', xhr.status);
-                    console.error('Raw server response:', xhr.responseText);
-                    $('#upload').html('<i class="bi bi-cloud-arrow-up"></i><span>Upload File</span>');
-                    alert('Upload request failed (HTTP ' + xhr.status + '). Open F12 > Console or Network > upload_file.php > Response for details.');
+                    console.error('Server response:', xhr.responseText);
+                    let message = 'Upload request failed (HTTP ' + xhr.status + ').';
+                    try {
+                        const response = JSON.parse(xhr.responseText);
+                        if (response.error) message = response.error;
+                    } catch (e) {
+                        message += ' The server did not return valid JSON. Check F12 > Network > upload_file.php > Response.';
+                    }
+                    alert(message);
+                    resetUploadButton();
                 }
             });
         }
-        // $(document).on('click', '#upload', function(e) {
-        //     e.preventDefault();
-        //     var section = $('#section').val();
-        //     console.log(section);
 
-        //     $('#upload').html(`<div class="spinner-border text-white" role="status"></div>`);
+        function resetUploadButton() {
+            $('#upload').prop('disabled', false)
+                .attr('class', 'async-files-submit')
+                .html('<i class="bi bi-cloud-arrow-up"></i><span>Upload File</span>');
+        }
 
-        //     const file = $('#file')[0].files[0];
-        //     // assumes a hidden input or source with id="case_id"
+        $(document).on('click', '#upload', function(event) {
+            event.preventDefault();
 
-        //     if (file) {
-        //         const fileSizeLimit = 20 * 1024 * 1024;
-
-        //         if (file.type !== 'application/pdf') {
-        //             $('#upload').html('Upload');
-        //             alert('Please select a PDF file.');
-        //             return;
-        //         }
-
-        //         if (file.size > fileSizeLimit) {
-        //             $('#upload').html('Upload');
-        //             alert('File size exceeds 20MB limit.');
-        //             return;
-        //         }
-
-        //         uploadFile(file, section);
-        //     } else {
-        //         $('#upload').html('Upload');
-        //         alert('Please select a file.');
-        //     }
-        // });
-        /*  $(document).on('click', '#upload', function(e) {
-              e.preventDefault();
-              var section = $('#section').val();
-              var fileType = $('#file_type').val();
-              const file = $('#file')[0].files[0];
-
-              $('#upload').html(`<div class="spinner-border text-white" role="status"></div>`);
-
-              if (!fileType) {
-                  $('#upload').html('Upload');
-                  alert('Please select a file type.');
-                  return;
-              }
-
-              if (!file) {
-                  $('#upload').html('Upload');
-                  alert('Please select a file.');
-                  return;
-              }
-
-              const fileSizeLimit = 100 * 1024 * 1024; // 100MB for video
-
-              if (fileType === 'pdf') {
-                  if (file.type !== 'application/pdf') {
-                      $('#upload').html('Upload');
-                      alert('Please select a valid PDF file.');
-                      return;
-                  }
-
-                  if (file.size > 20 * 1024 * 1024) {
-                      $('#upload').html('Upload');
-                      alert('PDF file size exceeds 20MB limit.');
-                      return;
-                  }
-
-              } else if (fileType === 'video') {
-                  const allowedVideoTypes = ['video/mp4', 'video/webm', 'video/ogg'];
-                  if (!allowedVideoTypes.includes(file.type)) {
-                      $('#upload').html('Upload');
-                      alert('Please select a valid video file (MP4, WebM, Ogg).');
-                      return;
-                  }
-
-                  if (file.size > fileSizeLimit) {
-                      $('#upload').html('Upload');
-                      alert('Video file size exceeds 100MB limit.');
-                      return;
-                  }
-              }
-
-              // Proceed with upload
-              uploadFile(file, section);
-          }); */
-        $(document).on('click', '#upload', function(e) {
-            e.preventDefault();
-            var section = $('#section').val();
-            var fileType = $('#file_type').val();
             const file = $('#file')[0].files[0];
-            $('#upload').attr('class', 'bg-white btn btn-white w-100')
-            $('#upload').html(`<div class="progress">
-                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" id="progress-bar"></div>
-                      </div>
-                      <span id="progress-text">0%</span>`);
+            const fileType = $('#file_type').val();
+            const section = $('#section').val();
 
             if (!fileType) {
-                $('#upload').html('Upload');
                 alert('Please select a file type.');
                 return;
             }
-
             if (!file) {
-                $('#upload').html('Upload');
                 alert('Please select a file.');
                 return;
             }
+            if (!section) {
+                alert('Please select a research section.');
+                return;
+            }
 
-            const fileSizeLimit = 2000 * 1024 * 1024; // 100MB for video
-
+            const allowedVideoTypes = ['video/mp4', 'video/webm', 'video/ogg'];
             if (fileType === 'pdf') {
-                if (file.type !== 'application/pdf') {
-                    $('#upload').html('Upload');
-                    alert('Please select a valid PDF file.');
+                if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
+                    alert('Please select a PDF file.');
                     return;
                 }
-
                 if (file.size > 20 * 1024 * 1024) {
-                    $('#upload').html('Upload');
-                    alert('PDF file size exceeds 20MB limit.');
+                    alert('PDF file size exceeds the 20 MB limit.');
                     return;
                 }
             } else if (fileType === 'video') {
-                const allowedVideoTypes = ['video/mp4', 'video/webm', 'video/ogg'];
                 if (!allowedVideoTypes.includes(file.type)) {
-                    $('#upload').html('Upload');
-                    alert('Please select a valid video file (MP4, WebM, Ogg).');
+                    alert('Please select a valid video file (MP4, WebM, or Ogg).');
                     return;
                 }
-
-                if (file.size > fileSizeLimit) {
-                    $('#upload').html('Upload');
-                    alert('Video file size exceeds 100MB limit.');
+                if (file.size > 100 * 1024 * 1024) {
+                    alert('Video file size exceeds the 100 MB limit.');
                     return;
                 }
+            } else {
+                alert('Invalid file type selected.');
+                return;
             }
 
-            // Proceed with upload using XMLHttpRequest
-            uploadFile(file, section);
+            uploadFile(file, section, fileType);
         });
     </script>
     <script>
