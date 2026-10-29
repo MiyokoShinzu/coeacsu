@@ -262,7 +262,6 @@ $departmentCode = strtoupper(trim((string)($_SESSION['department'] ?? '')));
         <a href="extension.php"><i class="bi bi-people-fill"></i><span>Extension</span></a>
         <a href="linkages.php"><i class="bi bi-globe2"></i><span>Linkages</span></a>
         <a href="planning.php"><i class="bi bi-diagram-3-fill"></i><span>Planning</span></a>
-        <a href="compliance.php"><i class="bi bi-check2-square"></i><span>Compliance</span></a>
         <a class="logout-link" href="../api/logout.php"><i class="bi bi-box-arrow-right"></i><span>Logout</span></a>
     </nav>
 </nav>
