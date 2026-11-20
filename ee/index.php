@@ -912,8 +912,8 @@
                 <div class="accreditors-welcome-card" data-aos="fade-up">
                     <div class="accreditors-welcome-visual">
                         <img
-                            src="../assets/accreditors.jfif"
-                            alt="Welcome to our Civil Engineering Program Accreditors"
+                            src="../assets/accreditorss.jfif"
+                            alt="Welcome to our Electrical Engineering Program Accreditors"
                             class="accreditors-welcome-image"
                             loading="eager">
                     </div>
@@ -921,13 +921,13 @@
                     <div class="accreditors-welcome-caption">
                         <div class="accreditors-welcome-eyebrow">
                             <i class="bi bi-stars"></i>
-                            BSCE Accreditation Portal
+                            BSEE Accreditation Portal
                         </div>
                         <h2>
                             Welcome, <span>Esteemed Accreditors!</span>
                         </h2>
                         <p>
-                            It is our honor to welcome you to our Civil Engineering
+                            It is our honor to welcome you to our Electrical Engineering
                             program. We sincerely appreciate your time, expertise,
                             and valuable insights as we continue our pursuit of
                             academic excellence, quality engineering education,
@@ -955,11 +955,11 @@
 
                     <div class="section-label">
                         <i class="bi bi-mortarboard-fill"></i>
-                        BSCE Accreditation Portal
+                        BSEE Accreditation Portal
                     </div>
 
                     <h1 class="section-heading">
-                        Excellence in <span>Civil Engineering</span>
+                        Excellence in <span>Electrical Engineering</span>
                     </h1>
 
                     <p class="section-subtitle">
