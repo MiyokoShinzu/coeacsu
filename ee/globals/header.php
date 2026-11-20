@@ -5,7 +5,7 @@
         <!-- Logo and Title -->
         <a class="navbar-brand d-flex align-items-center ms-3" href="../">
             <img src="../assets/coea_logo.png" alt="Logo" style="height: 30px; width: 30px;">
-            <span class="ms-2 fw-bold subtitle_n" style="font-size: 0.7em; color: #000;">COEA - BSCE</span>
+            <span class="ms-2 fw-bold subtitle_n" style="font-size: 0.7em; color: #000;">COEA - BSEE</span>
         </a>
 
         <!-- Hamburger toggler -->
