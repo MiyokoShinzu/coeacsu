@@ -20,7 +20,7 @@ include '../src/connection.php';
  * Change this value when reusing this page for another department.
  * Examples: 'ce', 'ee', 'me' (use the exact value stored in your database).
  */
-$department = 'ce';
+$department = 'ee';
 $departmentSql = $mysqli->real_escape_string($department);
 ?>
 
@@ -32,9 +32,9 @@ $departmentSql = $mysqli->real_escape_string($department);
         <?php
         $bannerTitle = 'Research';
         $bannerSubtitle = 'Advancing Research Excellence Through Innovation, Collaboration, and Academic Development.';
-        $bannerKicker = 'Bachelor of Science in Civil Engineering';
+        $bannerKicker = 'Bachelor of Science in Electrical Engineering';
 
-        $bannerImage = '../assets/ce_faculty.jfif';
+        $bannerImage = '../assets/ee_faculty.jfif';
 
         $bannerColor = '#ff4C01';
         $bannerTextColor = '#FFFFFF';
