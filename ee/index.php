@@ -1035,8 +1035,8 @@
 
                                 <p class="intro-text">
                                     Welcome to the accreditation portal of the
-                                    <strong>Bachelor of Science in Civil
-                                        Engineering (BSCE)</strong> program.
+                                    <strong>Bachelor of Science in Electrical
+                                        Engineering (BSEE)</strong> program.
                                     This portal is designed to assist our
                                     esteemed accreditors in exploring the
                                     program's academic and institutional
