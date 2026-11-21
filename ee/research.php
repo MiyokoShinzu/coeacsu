@@ -34,11 +34,11 @@ $departmentSql = $mysqli->real_escape_string($department);
         $bannerSubtitle = 'Advancing Research Excellence Through Innovation, Collaboration, and Academic Development.';
         $bannerKicker = 'Bachelor of Science in Electrical Engineering';
 
-        $bannerImage = '../assets/ee_faculty.jfif';
+        $bannerImage = '../assets/ce_faculty.jfif';
 
-        $bannerColor = '#d9ff01';
+        $bannerColor = '#ff4C01';
         $bannerTextColor = '#FFFFFF';
-        $bannerOverlayColor = '#ff4C01';
+        $bannerOverlayColor = '#f2ff01';
         $bannerOverlayOpacity = 0.2;
 
         include './globals/banner.php';
