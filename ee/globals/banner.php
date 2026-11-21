@@ -18,7 +18,7 @@ $bannerSubtitle = (isset($bannerSubtitle) && is_string($bannerSubtitle))
 $bannerKicker = (isset($bannerKicker) && is_string($bannerKicker))
     ? trim($bannerKicker) : $bannerParam('kicker', 'College of Engineering and Architecture');
 $bannerImage = (isset($bannerImage) && is_string($bannerImage) && trim($bannerImage) !== '')
-    ? trim($bannerImage) : $bannerParam('image', '../assets/ee_faculty.jfif');
+    ? trim($bannerImage) : $bannerParam('image', '../assets/ee_facultsy.jfif');
 $bannerAlt = (isset($bannerAlt) && is_string($bannerAlt) && trim($bannerAlt) !== '')
     ? trim($bannerAlt) : $bannerParam('alt', 'College of Engineering and Architecture');
 
