@@ -36,7 +36,7 @@ $departmentSql = $mysqli->real_escape_string($department);
 
         $bannerImage = '../assets/ee_faculty.jfif';
 
-        $bannerColor = '#ff4C01';
+        $bannerColor = '#d9ff01';
         $bannerTextColor = '#FFFFFF';
         $bannerOverlayColor = '#ff4C01';
         $bannerOverlayOpacity = 0.2;
