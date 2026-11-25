@@ -1286,8 +1286,9 @@
 
                             <p>
                                 The department has consistently produced graduates who perform well in the licensure examinations, with reported passing rates above the national average. 
-                                This reflects the program's commitment to academic excellence and the effectiveness of its curriculum and instruction.
-                            </p>
+                                This reflects the program's commitment to academic excellence and the effectiveness of its curriculum and instruction. 
+                               Based on its performance, the department was adjudged Top 4 and Top 6 performing school for the years 2024 and 2026 respectively.
+                               The department has also received commendations for producing licensure examination topnotchers.</p>
 
                         </article>
 
@@ -1305,7 +1306,7 @@
                                 in accordance with the pertinent provisions
                                 of Republic Act No. 7722, otherwise known as
                                 the Higher Education Act of 1994, and CHED
-                                Memorandum Order No. 028, s. 2007, containing
+                                Memorandum Order No. 088, s. 2017, containing
                                 policies, standards, and guidelines for the
                                 Electrical Engineering program.
                             </p>
@@ -1323,18 +1324,17 @@
                                 The curriculum is designed to meet or even
                                 exceed CHED's minimum requirements and
                                 incorporate recent developments and
-                                technologies in Civil Engineering, locally
+                                technologies in Electrical Engineering, locally
                                 and globally.
 
                                 It is continuously updated to provide breadth
-                                of knowledge across Civil Engineering fields
+                                of knowledge across Electrical Engineering fields
                                 through core courses, while ensuring depth
-                                and focus through areas of specialization
-                                and recommended specialization tracks.
+                                and focus through areas of specialization.
 
                                 The curriculum develops fundamental
                                 engineering tools for solving complex
-                                Civil Engineering problems and prepares
+                                Electrical Engineering problems and prepares
                                 graduates for a wide range of careers.
                                 Elective courses provide further
                                 specialization and allow the institution
