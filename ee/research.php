@@ -71,7 +71,8 @@ $departmentSql = $mysqli->real_escape_string($department);
                         </div>
                         <div class="video-frame-wrap youtube-frame-wrap">
                             <iframe
-                                src="https://www.youtube-nocookie.com/embed/-IEsr6XLenc?playsinline=1"
+                             
+                                src="https://www.youtube-nocookie.com/embed/-ZyRU2usJZ1U?playsinline=1"
                                 title="COEA Narrative Presentation"
                                 loading="eager"
                                 referrerpolicy="strict-origin-when-cross-origin"
@@ -787,7 +788,7 @@ $departmentSql = $mysqli->real_escape_string($department);
 
         </div>
 
-        
+
 
 
 
@@ -799,7 +800,7 @@ $departmentSql = $mysqli->real_escape_string($department);
 
 
     <?php include "../globals/footer.php"; ?>
- 
+
     <style>
         .image-container {
             position: relative;
