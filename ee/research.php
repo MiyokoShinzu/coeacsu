@@ -72,7 +72,7 @@ $departmentSql = $mysqli->real_escape_string($department);
                         <div class="video-frame-wrap youtube-frame-wrap">
                             <iframe
                              
-                                src="https://www.youtube-nocookie.com/embed/-ZyRU2usJZ1U?playsinline=1"
+                                src="https://www.youtube-nocookie.com/embed/ZyRU2usJZ1U?playsinline=1"
                                 title="COEA Narrative Presentation"
                                 loading="eager"
                                 referrerpolicy="strict-origin-when-cross-origin"
