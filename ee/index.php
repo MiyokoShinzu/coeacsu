@@ -1323,7 +1323,7 @@
                                 the Higher Education Act of 1994, and CHED
                                 Memorandum Order No. 028, s. 2007, containing
                                 policies, standards, and guidelines for the
-                                Civil Engineering program.
+                                Electrical Engineering program.
                             </p>
 
                         </article>

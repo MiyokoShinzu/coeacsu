@@ -13,7 +13,7 @@
 </head>
 <?php
 include '../src/connection.php';
-$department = 'ce';
+$department = 'ee';
 $departmentSql = $mysqli->real_escape_string($department);
 ?>
 
@@ -23,8 +23,8 @@ $departmentSql = $mysqli->real_escape_string($department);
         <?php
         $bannerTitle = 'GRADUATES';
         $bannerSubtitle = 'Celebrating graduate achievements, career journeys, and the impact of COEA education.';
-        $bannerKicker = 'Bachelor of Science in Civil Engineering';
-        $bannerImage = '../assets/ce_faculty.jfif';
+        $bannerKicker = 'Bachelor of Science in Electrical Engineering';
+        $bannerImage = '../assets/ee_faculty.jfif';
         $bannerColor = '#ff4c01';
         $bannerTextColor = '#FFFFFF';
         $bannerOverlayColor = '#ff4c01';
