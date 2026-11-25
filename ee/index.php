@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>COEA | Civil Engineering Accreditation Portal</title>
+    <title>COEA | Electrical Engineering Accreditation Portal</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
@@ -1128,7 +1128,7 @@
                     </div>
 
                     <h2 class="section-heading">
-                        Civil Engineering <span>Faculty</span>
+                        Electrical Engineering <span>Faculty</span>
                     </h2>
 
                     <p class="section-subtitle">
@@ -1163,7 +1163,7 @@
 
                                 <span class="faculty-badge">
                                     <i class="bi bi-mortarboard-fill me-2"></i>
-                                    Bachelor of Science in Civil Engineering
+                                    Bachelor of Science in Electrical Engineering
                                 </span>
 
                                 <h3>
@@ -1172,7 +1172,7 @@
                                 </h3>
 
                                 <p>
-                                    The Civil Engineering faculty provides
+                                    The Electrical Engineering faculty provides
                                     academic instruction and guidance to help
                                     students develop the technical knowledge,
                                     practical skills, and professional
@@ -1228,7 +1228,7 @@
                     </div>
 
                     <h2 class="section-heading">
-                        Civil Engineering <span>Program History</span>
+                        Electrical Engineering <span>Program History</span>
                     </h2>
 
                     <p class="section-subtitle">
