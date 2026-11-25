@@ -1316,7 +1316,7 @@
 
                             <p>
                                 The program was granted a Certificate of
-                                Program Compliance (COPC 053, s. 2015) by
+                                Program Compliance (COPC 056, s. 2015) by
                                 the Commission on Higher Education (CHED),
                                 in accordance with the pertinent provisions
                                 of Republic Act No. 7722, otherwise known as
