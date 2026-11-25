@@ -857,8 +857,8 @@
                     alert('Please select a PDF file.');
                     return;
                 }
-                if (file.size > 20 * 1024 * 1024) {
-                    alert('PDF file size exceeds the 20 MB limit.');
+                if (file.size > 100 * 1024 * 1024) {
+                    alert('PDF file size exceeds the 100 MB limit.');
                     return;
                 }
             } else if (fileType === 'video') {
