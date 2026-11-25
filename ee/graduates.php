@@ -126,7 +126,7 @@ $departmentSql = $mysqli->real_escape_string($department);
                 <h2 id="attachmentsTitle">Graduate <span>Attachments</span></h2>
                 <p>Browse the supporting documents related to graduate performance.</p>
             </section>
-            <?php $driveFolderLink = 'https://drive.google.com/drive/folders/1Qw6gc_7P7YyPNMbttYqu1ww9CmXL8bct?fbclid=IwY2xjawV0UXRleHRuA2FlbQIxMABwZG9mBWJyaWQRMWxwcGhDTFdQSjFqTzhwQlVzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEfM_xqeOgk5-u-tXDquua1qBcvW0OvQgyN8sI57brjcOm7uxzem96Jz5V79cc_aem_M8XSi7APh03H5SZHqhsdzg' ?>
+            <?php $driveFolderLink = 'https://drive.google.com/drive/folders/1u3HckonrQU4tR0L3cdZAEVAuraYQh71s' ?>
                                 <?php include 'folder_drive.php' ?>
            
 
