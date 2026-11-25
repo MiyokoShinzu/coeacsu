@@ -2,8 +2,8 @@
 include '../src/connection.php';
 $bannerTitle = 'COMPLIANCE REPORTS';
 $bannerSubtitle = 'Browse compliance reports, supporting documents, and institutional records for COEA.';
-$bannerKicker = 'Bachelor of Science in Civil Engineering';
-$bannerImage = '../assets/ce_faculty.jfif';
+$bannerKicker = 'Bachelor of Science in Electrical Engineering';
+$bannerImage = '../assets/ee_faculty.jfif';
 $bannerColor = '#ff4c01';
 $bannerTextColor = '#FFFFFF';
 $bannerOverlayColor = '#ff4c01';
