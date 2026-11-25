@@ -1030,7 +1030,7 @@
 
                                 <h2>
                                     Welcome to the
-                                    <span>BSCE Accreditation Portal</span>
+                                    <span>BSEE Accreditation Portal</span>
                                 </h2>
 
                                 <p class="intro-text">
@@ -1114,9 +1114,9 @@
 
 
         <!-- ==========================================
-             SECTION 2: CIVIL ENGINEERING FACULTY
+             SECTION 2: Electrical ENGINEERING FACULTY
         =========================================== -->
-        <section class="coea-section" id="civil-engineering-faculty">
+        <section class="coea-section" id="electrical-engineering-faculty">
 
             <div class="coea-wrapper">
 
@@ -1214,7 +1214,7 @@
 
 
         <!-- ==========================================
-             SECTION 3: CIVIL ENGINEERING PROGRAM HISTORY
+             SECTION 3: Electrical ENGINEERING PROGRAM HISTORY
         =========================================== -->
         <section class="coea-section history-section" id="program-history">
 
@@ -1249,7 +1249,7 @@
                         </h3>
 
                         <p>
-                            The Civil Engineering program was opened in
+                            The Electrical Engineering program was opened in
                             response to the labor demand of the region for
                             infrastructure development, an essential factor
                             to spur regional socioeconomic growth and
@@ -1426,7 +1426,7 @@
                             <div>
                                 <strong>Program Compliance</strong>
                                 <span>
-                                    COPC 053, s. 2015, as stated in the
+                                    COPC 056, s. 2015, as stated in the
                                     supplied program history.
                                 </span>
                             </div>
@@ -1464,7 +1464,7 @@
                         <h3>Continuing Commitment</h3>
 
                         <p>
-                            The Civil Engineering program continues to pursue
+                            The Electrical Engineering program continues to pursue
                             quality engineering education, relevant research,
                             meaningful community engagement, and continuous
                             institutional improvement to prepare graduates
