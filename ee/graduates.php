@@ -127,29 +127,34 @@ $departmentSql = $mysqli->real_escape_string($department);
                 <p>Browse the supporting documents related to graduate performance.</p>
             </section>
 
-            <div class="attachments-list" aria-label="Graduate attachments">
-                <?php
-                $sql = "SELECT * FROM files WHERE area = 'Graduates' AND section = 'Attachment' AND department = '$departmentSql' ORDER BY id DESC";
-                $result = $mysqli->query($sql);
-                if ($result && $result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $filePath = $row['path'];
-                        $fileName = pathinfo(preg_replace('/^\d+_/', '', basename($filePath)), PATHINFO_FILENAME);
-                        $attachmentUrl = '../admin/handlers/' . ltrim($filePath, '/');
-                        echo '
-                    <div class="attachment-item" data-aos="fade-up">
-                        <a href="' . htmlspecialchars($attachmentUrl, ENT_QUOTES, 'UTF-8') . '" target="_blank" rel="noopener noreferrer" class="attachment-link">
-                            <span class="attachment-icon"><i class="bi bi-file-earmark-pdf-fill" aria-hidden="true"></i></span>
-                            <span class="file-name">' . htmlspecialchars($fileName, ENT_QUOTES, 'UTF-8') . '</span>
-                            <span class="attachment-action">Open file <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
-                        </a>
-                    </div>';
-                    }
-                } else {
-                    echo '<p class="empty-state">No files found under Attachments.</p>';
-                }
-                ?>
-            </div>
+            <section class="section-heading" data-aos="fade-up" aria-labelledby="complianceHeading">
+                <span class="section-kicker"><i class="bi bi-shield-check-fill me-2" aria-hidden="true"></i>OFFICIAL DOCUMENTATION</span>
+                <h2 id="complianceHeading">Compliance <span>Reports</span></h2>
+                <p>Browse the files and folders shared for COEA compliance. Open individual folders and view available documents within this page where Google Drive permits embedded browsing.</p>
+            </section>
+            <section class="folder-area" aria-label="Compliance report folder" data-aos="fade-up" data-aos-delay="80">
+                <div class="folder-card">
+                    <div class="folder-toolbar">
+                        <div class="folder-info">
+                            <span class="folder-icon"><i class="bi bi-folder2-open" aria-hidden="true"></i></span>
+                            <div>
+                                <h3>COEA Compliance Documents</h3>
+                                <p>Browse folders and files from the shared Google Drive directory.</p>
+                            </div>
+                        </div>
+                        <div class="folder-actions">
+                            <button type="button" onclick="reloadDriveFolder()"><i class="bi bi-arrow-clockwise" aria-hidden="true"></i> Refresh</button>
+                            <a class="primary-action" href="<?php echo htmlspecialchars($driveFolderUrl, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer"><i class="bi bi-google" aria-hidden="true"></i> Open in Google Drive <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="folder-frame-wrap">
+                        <iframe id="complianceDriveFrame" class="folder-frame" title="COEA Compliance Reports Google Drive folder browser" src="<?php echo htmlspecialchars($driveEmbedUrl, ENT_QUOTES, 'UTF-8'); ?>" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allow="fullscreen"></iframe>
+                    </div>
+                    <div class="folder-hint"><i class="bi bi-info-circle-fill" aria-hidden="true"></i>
+                        <div><strong>Browsing folders:</strong> Select a folder in the embedded Google Drive view to browse its contents in the frame. The folder must be shared as <em>Anyone with the link — Viewer</em>. Google controls the embedded interface, so if it blocks in-page navigation or preview in a browser, use “Open in Google Drive.”</div>
+                    </div>
+                </div>
+            </section>
 
             <section class="section-heading document-heading" data-aos="fade-up" aria-labelledby="tracerTitle">
                 <span class="section-kicker"><i class="bi bi-graph-up-arrow me-2" aria-hidden="true"></i>ALUMNI OUTCOMES</span>
