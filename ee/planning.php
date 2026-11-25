@@ -45,7 +45,6 @@ $bannerOverlayOpacity = 0.2;
                         </div>
                         <div class="video-frame-wrap">
                             <!-- main link -->
-                            
                             <iframe src="https://www.youtube-nocookie.com/embed/ctOaW1-cv4Q?playsinline=1" title="Planning Narrative Presentation" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </article>
