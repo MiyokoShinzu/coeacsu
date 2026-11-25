@@ -1249,7 +1249,9 @@
                         </h3>
 
                         <p>
-                            The Bachelor of Science in Electrical Engineering (BSEE) program of Cagayan State University was established in 1988 at the Carig Campus to address the growing demand for qualified electrical engineering professionals in Cagayan Valley (Region II). The program aims to produce competent and globally competitive graduates equipped with the knowledge and skills to support the region's development in power generation and distribution, infrastructure, industrial automation, and renewable energy. Through quality instruction, research, and extension, it contributes to technological advancement, industrial growth, and sustainable regional development.
+                            The Bachelor of Science in Electrical Engineering (BSEE) program of
+                            Cagayan State University was established in 1988 at the Carig Campus
+                             to address the growing demand for qualified electrical engineering professionals in Cagayan Valley (Region II). The program aims to produce competent and globally competitive graduates equipped with the knowledge and skills to support the region's development in power generation and distribution, infrastructure, industrial automation, and renewable energy. Through quality instruction, research, and extension, it contributes to technological advancement, industrial growth, and sustainable regional development.
                         </p>
 
                     </div>
@@ -1269,7 +1271,7 @@
                                 staff the program. Their academic preparation
                                 and professional expertise support the
                                 delivery of quality instruction and the
-                                development of competent Civil Engineering
+                                development of competent Electrical Engineering
                                 graduates.
                             </p>
 
