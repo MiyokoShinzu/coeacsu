@@ -2,8 +2,8 @@
 include '../src/connection.php';
 $bannerTitle = 'PLANNING';
 $bannerSubtitle = 'Explore planning presentations, narrative reports, and supporting documents for COEA.';
-$bannerKicker = 'Bachelor of Science in Civil Engineering';
-$bannerImage = '../assets/ce_faculty.jfif';
+$bannerKicker = 'Bachelor of Science in Electrical Engineering';
+$bannerImage = '../assets/ee_faculty.jfif';
 $bannerColor = '#ff4c01';
 $bannerTextColor = '#FFFFFF';
 $bannerOverlayColor = '#ff4c01';
@@ -55,7 +55,7 @@ $bannerOverlayOpacity = 0.2;
                 <p>Read, open, or download the planning narrative report.</p>
             </section>
             <?php
-            $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Narrative Report' AND department = 'ce' ORDER BY id DESC";
+            $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Narrative Report' AND department = 'ee' ORDER BY id DESC";
             $result = $mysqli->query($sql);
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
@@ -90,7 +90,7 @@ $bannerOverlayOpacity = 0.2;
             foreach ($attachmentSections as $label => $displayTitle) {
                 echo '<section class="attachment-section" aria-label="' . htmlspecialchars($displayTitle, ENT_QUOTES, 'UTF-8') . '"><div class="attachment-section-heading"><h3>' . htmlspecialchars($displayTitle, ENT_QUOTES, 'UTF-8') . '</h3></div><div class="attachments-list">';
                 $safeLabel = $mysqli->real_escape_string($label);
-                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' AND department = 'ce' AND label = '$safeLabel' ORDER BY id ASC";
+                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' AND department = 'ee' AND label = '$safeLabel' ORDER BY id ASC";
                 $result = $mysqli->query($sql);
                 if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
