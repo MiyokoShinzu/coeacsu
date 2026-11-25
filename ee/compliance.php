@@ -8,8 +8,7 @@ $bannerColor = '#ff4c01';
 $bannerTextColor = '#FFFFFF';
 $bannerOverlayColor = '#ff4c01';
 $bannerOverlayOpacity = 0.2;
-    
-        $driveFolderId = '1VO6EQxsEbfgkDVFps-TUHuT02P7wwV7a?usp=drive_link';
+        $driveFolderId = '1VO6EQxsEbfgkDVFps-TUHuT02P7wwV7a';
 $driveFolderUrl = 'https://drive.google.com/drive/folders/' . $driveFolderId . '?usp=sharing';
 $driveEmbedUrl = 'https://drive.google.com/embeddedfolderview?id=' . $driveFolderId . '#list';
 ?>
