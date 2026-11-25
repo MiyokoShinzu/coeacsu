@@ -126,35 +126,9 @@ $departmentSql = $mysqli->real_escape_string($department);
                 <h2 id="attachmentsTitle">Graduate <span>Attachments</span></h2>
                 <p>Browse the supporting documents related to graduate performance.</p>
             </section>
-
-            <section class="section-heading" data-aos="fade-up" aria-labelledby="complianceHeading">
-                <span class="section-kicker"><i class="bi bi-shield-check-fill me-2" aria-hidden="true"></i>OFFICIAL DOCUMENTATION</span>
-                <h2 id="complianceHeading">Compliance <span>Reports</span></h2>
-                <p>Browse the files and folders shared for COEA compliance. Open individual folders and view available documents within this page where Google Drive permits embedded browsing.</p>
-            </section>
-            <section class="folder-area" aria-label="Compliance report folder" data-aos="fade-up" data-aos-delay="80">
-                <div class="folder-card">
-                    <div class="folder-toolbar">
-                        <div class="folder-info">
-                            <span class="folder-icon"><i class="bi bi-folder2-open" aria-hidden="true"></i></span>
-                            <div>
-                                <h3>COEA Compliance Documents</h3>
-                                <p>Browse folders and files from the shared Google Drive directory.</p>
-                            </div>
-                        </div>
-                        <div class="folder-actions">
-                            <button type="button" onclick="reloadDriveFolder()"><i class="bi bi-arrow-clockwise" aria-hidden="true"></i> Refresh</button>
-                            <a class="primary-action" href="<?php echo htmlspecialchars($driveFolderUrl, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer"><i class="bi bi-google" aria-hidden="true"></i> Open in Google Drive <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="folder-frame-wrap">
-                        <iframe id="complianceDriveFrame" class="folder-frame" title="COEA Compliance Reports Google Drive folder browser" src="<?php echo htmlspecialchars($driveEmbedUrl, ENT_QUOTES, 'UTF-8'); ?>" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allow="fullscreen"></iframe>
-                    </div>
-                    <div class="folder-hint"><i class="bi bi-info-circle-fill" aria-hidden="true"></i>
-                        <div><strong>Browsing folders:</strong> Select a folder in the embedded Google Drive view to browse its contents in the frame. The folder must be shared as <em>Anyone with the link — Viewer</em>. Google controls the embedded interface, so if it blocks in-page navigation or preview in a browser, use “Open in Google Drive.”</div>
-                    </div>
-                </div>
-            </section>
+            <?php $driveFolderLink = 'https://drive.google.com/drive/folders/1Qw6gc_7P7YyPNMbttYqu1ww9CmXL8bct?fbclid=IwY2xjawV0UXRleHRuA2FlbQIxMABwZG9mBWJyaWQRMWxwcGhDTFdQSjFqTzhwQlVzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEfM_xqeOgk5-u-tXDquua1qBcvW0OvQgyN8sI57brjcOm7uxzem96Jz5V79cc_aem_M8XSi7APh03H5SZHqhsdzg' ?>
+                                <?php include 'folder_drive.php' ?>
+           
 
             <section class="section-heading document-heading" data-aos="fade-up" aria-labelledby="tracerTitle">
                 <span class="section-kicker"><i class="bi bi-graph-up-arrow me-2" aria-hidden="true"></i>ALUMNI OUTCOMES</span>
