@@ -19,8 +19,8 @@
         <?php
         $bannerTitle = 'INTERNATIONAL LINKAGES';
         $bannerSubtitle = 'Explore COEA international partnerships, institutional collaborations, and supporting linkage documents.';
-        $bannerKicker = 'Bachelor of Science in Civil Engineering';
-        $bannerImage = '../assets/ce_faculty.jfif';
+        $bannerKicker = 'Bachelor of Science in Electrical Engineering';
+        $bannerImage = '../assets/ee_faculty.jfif';
         $bannerColor = '#ff4c01';
         $bannerTextColor = '#FFFFFF';
         $bannerOverlayColor = '#ff4c01';
@@ -42,7 +42,7 @@
                             <div>
                                 <span class="video-kicker">Narrative Presentation</span>
                                 <h3>International Linkages</h3>
-                                <p>A presentation highlighting international partnerships and linkage activities of the Civil Engineering department.</p>
+                                <p>A presentation highlighting international partnerships and linkage activities of the Electrical Engineering department.</p>
                             </div>
                         </div>
                         <div class="video-frame-wrap">
@@ -62,7 +62,7 @@
                 <p>Read or open the official international linkages narrative report.</p>
             </section>
             <?php
-            $sql = "SELECT * FROM files WHERE area = 'International Linkages' AND section = 'Narrative Report' and department='ce' ORDER BY id DESC";
+            $sql = "SELECT * FROM files WHERE area = 'International Linkages' AND section = 'Narrative Report' and department='ee' ORDER BY id DESC";
             $result = $mysqli->query($sql);
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
@@ -114,7 +114,7 @@
                     <div class="attachment-section-heading"><h3>' . htmlspecialchars($displayTitle, ENT_QUOTES, 'UTF-8') . '</h3></div>
                     <div class="attachments-list">';
                 $sectionSql = $mysqli->real_escape_string($sectionName);
-                $sql = "SELECT * FROM files WHERE area = 'International Linkages' AND section = '$sectionSql' and department='ce' ORDER BY id DESC";
+                $sql = "SELECT * FROM files WHERE area = 'International Linkages' AND section = '$sectionSql' and department='ee' ORDER BY id DESC";
                 $result = $mysqli->query($sql);
                 if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
