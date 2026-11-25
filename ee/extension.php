@@ -120,7 +120,7 @@
                     while ($row = $result->fetch_assoc()) {
                         $filePath = $row['path'];
                         $fileName = pathinfo(preg_replace('/^\d+_/', '', basename($filePath)), PATHINFO_FILENAME);
-                        $attachmentUrl = '../admin/handlers/' . ltrim($filePath, '/');
+                        $attachmentUrl = ltrim($filePath, '/');
                         echo '<div class="attachment-item" data-aos="fade-up">
                             <a href="' . htmlspecialchars($attachmentUrl, ENT_QUOTES, 'UTF-8') . '" target="_blank" rel="noopener noreferrer" class="attachment-link">
                                 <span class="attachment-icon"><i class="bi bi-file-earmark-pdf-fill" aria-hidden="true"></i></span>

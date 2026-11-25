@@ -717,7 +717,7 @@
                 data.forEach(file => {
                     const row = document.createElement('tr');
                     row.innerHTML = `
-              <td>${getDisplayFilename(substr(file.path, 46, file.path.length - 1))}</td>
+              <td>${getDisplayFilename((file.path))}</td>
               <td>${file.section || ''}</td>
               <td>${file.area || ''}</td>
               <td>${file.datetime_update || ''}</td>
