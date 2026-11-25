@@ -1285,20 +1285,8 @@
                             </h3>
 
                             <p>
-                                The department produces quality graduates,
-                                as demonstrated by its performance in the
-                                Civil Engineering Licensure Examination,
-                                which is consistently higher than the
-                                national passing percentage.
-
-                                Based on its performance, the department
-                                was adjudged No. 5 among the top Civil
-                                Engineering schools in the Philippines
-                                offering the program for a minimum of
-                                ten years. The department has also received
-                                commendations for producing licensure
-                                examination topnotchers and for becoming
-                                a Center of Development.
+                                The department has consistently produced graduates who perform well in the licensure examinations, with reported passing rates above the national average. 
+                                This reflects the program's commitment to academic excellence and the effectiveness of its curriculum and instruction.
                             </p>
 
                         </article>
