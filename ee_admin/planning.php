@@ -915,7 +915,7 @@
             );
 
             $.ajax({
-                url: './handlers/upload_file.php',
+                url: './handlers/upload_file_planning.php',
                 method: 'POST',
                 data: formData,
                 contentType: false,
