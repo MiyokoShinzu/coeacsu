@@ -1148,8 +1148,8 @@
                             <div class="faculty-image-wrapper">
 
                                 <img
-                                    src="../assets/ce_faculty.jfif"
-                                    alt="Civil Engineering Faculty"
+                                    src="../assets/ee_faculty.jfif"
+                                    alt="Electrical Engineering Faculty"
                                     class="faculty-image"
                                     loading="lazy">
 
