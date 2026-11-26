@@ -1043,8 +1043,8 @@
                     return;
                 }
 
-                if (file.size > 100 * 1024 * 1024) {
-                    alert('PDF file size exceeds the 100 MB limit.');
+                if (file.size > 1024 * 1024 * 1024) {
+                    alert('PDF file size exceeds the 1 GB limit.');
                     return;
                 }
             } else if (fileType === 'video') {
