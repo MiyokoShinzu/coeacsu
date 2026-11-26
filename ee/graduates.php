@@ -132,7 +132,7 @@ $departmentSql = $mysqli->real_escape_string($department);
 
             <section class="section-heading document-heading" data-aos="fade-up" aria-labelledby="tracerTitle">
                 <span class="section-kicker"><i class="bi bi-graph-up-arrow me-2" aria-hidden="true"></i>ALUMNI OUTCOMES</span>
-                <h2 id="tracerTitle">BSCE <span>Tracer Study</span></h2>
+                <h2 id="tracerTitle">BSEE <span>Tracer Study</span></h2>
                 <p>View the tracer study document for Bachelor of Science in Civil Engineering graduates.</p>
             </section>
 
