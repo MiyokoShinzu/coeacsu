@@ -105,7 +105,7 @@
 
             <?php
             $attachmentSections = [
-                'Higher Institutions' => 'Memorandum of Understanding & Memorandum of Agreement (Higher Institutions and Organizations)',
+                'Higher Institutions' => 'Memoranda of Understanding & Memoranda of Agreement (Higher Institutions and Organizations)',
                 
                 'Others' => 'Other Documents'
             ];
