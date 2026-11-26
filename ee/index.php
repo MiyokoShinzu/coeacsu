@@ -998,7 +998,7 @@
 
                                     <iframe
                                         src="https://www.youtube-nocookie.com/embed/yRgSFguROO0"
-                                        title="COEA Civil Engineering Program Overview"
+                                        title="COEA Electrical Engineering Program Overview"
                                         loading="eager"
                                         allow="encrypted-media; picture-in-picture; fullscreen"
                                         referrerpolicy="strict-origin-when-cross-origin"
