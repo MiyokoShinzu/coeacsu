@@ -1,6 +1,6 @@
 <footer class="footer bg-dark text-white py-3 mt-5" style="height: 15vh; display: flex; align-items: center; justify-content: center;">
     <div class="container text-center">
-        <small>&copy; 2025 Cagayan State University – Carig Campus, College of Engineering and Architecture. All rights reserved.</small>
+        <small>&copy; 2026 Cagayan State University – Carig Campus, College of Engineering and Architecture. All rights reserved.</small>
     </div>
 </footer>
 
