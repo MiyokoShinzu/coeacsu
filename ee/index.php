@@ -25,7 +25,8 @@
 
     <style>
         :root {
-            --coea-orange: #ff4c01;
+            --coea-oranaage: #ff4c01;
+            --coea-orange: #ca03f7;
             --coea-light-orange: #FE904D;
             --coea-dark: #252525;
             --coea-muted: #686868;
