@@ -107,8 +107,8 @@
                                         <select name="section" id="section" class="form-select async-files-input" required>
                                             <option value="Narrative Presentation">Narrative Presentation</option>
                                             <option value="Narrative Report">Narrative Report</option>
-                                            <option value="Higher Institutions">Higher Institutions</option>
-                                            <option value="Organizations">Organizations</option>
+                                            <option value="Higher Institutions">Higher Institutions/Organizations</option>
+                                            
                                             <option value="Others">Others</option>
                                         </select>
                                     </div>
