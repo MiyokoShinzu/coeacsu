@@ -914,7 +914,7 @@
                 <div class="accreditors-welcome-card" data-aos="fade-up">
                     <div class="accreditors-welcome-visual">
                         <img
-                            src="../assets/accreditorss.jfif"
+                            src="../assets/ee_faculty.jfif"
                             alt="Welcome to our Electrical Engineering Program Accreditors"
                             class="accreditors-welcome-image"
                             loading="eager">
