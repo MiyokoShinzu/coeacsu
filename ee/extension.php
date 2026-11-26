@@ -42,7 +42,7 @@
                             <div>
                                 <span class="video-kicker">Narrative Presentation</span>
                                 <h3>Community Service</h3>
-                                <p>A presentation highlighting community service and extension activities of the Civil Engineering department.</p>
+                                <p>A presentation highlighting community service and extension activities of the Electrical Engineering department.</p>
                             </div>
                         </div>
                         <div class="video-frame-wrap">
