@@ -105,8 +105,8 @@
 
             <?php
             $attachmentSections = [
-                'Higher Institutions' => 'Memorandum of Understanding — Higher Institutions',
-                'Organizations' => 'Memorandum of Understanding — Organizations',
+                'Higher Institutions' => 'Memorandum of Understanding & Memorandum of Agreement (Higher Institutions and Organizations)',
+                
                 'Others' => 'Other Documents'
             ];
             foreach ($attachmentSections as $sectionName => $displayTitle) {
