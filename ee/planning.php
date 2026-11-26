@@ -91,7 +91,7 @@ $bannerOverlayOpacity = 0.2;
             foreach ($attachmentSections as $label => $displayTitle) {
                 echo '<section class="attachment-section" aria-label="' . htmlspecialchars($displayTitle, ENT_QUOTES, 'UTF-8') . '"><div class="attachment-section-heading"><h3>' . htmlspecialchars($displayTitle, ENT_QUOTES, 'UTF-8') . '</h3></div><div class="attachments-list">';
                 $safeLabel = $mysqli->real_escape_string($label);
-                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' AND department = 'ee' AND label = '$safeLabel' ORDER BY `path` ASC";
+                $sql = "SELECT * FROM files WHERE area = 'Planning' AND section = 'Attachments' AND department = 'ee' AND label = '$safeLabel' ORDER BY files.path ASC";
                 $result = $mysqli->query($sql);
                 if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
