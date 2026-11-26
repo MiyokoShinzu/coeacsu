@@ -47,7 +47,7 @@ $departmentSql = $mysqli->real_escape_string($department);
                             <div>
                                 <span class="video-kicker">Graduate Achievement</span>
                                 <h3>Performance of Graduates</h3>
-                                <p>A look at the performance and accomplishments of our Civil Engineering graduates.</p>
+                                <p>A look at the performance and accomplishments of our Electrical Engineering graduates.</p>
                             </div>
                         </div>
                         <div class="video-frame-wrap">
@@ -133,7 +133,7 @@ $departmentSql = $mysqli->real_escape_string($department);
             <section class="section-heading document-heading" data-aos="fade-up" aria-labelledby="tracerTitle">
                 <span class="section-kicker"><i class="bi bi-graph-up-arrow me-2" aria-hidden="true"></i>ALUMNI OUTCOMES</span>
                 <h2 id="tracerTitle">BSEE <span>Tracer Study</span></h2>
-                <p>View the tracer study document for Bachelor of Science in Civil Engineering graduates.</p>
+                <p>View the tracer study document for Bachelor of Science in Electrical Engineering graduates.</p>
             </section>
 
             <?php
@@ -147,12 +147,12 @@ $departmentSql = $mysqli->real_escape_string($department);
                     $pdfUrl = htmlspecialchars($cleanPath, ENT_QUOTES, 'UTF-8');
                     $viewerId = 'tracer-study-' . (int)$row['id'];
                     echo '
-                <section class="document-area" aria-label="BSCE tracer study PDF">
+                <section class="document-area" aria-label="BSEE tracer study PDF">
                     <div class="document-card" data-aos="fade-up">
                         <div class="document-toolbar">
                             <div class="document-fileinfo">
                                 <span class="pdf-icon"><i class="bi bi-file-earmark-pdf-fill" aria-hidden="true"></i></span>
-                                <div><h3>' . htmlspecialchars($fileName, ENT_QUOTES, 'UTF-8') . '</h3><p>BSCE tracer study · PDF document</p></div>
+                                <div><h3>' . htmlspecialchars($fileName, ENT_QUOTES, 'UTF-8') . '</h3><p>BSEE tracer study · PDF document</p></div>
                             </div>
                             <div class="document-actions">
                                 <button type="button" onclick="togglePdfFullscreen(\'' . $viewerId . '\')"><i class="bi bi-arrows-fullscreen" aria-hidden="true"></i> Fullscreen</button>
