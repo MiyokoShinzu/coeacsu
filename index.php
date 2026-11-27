@@ -1739,7 +1739,7 @@
             width: 100%;
             max-height: 520px;
             object-fit: cover;
-            border-bottom: 1px solid #2a3543;
+            border-bottom: 1px solid #ff00ae;
         }
 
         .banner {
