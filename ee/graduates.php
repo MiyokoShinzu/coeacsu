@@ -46,36 +46,20 @@ $departmentSql = $mysqli->real_escape_string($department);
                             <span class="video-icon"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i></span>
                             <div>
                                 <span class="video-kicker">Graduate Achievement</span>
-                                <h3>Performance of Graduates</h3>
-                                <p>A look at the performance and accomplishments of our Electrical Engineering graduates.</p>
+                                <h3>Performance and Testimonials of Graduates</h3>
+                                <p>A look at the performance, testimonials, and accomplishments of our Electrical Engineering graduates.</p>
                             </div>
                         </div>
                         <div class="video-frame-wrap">
                             <iframe src="https://www.youtube-nocookie.com/embed/z825J4H_83M?playsinline=1"
-                                title="Performance of Graduates" loading="lazy"
+                                title="Performance and Testimonials of Graduates" loading="lazy"
                                 referrerpolicy="strict-origin-when-cross-origin"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen></iframe>
                         </div>
                     </article>
 
-                    <article class="video-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="video-card-heading">
-                            <span class="video-icon"><i class="bi bi-chat-quote-fill" aria-hidden="true"></i></span>
-                            <div>
-                                <span class="video-kicker">Graduate Experiences</span>
-                                <h3>Graduate Testimonials</h3>
-                                <p>Listen to graduates share their experiences, reflections, and perspectives.</p>
-                            </div>
-                        </div>
-                        <div class="video-frame-wrap">
-                            <iframe src="https://www.youtube-nocookie.com/embed/kGt_wCJVLcQ?playsinline=1"
-                                title="Graduate Testimonials" loading="lazy"
-                                referrerpolicy="strict-origin-when-cross-origin"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
-                        </div>
-                    </article>
+                   
                 </div>
             </section>
 
