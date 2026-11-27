@@ -51,7 +51,8 @@ $departmentSql = $mysqli->real_escape_string($department);
                             </div>
                         </div>
                         <div class="video-frame-wrap">
-                            <iframe src="https://www.youtube-nocookie.com/embed/z825J4H_83M?playsinline=1"
+                         
+                            <iframe src="https://www.youtube-nocookie.com/embed/OHRhM07l-8o?playsinline=1"
                                 title="Performance and Testimonials of Graduates" loading="lazy"
                                 referrerpolicy="strict-origin-when-cross-origin"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -59,7 +60,7 @@ $departmentSql = $mysqli->real_escape_string($department);
                         </div>
                     </article>
 
-                   
+
                 </div>
             </section>
 
@@ -111,8 +112,8 @@ $departmentSql = $mysqli->real_escape_string($department);
                 <p>Browse the supporting documents related to graduate performance.</p>
             </section>
             <?php $driveFolderLink = 'https://drive.google.com/drive/folders/1u3HckonrQU4tR0L3cdZAEVAuraYQh71s' ?>
-                                <?php include 'folder_drive.php' ?>
-           
+            <?php include 'folder_drive.php' ?>
+
 
             <section class="section-heading document-heading" data-aos="fade-up" aria-labelledby="tracerTitle">
                 <span class="section-kicker"><i class="bi bi-graph-up-arrow me-2" aria-hidden="true"></i>ALUMNI OUTCOMES</span>
