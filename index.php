@@ -2679,7 +2679,7 @@
         .welcome-action-primary:hover,
         .welcome-action-primary:focus-visible {
             /* background: var(--coea-orange) !important; */
-            background: #fff; !important;
+            background: #fff !important;
             border-color: var(--coea-orange) !important;
             color: #fff !important;
         }
