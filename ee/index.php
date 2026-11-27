@@ -972,12 +972,12 @@
 
                 </div>
 
-                <!-- <div class="overview-card" data-aos="fade-up">
+                <div class="overview-card" data-aos="fade-up">
 
                     <div class="row g-0 align-items-stretch">
 
                        
-                        <div class="col-lg-6 order-1 order-lg-2">
+                        <!-- <div class="col-lg-6 order-1 order-lg-2">
 
                             <div class="video-panel">
 
@@ -1018,10 +1018,10 @@
 
                             </div>
 
-                        </div>
+                        </div> -->
 
                         <!-- Introduction: placed on the left on desktop -->
-                        <div class="col-lg-6 order-2 order-lg-1">
+                        <div class="col-lg-10 order-2 order-lg-1">
 
                             <div class="intro-panel">
 
