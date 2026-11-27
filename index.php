@@ -105,7 +105,7 @@
                             </div>
                             <div class="video-frame-wrap">
                                 <video controls preload="metadata" poster="./assets/template_iv.jfif" aria-label="Campus Tour Video">
-                                    <source src="https://drive.google.com/file/d/1MKenyNUePmdD4elylT3GNXNjor4jz9VR/view?fbclid=IwY2xjawV0h99leHRuA2FlbQIxMQBwZG9mA3NydGMGYXBwX2lkDzQzNzYyNjMxNjk3Mzc4OAABHwj0uq8TwK1uGSO-kuQUBIh6LuOAuq097taUupz5XtRpzgNttCRluh4id92Y_aem_I-GQZFkpIhQPoXLbtHUyog" type="video/mp4">
+                                    <source src="https://csucpe.com/accre_standalone_folder/campus_tour.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
