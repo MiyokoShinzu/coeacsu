@@ -215,7 +215,7 @@ $departmentSql = $mysqli->real_escape_string($department);
 
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(1, minmax(0, 1fr));
             gap: 24px;
             width: min(1180px, calc(100% - 32px));
             margin: 24px auto 36px
