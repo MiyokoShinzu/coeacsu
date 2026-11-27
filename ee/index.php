@@ -972,11 +972,11 @@
 
                 </div>
 
-                <div class="overview-card" data-aos="fade-up">
+                <!-- <div class="overview-card" data-aos="fade-up">
 
                     <div class="row g-0 align-items-stretch">
 
-                        <!-- YouTube video: placed on the right on desktop -->
+                       
                         <div class="col-lg-6 order-1 order-lg-2">
 
                             <div class="video-panel">
@@ -1108,7 +1108,7 @@
 
                     </div>
 
-                </div>
+                </div> -->
 
             </div>
 
