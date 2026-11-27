@@ -2678,7 +2678,8 @@
         .welcome-action-primary,
         .welcome-action-primary:hover,
         .welcome-action-primary:focus-visible {
-            background: var(--coea-orange) !important;
+            /* background: var(--coea-orange) !important; */
+            background: #fff; !important;
             border-color: var(--coea-orange) !important;
             color: #fff !important;
         }
